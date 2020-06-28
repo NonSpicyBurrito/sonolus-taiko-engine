@@ -1,0 +1,1064 @@
+//
+// Taiko Engine
+// For Sonolus 0.3.6
+//
+// A recreation Taiko no Tatsujin engine
+// By Burrito
+//
+
+
+
+// Note Class
+
+IsNoteOnScreen:GreaterOr(Time NoteSpawnTime)
+
+InitNote:Execute(
+    Set(EntityMemory *NoteY1 Subtract(0.25 NoteRadius))
+    Set(EntityMemory *NoteY2 Add(0.25 NoteRadius))
+)
+
+InitAuto:And(
+    Auto
+    Execute(
+        Set(EntityInput *Judgment JudgmentPerfect)
+        Set(EntityInput *Bucket NoteBucket)
+    )
+)
+
+UpdateDonNote:And(
+    Not(HasDonNote)
+    Less(NoteTime DonNoteTime)
+    Execute(
+        Set(LevelMemory *DonNoteIndex Index)
+        Set(LevelMemory *DonNoteTime NoteTime)
+    )
+)
+UpdateKatNote:And(
+    Not(HasKatNote)
+    Less(NoteTime KatNoteTime)
+    Execute(
+        Set(LevelMemory *KatNoteIndex Index)
+        Set(LevelMemory *KatNoteTime NoteTime)
+    )
+)
+
+DrawNote:Execute(
+    Set(EntityMemory *NoteX Remap(NoteSpawnTime NoteTime LaneX2 LaneX1 Time))
+    Draw(
+        NoteTexture
+        Subtract(NoteX NoteRadius) NoteY1
+        Subtract(NoteX NoteRadius) NoteY2
+        Add(NoteX NoteRadius) NoteY2
+        Add(NoteX NoteRadius) NoteY1
+        LayerNote
+        1
+    )
+)
+
+
+
+// #0: Initialization
+
+#0.updateSequential:Execute(
+    Set(LevelMemory *StageX1 Multiply(AspectRatio -1))
+    Set(LevelMemory *StageX2 AspectRatio)
+    Set(LevelMemory *LaneX1 Subtract(0.25 AspectRatio))
+    Set(LevelMemory *LaneX2 Add(AspectRatio 0.25))
+    Set(LevelMemory *SlotEffectX1 Subtract(LaneX1 0.25))
+    Set(LevelMemory *SlotEffectX2 Add(LaneX1 0.25))
+    Set(LevelMemory *SoulX Subtract(AspectRatio 0.25))
+    Set(LevelMemory *NoteTimeOffset Divide(LevelAudioOffset 1000))
+    Set(LevelMemory *InputOffset Add(DeviceInputOffset Divide(LevelInputOffset 1000)))
+
+    SetShifted(LevelUI *UIMenu *UIAnchorX Subtract(0.05 AspectRatio))
+    SetShifted(LevelUI *UIMenu *UIAnchorY 0.95)
+    SetShifted(LevelUI *UIMenu *UIPivotX 0)
+    SetShifted(LevelUI *UIMenu *UIPivotY 1)
+    SetShifted(LevelUI *UIMenu *UIWidth 0.15)
+    SetShifted(LevelUI *UIMenu *UIHeight 0.15)
+    SetShifted(LevelUI *UIMenu *UIAlpha 1)
+    SetShifted(LevelUI *UIMenu *UIBackground true)
+
+    SetShifted(LevelUI *UIJudgment *UIAnchorX Subtract(0.25 AspectRatio))
+    SetShifted(LevelUI *UIJudgment *UIAnchorY 0.5)
+    SetShifted(LevelUI *UIJudgment *UIPivotX 0.5)
+    SetShifted(LevelUI *UIJudgment *UIPivotY 0)
+    SetShifted(LevelUI *UIJudgment *UIWidth Multiply(0.5 UIJudgmentSize))
+    SetShifted(LevelUI *UIJudgment *UIHeight Multiply(0.125 UIJudgmentSize))
+    SetShifted(LevelUI *UIJudgment *UIAlpha UIJudgmentAlpha)
+
+    SetShifted(LevelUI *UIComboValue *UIAnchorX Subtract(0.25 AspectRatio))
+    SetShifted(LevelUI *UIComboValue *UIAnchorY 0)
+    SetShifted(LevelUI *UIComboValue *UIPivotX 0.5)
+    SetShifted(LevelUI *UIComboValue *UIPivotY 1)
+    SetShifted(LevelUI *UIComboValue *UIWidth Multiply(0.5 UIComboSize))
+    SetShifted(LevelUI *UIComboValue *UIHeight Multiply(0.25 UIComboSize))
+    SetShifted(LevelUI *UIComboValue *UIAlpha UIComboAlpha)
+
+    SetShifted(LevelUI *UIComboText *UIAnchorX Subtract(0.25 AspectRatio))
+    SetShifted(LevelUI *UIComboText *UIAnchorY 0)
+    SetShifted(LevelUI *UIComboText *UIPivotX 0.5)
+    SetShifted(LevelUI *UIComboText *UIPivotY 2.6667)
+    SetShifted(LevelUI *UIComboText *UIWidth Multiply(0.5 UIComboSize))
+    SetShifted(LevelUI *UIComboText *UIHeight Multiply(0.15 UIComboSize))
+    SetShifted(LevelUI *UIComboText *UIAlpha UIComboAlpha)
+
+    SetShifted(LevelUI *UIScoreBar *UIAnchorX AspectRatio)
+    SetShifted(LevelUI *UIScoreBar *UIAnchorY 0.5)
+    SetShifted(LevelUI *UIScoreBar *UIPivotX 1)
+    SetShifted(LevelUI *UIScoreBar *UIPivotY 0)
+    SetShifted(LevelUI *UIScoreBar *UIWidth Subtract(Multiply(AspectRatio 2) 1))
+    SetShifted(LevelUI *UIScoreBar *UIHeight 0.15)
+    SetShifted(LevelUI *UIScoreBar *UIAlpha 1)
+    SetShifted(LevelUI *UIScoreBar *UIHorizontalAlign -1)
+    SetShifted(LevelUI *UIScoreBar *UIBackground true)
+
+    SetShifted(LevelUI *UIScoreValue *UIAnchorX AspectRatio)
+    SetShifted(LevelUI *UIScoreValue *UIAnchorY 0.5)
+    SetShifted(LevelUI *UIScoreValue *UIPivotX 1)
+    SetShifted(LevelUI *UIScoreValue *UIPivotY 0)
+    SetShifted(LevelUI *UIScoreValue *UIWidth Subtract(Multiply(AspectRatio 2) 1.15))
+    SetShifted(LevelUI *UIScoreValue *UIHeight 0.15)
+    SetShifted(LevelUI *UIScoreValue *UIAlpha 1)
+    SetShifted(LevelUI *UIScoreValue *UIHorizontalAlign 1)
+
+    true
+)
+
+
+
+// #1: Stage
+
+#1.shouldSpawn:Equal(Get(EntityInfoArray *State) Despawned)
+
+#1.initialize:Execute(
+    Set(EntityMemory *SlotX1 Subtract(LaneX1 0.1875))
+    Set(EntityMemory *SlotX2 Add(LaneX1 0.1875))
+    Set(EntityMemory *StageCoverX Lerp(AspectRatio Subtract(0.25 AspectRatio) StageCover))
+)
+
+#1.updateSequential:Execute(
+    Set(LevelMemory *HasDonNote Equal(GetShifted(EntityInfoArray Multiply(DonNoteIndex 3) *State) Spawned))
+    Set(LevelMemory *HasKatNote Equal(GetShifted(EntityInfoArray Multiply(KatNoteIndex 3) *State) Spawned))
+    Or(
+        HasDonNote
+        Set(LevelMemory *DonNoteTime 1000000)
+    )
+    Or(
+        HasKatNote
+        Set(LevelMemory *KatNoteTime 1000000)
+    )
+
+    Set(LevelMemory *DonStarted false)
+    Set(LevelMemory *KatStarted false)
+)
+
+#1.touch:And(
+    Not(Auto)
+    TempTouchStarted
+    LessOr(TempTouchY 0)
+    Execute(
+        If(
+            LessOr(Add(Power(TempTouchX 2) Power(Subtract(TempTouchY -1) 2)) 0.81)
+            Execute(
+                If(
+                    DonStarted
+                    Set(LevelMemory *DonST Min(TempTouchST DonST))
+                    Execute(
+                        Set(LevelMemory *DonStarted true)
+                        Set(LevelMemory *DonST TempTouchST)
+                    )
+                )
+                And(
+                    SlotEffect
+                    Spawn(
+                        8
+                        TempTouchST
+                    )
+                )
+                And(
+                    SoundEffect
+                    Play(EffectPerfect MinEffectTime)
+                )
+            )
+            Execute(
+                If(
+                    KatStarted
+                    Set(LevelMemory *KatST Min(TempTouchST KatST))
+                    Execute(
+                        Set(LevelMemory *KatStarted true)
+                        Set(LevelMemory *KatST TempTouchST)
+                    )
+                )
+                And(
+                    SlotEffect
+                    Spawn(
+                        9
+                        TempTouchST
+                    )
+                )
+                And(
+                    SoundEffect
+                    Play(EffectFlick MinEffectTime)
+                )
+            )
+        )
+    )
+)
+
+#1.updateParallel:Execute(
+    Draw(
+        TextureLane
+        StageX1 0.5
+        StageX2 0.5
+        StageX2 0
+        StageX1 0
+        LayerStage
+        1
+    )
+
+    Draw(
+        TextureSlot
+        SlotX1 0.0625
+        SlotX1 0.4375
+        SlotX2 0.4375
+        SlotX2 0.0625
+        LayerSlot
+        1
+    )
+
+    And(
+        StageCover
+        Draw(
+            TextureStageCover
+            StageCoverX 0
+            StageCoverX 0.5
+            AspectRatio 0.5
+            AspectRatio 0
+            LayerStageCover
+            1
+        )
+    )
+)
+
+
+
+// #2: Don
+
+#2.shouldSpawn:IsNoteOnScreen
+
+#2.initialize:Execute(
+    InitNote
+    And(
+        Auto
+        Execute(
+            And(
+                SoundEffect
+                PlayScheduled(EffectPerfect NoteTime MinEffectTime)
+            )
+            Set(EntityInput *Judgment JudgmentPerfect)
+            Set(EntityInput *Bucket NoteBucket)
+        )
+    )
+)
+
+#2.updateSequential:UpdateDonNote
+
+#2.updateParallel:Execute(
+    DrawNote
+
+    If(
+        Auto
+        And(
+            Greater(Time NoteTime)
+            Execute(
+                And(
+                    NoteEffect
+                    Spawn(
+                        7
+                        NoteTime
+                        NoteTexture
+                        NoteRadius
+                        TextureSlotDonEffectCB
+                    )
+                )
+                And(
+                    SlotEffect
+                    Spawn(
+                        8
+                        NoteTime
+                    )
+                )
+                true
+            )
+        )
+        If(
+            And(
+                DonStarted
+                Equal(DonNoteIndex Index)
+                LessOr(Subtract(NoteTime Subtract(Time InputOffset)) GoodWindow)
+            )
+            Execute(
+                Set(EntityInput *Judgment JudgeSimple(Subtract(DonST InputOffset) NoteTime PerfectWindow GreatWindow GoodWindow))
+                Set(EntityInput *Bucket NoteBucket)
+                Set(EntityInput *BucketValue Multiply(1000 Subtract(DonST InputOffset NoteTime)))
+                And(
+                    NoteEffect
+                    Spawn(
+                        7
+                        DonST
+                        NoteTexture
+                        NoteRadius
+                        TextureSlotDonEffectCB
+                    )
+                )
+                true
+            )
+            Greater(Subtract(Time NoteTime InputOffset) GoodWindow)
+        )
+    )
+)
+
+
+
+// #3: Kat
+
+#3.shouldSpawn:IsNoteOnScreen
+
+#3.initialize:Execute(
+    InitNote
+    And(
+        Auto
+        Execute(
+            And(
+                SoundEffect
+                PlayScheduled(EffectFlick NoteTime MinEffectTime)
+            )
+            Set(EntityInput *Judgment JudgmentPerfect)
+            Set(EntityInput *Bucket NoteBucket)
+        )
+    )
+)
+
+#3.updateSequential:UpdateKatNote
+
+#3.updateParallel:Execute(
+    DrawNote
+
+    If(
+        Auto
+        And(
+            Greater(Time NoteTime)
+            Execute(
+                And(
+                    NoteEffect
+                    Spawn(
+                        7
+                        NoteTime
+                        NoteTexture
+                        NoteRadius
+                        TextureSlotKatEffectCB
+                    )
+                )
+                And(
+                    SlotEffect
+                    Spawn(
+                        9
+                        NoteTime
+                    )
+                )
+                true
+            )
+        )
+        If(
+            And(
+                KatStarted
+                Equal(KatNoteIndex Index)
+                LessOr(Subtract(NoteTime Subtract(Time InputOffset)) GoodWindow)
+            )
+            Execute(
+                Set(EntityInput *Judgment JudgeSimple(Subtract(KatST InputOffset) NoteTime PerfectWindow GreatWindow GoodWindow))
+                Set(EntityInput *Bucket NoteBucket)
+                Set(EntityInput *BucketValue Multiply(1000 Subtract(KatST InputOffset NoteTime)))
+                And(
+                    NoteEffect
+                    Spawn(
+                        7
+                        KatST
+                        NoteTexture
+                        NoteRadius
+                        TextureSlotKatEffectCB
+                    )
+                )
+                true
+            )
+            Greater(Subtract(Time NoteTime InputOffset) GoodWindow)
+        )
+    )
+)
+
+
+
+// #4: Drum
+
+#4.shouldSpawn:IsNoteOnScreen
+
+#4.initialize:Execute(
+    InitNote
+    InitAuto
+)
+
+#4.updateSequential:Execute(
+    UpdateDonNote
+    UpdateKatNote
+)
+
+#4.updateParallel:Execute(
+    DrawNote
+
+    Set(EntityMemory *NoteTailX Remap(NoteTailSpawnTime NoteTailTime LaneX2 LaneX1 Time))
+    Draw(
+        11004
+        NoteX NoteY2
+        NoteTailX NoteY2
+        NoteTailX NoteY1
+        NoteX NoteY1
+        LayerNoteBody
+        1
+    )
+    Draw(
+        3004
+        Subtract(NoteTailX NoteRadius) NoteY1
+        Subtract(NoteTailX NoteRadius) NoteY2
+        Add(NoteTailX NoteRadius) NoteY2
+        Add(NoteTailX NoteRadius) NoteY1
+        LayerNoteTail
+        1
+    )
+
+    And(
+        Greater(Subtract(Time InputOffset) NoteTime)
+        Execute(
+            And(
+                DonStarted
+                Equal(DonNoteIndex Index)
+                Execute(
+                    Set(EntityInput *Judgment JudgmentPerfect)
+                    And(
+                        NoteEffect
+                        Spawn(
+                            7
+                            DonST
+                            TextureNoteDon
+                            NoteRadius
+                            TextureSlotDonEffectCB
+                        )
+                    )
+                )
+            )
+            And(
+                KatStarted
+                Equal(KatNoteIndex Index)
+                Execute(
+                    Set(EntityInput *Judgment JudgmentPerfect)
+                    And(
+                        NoteEffect
+                        Spawn(
+                            7
+                            KatST
+                            TextureNoteKat
+                            NoteRadius
+                            TextureSlotKatEffectCB
+                        )
+                    )
+                )
+            )
+        )
+    )
+
+    If(
+        Auto
+        Greater(Time NoteTailTime)
+        Greater(Subtract(Time InputOffset) NoteTailTime)
+    )
+)
+
+
+
+// #5: Balloon Graphics
+
+#5.shouldSpawn:IsNoteOnScreen
+
+#5.initialize:Execute(
+    InitNote
+    Set(EntityMemory *NoteBalloonRadius 0.125)
+)
+
+#5.updateParallel:Execute(
+    If(
+        Auto
+        Set(EntityMemory *NoteBalloonRadius Remap(NoteTime NoteTailTime 0.125 0.25 Time))
+        And(
+            DonStarted
+            GreaterOr(Subtract(Time InputOffset) NoteTime)
+            LessOr(Subtract(Time InputOffset) NoteTailTime)
+            Execute(
+                Set(EntityMemory *NoteBalloonInputCount Add(NoteBalloonInputCount 1))
+                Set(EntityMemory *NoteBalloonRadius Multiply(0.125 Add(1 Divide(NoteBalloonInputCount NoteBalloonCount))))
+                And(
+                    NoteEffect
+                    GreaterOr(NoteBalloonInputCount NoteBalloonCount)
+                    And(
+                        NoteEffect
+                        Spawn(
+                            7
+                            Time
+                            NoteTexture
+                            0.1875
+                            TextureSlotBalloonEffectCB
+                        )
+                    )
+                )
+            )
+        )
+    )
+
+    If(
+        GreaterOr(Time NoteTime)
+        Draw(
+            NoteTexture
+            Subtract(LaneX1 NoteBalloonRadius) Subtract(0.25 NoteBalloonRadius)
+            Subtract(LaneX1 NoteBalloonRadius) Add(0.25 NoteBalloonRadius)
+            Add(LaneX1 NoteBalloonRadius) Add(0.25 NoteBalloonRadius)
+            Add(LaneX1 NoteBalloonRadius) Subtract(0.25 NoteBalloonRadius)
+            LayerNote
+            1
+        )
+        DrawNote
+    )
+
+    If(
+        Auto
+        And(
+            Greater(Time NoteTailTime)
+            Execute(
+                And(
+                    NoteEffect
+                    Spawn(
+                        7
+                        NoteTailTime
+                        NoteTexture
+                        0.1875
+                        TextureSlotBalloonEffectCB
+                    )
+                )
+                true
+            )
+        )
+        Or(
+            GreaterOr(NoteBalloonInputCount NoteBalloonCount)
+            Greater(Subtract(Time InputOffset) NoteTailTime)
+        )
+    )
+)
+
+
+
+// #6: Balloon Note
+
+#6.shouldSpawn:IsNoteOnScreen
+
+#6.initialize:InitAuto
+
+#6.updateSequential:UpdateDonNote
+
+#6.updateParallel:If(
+    Auto
+    Greater(Time NoteTailTime)
+    If(
+        And(
+            DonStarted
+            Equal(DonNoteIndex Index)
+        )
+        Execute(
+            Set(EntityInput *Judgment JudgmentPerfect)
+            true
+        )
+        Greater(Subtract(Time InputOffset) NoteTailTime)
+    )
+)
+
+
+
+// #7: Note Effect
+
+#7.updateParallel:Execute(
+    Set(EntityMemory *EffectTimeDistance Subtract(Time EffectTime))
+    Or(
+        Greater(EffectTimeDistance 0.75)
+        If(
+            GreaterOr(EffectTimeDistance 0.5)
+            Execute(
+                Draw(
+                    EffectTexture
+                    Subtract(SoulX EffectRadius) Subtract(0.75 EffectRadius)
+                    Subtract(SoulX EffectRadius) Add(0.75 EffectRadius)
+                    Add(SoulX EffectRadius) Add(0.75 EffectRadius)
+                    Add(SoulX EffectRadius) Subtract(0.75 EffectRadius)
+                    LayerNoteEffect
+                    Unlerp(0.75 0.5 EffectTimeDistance)
+                )
+            )
+            Execute(
+                Set(EntityMemory *EffectScale Divide(EffectTimeDistance 0.5))
+
+                Set(EntityMemory *EffectSX1 Lerp(LaneX1 0 EffectScale))
+                Set(EntityMemory *EffectSY1 Lerp(0.25 1.5 EffectScale))
+                Set(EntityMemory *EffectSX2 Lerp(0 SoulX EffectScale))
+                Set(EntityMemory *EffectSY2 Lerp(1.5 0.75 EffectScale))
+                Set(EntityMemory *EffectSX3 Lerp(EffectSX1 EffectSX2 EffectScale))
+                Set(EntityMemory *EffectSY3 Lerp(EffectSY1 EffectSY2 EffectScale))
+
+                Draw(
+                    EffectTexture
+                    Subtract(EffectSX3 EffectRadius) Subtract(EffectSY3 EffectRadius)
+                    Subtract(EffectSX3 EffectRadius) Add(EffectSY3 EffectRadius)
+                    Add(EffectSX3 EffectRadius) Add(EffectSY3 EffectRadius)
+                    Add(EffectSX3 EffectRadius) Subtract(EffectSY3 EffectRadius)
+                    LayerNoteEffect
+                    1
+                )
+
+                And(
+                    LessOr(EffectTimeDistance 0.2)
+                    Draw(
+                        EffectSlotTexture
+                        SlotEffectX1 0
+                        SlotEffectX1 0.5
+                        SlotEffectX2 0.5
+                        SlotEffectX2 0
+                        LayerNoteSlotEffect
+                        Subtract(1 Divide(EffectTimeDistance 0.2))
+                    )
+                )
+            )
+        )
+    )
+)
+
+
+
+// #8: Don Slot Effect
+
+#8.updateParallel:Execute(
+    Set(EntityMemory *EffectTimeDistance Subtract(Time EffectTime))
+    Or(
+        Greater(EffectTimeDistance 0.5)
+        Draw(
+            TextureDonEffectCB
+            -0.9 -1.9
+            -0.9 -0.1
+            0.9 -0.1
+            0.9 -1.9
+            LayerSlotEffect
+            Subtract(1 Divide(EffectTimeDistance 0.5))
+        )
+    )
+)
+
+
+
+// #9: Kat Slot Effect
+
+#9.updateParallel:Execute(
+    Set(EntityMemory *EffectTimeDistance Subtract(Time EffectTime))
+    Or(
+        Greater(EffectTimeDistance 0.5)
+        Execute(
+            Draw(
+                TextureKatEffectLB
+                StageX1 0
+                -0.9 0
+                -0.9 -1
+                StageX1 -1
+                LayerSlotEffect
+                Subtract(1 Divide(EffectTimeDistance 0.5))
+            )
+            Draw(
+                TextureKatEffectLB
+                StageX2 -1
+                0.9 -1
+                0.9 0
+                StageX2 0
+                LayerSlotEffect
+                Subtract(1 Divide(EffectTimeDistance 0.5))
+            )
+        )
+    )
+)
+
+
+
+// Constants
+
+true:1
+false:0
+
+Waiting:0
+Spawned:1
+Despawned:2
+
+Waiting:0
+Terminated:1
+
+PhaseBegan:1
+PhaseStationary:2
+PhaseMoved:3
+PhaseEnded:4
+
+PerfectWindow:0.025
+GreatWindow:0.075
+GoodWindow:0.108
+
+MinEffectTime:0.02
+
+LayerStageCover:1000
+LayerNoteEffect:200
+LayerNote:100
+LayerNoteBody:99
+LayerNoteTail:98
+LayerNoteSlotEffect:90
+LayerSlotEffect:10
+LayerSlot:1
+LayerStage:0
+
+JudgmentMiss:0
+JudgmentPerfect:1
+JudgmentGreat:2
+JudgmentGood:3
+
+
+
+// Texture identifiers
+
+TextureSlot:41001
+TextureLane:40100
+TextureStageCover:42000
+TextureNoteDon:1001
+TextureNoteKat:1006
+TextureSlotDonEffectCB:31001
+TextureSlotKatEffectCB:31006
+TextureSlotBalloonEffectCB:31005
+TextureDonEffectCB:31001
+TextureKatEffectLB:33006
+
+
+
+// Effect identifiers
+
+EffectMiss:0
+EffectPerfect:1
+EffectGreat:2
+EffectGood:3
+EffectFlick:4
+EffectEmpty:5
+
+
+
+// Block identifiers
+
+LevelMemory:0
+LevelData:1
+LevelOption:2
+LevelTransform:3
+LevelBackground:4
+LevelUI:5
+
+EntityInfoArray:10
+EntityDataArray:11
+EntitySharedMemoryArray:12
+
+EntityInfo:20
+EntityMemory:21
+EntityData:22
+EntityInput:23
+EntitySharedMemory:24
+
+TemporaryMemory:100
+TemporaryData:101
+
+
+
+// Level Memory Layout
+
+*StageX1:0
+*StageX2:1
+*LaneX1:2
+*LaneX2:3
+*SlotEffectX1:4
+*SlotEffectX2:5
+*SoulX:6
+*NoteTimeOffset:7
+*InputOffset:8
+*HasDonNote:64
+*DonNoteIndex:65
+*DonNoteTime:66
+*HasKatNote:67
+*KatNoteIndex:68
+*KatNoteTime:69
+*DonStarted:128
+*DonST:129
+*KatStarted:130
+*KatST:131
+
+StageX1:Get(LevelMemory *StageX1)
+StageX2:Get(LevelMemory *StageX2)
+LaneX1:Get(LevelMemory *LaneX1)
+LaneX2:Get(LevelMemory *LaneX2)
+SlotEffectX1:Get(LevelMemory *SlotEffectX1)
+SlotEffectX2:Get(LevelMemory *SlotEffectX2)
+SoulX:Get(LevelMemory *SoulX)
+NoteTimeOffset:Get(LevelMemory *NoteTimeOffset)
+InputOffset:Get(LevelMemory *InputOffset)
+HasDonNote:Get(LevelMemory *HasDonNote)
+DonNoteIndex:Get(LevelMemory *DonNoteIndex)
+DonNoteTime:Get(LevelMemory *DonNoteTime)
+HasKatNote:Get(LevelMemory *HasKatNote)
+KatNoteIndex:Get(LevelMemory *KatNoteIndex)
+KatNoteTime:Get(LevelMemory *KatNoteTime)
+DonStarted:Get(LevelMemory *DonStarted)
+DonST:Get(LevelMemory *DonST)
+KatStarted:Get(LevelMemory *KatStarted)
+KatST:Get(LevelMemory *KatST)
+
+
+
+// Level Data Layout
+
+*Time:0
+*DeltaTime:1
+*AspectRatio:2
+*DeviceAudioOffset:3
+*DeviceInputOffset:4
+
+Time:Get(LevelData *Time)
+DeltaTime:Get(LevelData *DeltaTime)
+AspectRatio:Get(LevelData *AspectRatio)
+DeviceAudioOffset:Get(LevelData *DeviceAudioOffset)
+DeviceInputOffset:Get(LevelData *DeviceInputOffset)
+
+
+
+// Level Option Layout
+
+*Auto:0
+*LevelAudioOffset:1
+*LevelInputOffset:2
+*Speed:3
+*StageCover:4
+*SoundEffect:5
+*NoteEffect:6
+*SlotEffect:7
+*UIJudgmentSize:8
+*UIJudgmentAlpha:9
+*UIComboSize:10
+*UIComboAlpha:11
+
+Auto:Get(LevelOption *Auto)
+LevelAudioOffset:Get(LevelOption *LevelAudioOffset)
+LevelInputOffset:Get(LevelOption *LevelInputOffset)
+Speed:Get(LevelOption *Speed)
+StageCover:Get(LevelOption *StageCover)
+SoundEffect:Get(LevelOption *SoundEffect)
+NoteEffect:Get(LevelOption *NoteEffect)
+SlotEffect:Get(LevelOption *SlotEffect)
+UIJudgmentSize:Get(LevelOption *UIJudgmentSize)
+UIJudgmentAlpha:Get(LevelOption *UIJudgmentAlpha)
+UIComboSize:Get(LevelOption *UIComboSize)
+UIComboAlpha:Get(LevelOption *UIComboAlpha)
+
+
+
+// Level UI Layout
+
+*UIMenu:0
+*UIJudgment:11
+*UIComboValue:22
+*UIComboText:33
+*UIScoreBar:44
+*UIScoreValue:55
+
+*UIAnchorX:0
+*UIAnchorY:1
+*UIPivotX:2
+*UIPivotY:3
+*UIWidth:4
+*UIHeight:5
+*UIRotation:6
+*UIAlpha:7
+*UIHorizontalAlign:8
+*UIVerticalAlign:9
+*UIBackground:10
+
+
+
+// Entity Info Layout
+
+*Index:0
+*Archetype:1
+*State:2
+
+Index:Get(EntityInfo *Index)
+Archetype:Get(EntityInfo *Archetype)
+State:Get(EntityInfo *State)
+
+
+
+// Entity Input Layout
+
+*Judgment:0
+*Bucket:1
+*BucketValue:2
+
+Judgment:Get(EntityInput *Judgment)
+Bucket:Get(EntityInput *Bucket)
+BucketValue:Get(EntityInput *BucketValue)
+
+
+
+// Touch Temporary Data Layout
+
+*TempTouchID:0
+*TempTouchStarted:1
+*TempTouchEnded:2
+*TempTouchT:3
+*TempTouchST:4
+*TempTouchX:5
+*TempTouchY:6
+*TempTouchSX:7
+*TempTouchSY:8
+*TempTouchDX:9
+*TempTouchDY:10
+*TempTouchVX:11
+*TempTouchVY:12
+*TempTouchVR:13
+*TempTouchVW:14
+
+TempTouchID:Get(TemporaryData *TempTouchID)
+TempTouchStarted:Get(TemporaryData *TempTouchStarted)
+TempTouchEnded:Get(TemporaryData *TempTouchEnded)
+TempTouchT:Get(TemporaryData *TempTouchT)
+TempTouchST:Get(TemporaryData *TempTouchST)
+TempTouchX:Get(TemporaryData *TempTouchX)
+TempTouchY:Get(TemporaryData *TempTouchY)
+TempTouchSX:Get(TemporaryData *TempTouchSX)
+TempTouchSY:Get(TemporaryData *TempTouchSY)
+TempTouchDX:Get(TemporaryData *TempTouchDX)
+TempTouchDY:Get(TemporaryData *TempTouchDY)
+TempTouchVX:Get(TemporaryData *TempTouchVX)
+TempTouchVY:Get(TemporaryData *TempTouchVY)
+TempTouchVR:Get(TemporaryData *TempTouchVR)
+TempTouchVW:Get(TemporaryData *TempTouchVW)
+
+
+
+// #1 Memory Layout
+
+*SlotX1:0
+*SlotX2:1
+*StageCoverX:2
+
+SlotX1:Get(EntityMemory *SlotX1)
+SlotX2:Get(EntityMemory *SlotX2)
+StageCoverX:Get(EntityMemory *StageCoverX)
+
+
+
+// Note Class Memory Layout
+
+*NoteX:32
+*NoteY1:33
+*NoteY2:34
+
+NoteX:Get(EntityMemory *NoteX)
+NoteY1:Get(EntityMemory *NoteY1)
+NoteY2:Get(EntityMemory *NoteY2)
+
+
+
+// Note Class Data Layout
+
+*NoteSpawnTime:0
+*NoteTime:1
+*NoteTailSpawnTime:2
+*NoteTailTime:3
+*NoteBalloonCount:4
+*NoteRadius:5
+*NoteTexture:6
+*NoteBucket:7
+
+NoteSpawnTime:Divide(Add(Get(EntityData *NoteSpawnTime) NoteTimeOffset) Speed)
+NoteTime:Divide(Add(Get(EntityData *NoteTime) NoteTimeOffset) Speed)
+NoteTailSpawnTime:Divide(Add(Get(EntityData *NoteTailSpawnTime) NoteTimeOffset) Speed)
+NoteTailTime:Divide(Add(Get(EntityData *NoteTailTime) NoteTimeOffset) Speed)
+NoteBalloonCount:Get(EntityData *NoteBalloonCount)
+NoteRadius:Get(EntityData *NoteRadius)
+NoteTexture:Get(EntityData *NoteTexture)
+NoteBucket:Get(EntityData *NoteBucket)
+
+
+
+// #4 Memory Layout
+
+*NoteTailX:0
+
+NoteTailX:Get(EntityMemory *NoteTailX)
+
+
+// #5 Memory Layout
+
+*NoteBalloonRadius:0
+*NoteBalloonInputCount:1
+
+NoteBalloonRadius:Get(EntityMemory *NoteBalloonRadius)
+NoteBalloonInputCount:Get(EntityMemory *NoteBalloonInputCount)
+
+
+
+// #7 Memory Layout
+
+*EffectTime:0
+*EffectTexture:1
+*EffectRadius:2
+*EffectSlotTexture:3
+*EffectTimeDistance:4
+*EffectScale:5
+*EffectSX1:6
+*EffectSY1:7
+*EffectSX2:8
+*EffectSY2:9
+*EffectSX3:10
+*EffectSY3:11
+
+EffectTime:Get(EntityMemory *EffectTime)
+EffectTexture:Get(EntityMemory *EffectTexture)
+EffectRadius:Get(EntityMemory *EffectRadius)
+EffectTimeDistance:Get(EntityMemory *EffectTimeDistance)
+EffectSlotTexture:Get(EntityMemory *EffectSlotTexture)
+EffectScale:Get(EntityMemory *EffectScale)
+EffectSX1:Get(EntityMemory *EffectSX1)
+EffectSY1:Get(EntityMemory *EffectSY1)
+EffectSX2:Get(EntityMemory *EffectSX2)
+EffectSY2:Get(EntityMemory *EffectSY2)
+EffectSX3:Get(EntityMemory *EffectSX3)
+EffectSY3:Get(EntityMemory *EffectSY3)
+
+
+
+// Effect Class Memory Layout
+
+*EffectTime:32
+*EffectTimeDistance:33
+
+EffectTime:Get(EntityMemory *EffectTime)
+EffectTimeDistance:Get(EntityMemory *EffectTimeDistance)

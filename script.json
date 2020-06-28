@@ -1,0 +1,156 @@
+{
+    "buckets": [
+        {
+            "sprites": [
+                {
+                    "id": 1001,
+                    "x": 0,
+                    "y": 0,
+                    "w": 2,
+                    "h": 2,
+                    "rotation": 0
+                }
+            ],
+            "windows": [
+                {
+                    "min": -25,
+                    "max": 25
+                },
+                {
+                    "min": -75,
+                    "max": 75
+                },
+                {
+                    "min": -108,
+                    "max": 108
+                }
+            ]
+        },
+        {
+            "sprites": [
+                {
+                    "id": 1006,
+                    "x": 0,
+                    "y": 0,
+                    "w": 2,
+                    "h": 2,
+                    "rotation": 0
+                }
+            ],
+            "windows": [
+                {
+                    "min": -25,
+                    "max": 25
+                },
+                {
+                    "min": -75,
+                    "max": 75
+                },
+                {
+                    "min": -108,
+                    "max": 108
+                }
+            ]
+        }
+    ],
+    "entities": [
+        {
+            "archetype": 0
+        },
+        {
+            "archetype": 1
+        }
+    ],
+    "archetypes": [
+        {
+            "script": 0
+        },
+        {
+            "script": 1
+        },
+        {
+            "script": 2,
+            "input": true,
+            "data": {
+                "index": 5,
+                "values": [
+                    0.125,
+                    1001,
+                    1
+                ]
+            }
+        },
+        {
+            "script": 3,
+            "input": true,
+            "data": {
+                "index": 5,
+                "values": [
+                    0.125,
+                    1006,
+                    2
+                ]
+            }
+        },
+        {
+            "script": 2,
+            "input": true,
+            "data": {
+                "index": 5,
+                "values": [
+                    0.1875,
+                    1001,
+                    1
+                ]
+            }
+        },
+        {
+            "script": 3,
+            "input": true,
+            "data": {
+                "index": 5,
+                "values": [
+                    0.1875,
+                    1006,
+                    2
+                ]
+            }
+        },
+        {
+            "script": 4,
+            "input": true,
+            "data": {
+                "index": 5,
+                "values": [
+                    0.125,
+                    1004
+                ]
+            }
+        },
+        {
+            "script": 4,
+            "input": true,
+            "data": {
+                "index": 5,
+                "values": [
+                    0.1875,
+                    1004
+                ]
+            }
+        },
+        {
+            "script": 5,
+            "data": {
+                "index": 5,
+                "values": [
+                    0.125,
+                    1005
+                ]
+            }
+        },
+        {
+            "script": 6,
+            "input": true
+        }
+    ]
+}
