@@ -149,7 +149,6 @@ DrawNote:Execute(
 #1.touch:And(
     Not(Auto)
     TempTouchStarted
-    LessOr(TempTouchY 0)
     Execute(
         If(
             LessOr(Add(Power(TempTouchX 2) Power(Subtract(TempTouchY -1) 2)) 0.81)
