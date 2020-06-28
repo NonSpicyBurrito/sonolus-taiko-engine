@@ -403,15 +403,7 @@ DrawNote:Execute(
 
 #4.shouldSpawn:IsNoteOnScreen
 
-#4.initialize:Execute(
-    InitNote
-    InitAuto
-)
-
-#4.updateSequential:Execute(
-    UpdateDonNote
-    UpdateKatNote
-)
+#4.initialize:InitNote
 
 #4.updateParallel:Execute(
     DrawNote
@@ -441,7 +433,6 @@ DrawNote:Execute(
         Execute(
             And(
                 DonStarted
-                Equal(DonNoteIndex Index)
                 Execute(
                     Set(EntityInput *Judgment JudgmentPerfect)
                     And(
@@ -458,7 +449,6 @@ DrawNote:Execute(
             )
             And(
                 KatStarted
-                Equal(KatNoteIndex Index)
                 Execute(
                     Set(EntityInput *Judgment JudgmentPerfect)
                     And(
