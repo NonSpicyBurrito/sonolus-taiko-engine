@@ -17,14 +17,6 @@ InitNote:Execute(
     Set(EntityMemory *NoteY2 Add(0.25 NoteRadius))
 )
 
-InitAuto:And(
-    Auto
-    Execute(
-        Set(EntityInput *Judgment JudgmentPerfect)
-        Set(EntityInput *Bucket NoteBucket)
-    )
-)
-
 UpdateDonNote:And(
     Not(HasDonNote)
     Less(NoteTime DonNoteTime)
@@ -172,7 +164,7 @@ DrawNote:Execute(
                 And(
                     SlotEffect
                     Spawn(
-                        8
+                        7
                         TempTouchST
                     )
                 )
@@ -193,7 +185,7 @@ DrawNote:Execute(
                 And(
                     SlotEffect
                     Spawn(
-                        9
+                        8
                         TempTouchST
                     )
                 )
@@ -275,7 +267,7 @@ DrawNote:Execute(
                 And(
                     NoteEffect
                     Spawn(
-                        7
+                        6
                         NoteTime
                         NoteTexture
                         NoteRadius
@@ -285,7 +277,7 @@ DrawNote:Execute(
                 And(
                     SlotEffect
                     Spawn(
-                        8
+                        7
                         NoteTime
                     )
                 )
@@ -305,7 +297,7 @@ DrawNote:Execute(
                 And(
                     NoteEffect
                     Spawn(
-                        7
+                        6
                         DonST
                         NoteTexture
                         NoteRadius
@@ -353,7 +345,7 @@ DrawNote:Execute(
                 And(
                     NoteEffect
                     Spawn(
-                        7
+                        6
                         NoteTime
                         NoteTexture
                         NoteRadius
@@ -363,7 +355,7 @@ DrawNote:Execute(
                 And(
                     SlotEffect
                     Spawn(
-                        9
+                        8
                         NoteTime
                     )
                 )
@@ -383,7 +375,7 @@ DrawNote:Execute(
                 And(
                     NoteEffect
                     Spawn(
-                        7
+                        6
                         KatST
                         NoteTexture
                         NoteRadius
@@ -438,7 +430,7 @@ DrawNote:Execute(
                     And(
                         NoteEffect
                         Spawn(
-                            7
+                            6
                             DonST
                             TextureNoteDon
                             NoteRadius
@@ -454,7 +446,7 @@ DrawNote:Execute(
                     And(
                         NoteEffect
                         Spawn(
-                            7
+                            6
                             KatST
                             TextureNoteKat
                             NoteRadius
@@ -501,7 +493,7 @@ DrawNote:Execute(
                     And(
                         NoteEffect
                         Spawn(
-                            7
+                            6
                             Time
                             NoteTexture
                             0.1875
@@ -535,7 +527,7 @@ DrawNote:Execute(
                 And(
                     NoteEffect
                     Spawn(
-                        7
+                        6
                         NoteTailTime
                         NoteTexture
                         0.1875
@@ -554,35 +546,9 @@ DrawNote:Execute(
 
 
 
-// #6: Balloon Note
+// #6: Note Effect
 
-#6.shouldSpawn:IsNoteOnScreen
-
-#6.initialize:InitAuto
-
-#6.updateSequential:UpdateDonNote
-
-#6.updateParallel:If(
-    Auto
-    Greater(Time NoteTailTime)
-    If(
-        And(
-            DonStarted
-            Equal(DonNoteIndex Index)
-        )
-        Execute(
-            Set(EntityInput *Judgment JudgmentPerfect)
-            true
-        )
-        Greater(Subtract(Time InputOffset) NoteTailTime)
-    )
-)
-
-
-
-// #7: Note Effect
-
-#7.updateParallel:Execute(
+#6.updateParallel:Execute(
     Set(EntityMemory *EffectTimeDistance Subtract(Time EffectTime))
     Or(
         Greater(EffectTimeDistance 0.75)
@@ -638,9 +604,9 @@ DrawNote:Execute(
 
 
 
-// #8: Don Slot Effect
+// #7: Don Slot Effect
 
-#8.updateParallel:Execute(
+#7.updateParallel:Execute(
     Set(EntityMemory *EffectTimeDistance Subtract(Time EffectTime))
     Or(
         Greater(EffectTimeDistance 0.5)
@@ -658,9 +624,9 @@ DrawNote:Execute(
 
 
 
-// #9: Kat Slot Effect
+// #8: Kat Slot Effect
 
-#9.updateParallel:Execute(
+#8.updateParallel:Execute(
     Set(EntityMemory *EffectTimeDistance Subtract(Time EffectTime))
     Or(
         Greater(EffectTimeDistance 0.5)
@@ -1015,7 +981,7 @@ NoteBalloonInputCount:Get(EntityMemory *NoteBalloonInputCount)
 
 
 
-// #7 Memory Layout
+// #6 Memory Layout
 
 *EffectTime:0
 *EffectTexture:1
