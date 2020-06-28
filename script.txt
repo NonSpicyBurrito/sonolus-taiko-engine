@@ -271,6 +271,7 @@ DrawNote:Execute(
                         NoteTime
                         NoteTexture
                         NoteRadius
+                        TextureSlotDonEffectCF
                         TextureSlotDonEffectCB
                     )
                 )
@@ -301,6 +302,7 @@ DrawNote:Execute(
                         DonST
                         NoteTexture
                         NoteRadius
+                        TextureSlotDonEffectCF
                         TextureSlotDonEffectCB
                     )
                 )
@@ -349,6 +351,7 @@ DrawNote:Execute(
                         NoteTime
                         NoteTexture
                         NoteRadius
+                        TextureSlotKatEffectCF
                         TextureSlotKatEffectCB
                     )
                 )
@@ -379,6 +382,7 @@ DrawNote:Execute(
                         KatST
                         NoteTexture
                         NoteRadius
+                        TextureSlotKatEffectCF
                         TextureSlotKatEffectCB
                     )
                 )
@@ -434,6 +438,7 @@ DrawNote:Execute(
                             DonST
                             TextureNoteDon
                             NoteRadius
+                            TextureSlotDonEffectCF
                             TextureSlotDonEffectCB
                         )
                     )
@@ -450,6 +455,7 @@ DrawNote:Execute(
                             KatST
                             TextureNoteKat
                             NoteRadius
+                            TextureSlotKatEffectCF
                             TextureSlotKatEffectCB
                         )
                     )
@@ -497,6 +503,7 @@ DrawNote:Execute(
                             Time
                             NoteTexture
                             0.1875
+                            TextureSlotBalloonEffectCF
                             TextureSlotBalloonEffectCB
                         )
                     )
@@ -531,6 +538,7 @@ DrawNote:Execute(
                         NoteTailTime
                         NoteTexture
                         0.1875
+                        TextureSlotBalloonEffectCF
                         TextureSlotBalloonEffectCB
                     )
                 )
@@ -587,14 +595,27 @@ DrawNote:Execute(
 
                 And(
                     LessOr(EffectTimeDistance 0.2)
-                    Draw(
-                        EffectSlotTexture
-                        SlotEffectX1 0
-                        SlotEffectX1 0.5
-                        SlotEffectX2 0.5
-                        SlotEffectX2 0
-                        LayerNoteSlotEffect
-                        Subtract(1 Divide(EffectTimeDistance 0.2))
+                    Execute(
+                        Set(EntityMemory *EffectScale Subtract(1 Divide(EffectTimeDistance 0.2)))
+
+                        Draw(
+                            EffectSlotTextureF
+                            SlotEffectX1 0
+                            SlotEffectX1 0.5
+                            SlotEffectX2 0.5
+                            SlotEffectX2 0
+                            LayerNoteSlotEffectF
+                            EffectScale
+                        )
+                        Draw(
+                            EffectSlotTextureB
+                            SlotEffectX1 0
+                            SlotEffectX1 0.5
+                            SlotEffectX2 0.5
+                            SlotEffectX2 0
+                            LayerNoteSlotEffectB
+                            EffectScale
+                        )
                     )
                 )
             )
@@ -683,7 +704,8 @@ LayerNoteEffect:200
 LayerNote:100
 LayerNoteBody:99
 LayerNoteTail:98
-LayerNoteSlotEffect:90
+LayerNoteSlotEffectF:90
+LayerNoteSlotEffectB:89
 LayerSlotEffect:10
 LayerSlot:1
 LayerStage:0
@@ -702,6 +724,9 @@ TextureLane:40100
 TextureStageCover:42000
 TextureNoteDon:1001
 TextureNoteKat:1006
+TextureSlotDonEffectCF:32001
+TextureSlotKatEffectCF:32006
+TextureSlotBalloonEffectCF:32005
 TextureSlotDonEffectCB:31001
 TextureSlotKatEffectCB:31006
 TextureSlotBalloonEffectCB:31005
@@ -988,21 +1013,23 @@ NoteBalloonInputCount:Get(EntityMemory *NoteBalloonInputCount)
 *EffectTime:0
 *EffectTexture:1
 *EffectRadius:2
-*EffectSlotTexture:3
-*EffectTimeDistance:4
-*EffectScale:5
-*EffectSX1:6
-*EffectSY1:7
-*EffectSX2:8
-*EffectSY2:9
-*EffectSX3:10
-*EffectSY3:11
+*EffectSlotTextureF:3
+*EffectSlotTextureB:4
+*EffectTimeDistance:5
+*EffectScale:6
+*EffectSX1:7
+*EffectSY1:8
+*EffectSX2:9
+*EffectSY2:10
+*EffectSX3:11
+*EffectSY3:12
 
 EffectTime:Get(EntityMemory *EffectTime)
 EffectTexture:Get(EntityMemory *EffectTexture)
 EffectRadius:Get(EntityMemory *EffectRadius)
+EffectSlotTextureF:Get(EntityMemory *EffectSlotTextureF)
+EffectSlotTextureB:Get(EntityMemory *EffectSlotTextureB)
 EffectTimeDistance:Get(EntityMemory *EffectTimeDistance)
-EffectSlotTexture:Get(EntityMemory *EffectSlotTexture)
 EffectScale:Get(EntityMemory *EffectScale)
 EffectSX1:Get(EntityMemory *EffectSX1)
 EffectSY1:Get(EntityMemory *EffectSY1)
