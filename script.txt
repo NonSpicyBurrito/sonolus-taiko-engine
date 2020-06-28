@@ -13,6 +13,7 @@
 IsNoteOnScreen:GreaterOr(Time NoteSpawnTime)
 
 InitNote:Execute(
+    Set(EntityMemory *NoteZ Subtract(LayerNote Divide(NoteTime 1000)))
     Set(EntityMemory *NoteY1 Subtract(0.25 NoteRadius))
     Set(EntityMemory *NoteY2 Add(0.25 NoteRadius))
 )
@@ -42,7 +43,7 @@ DrawNote:Execute(
         Subtract(NoteX NoteRadius) NoteY2
         Add(NoteX NoteRadius) NoteY2
         Add(NoteX NoteRadius) NoteY1
-        LayerNote
+        NoteZ
         1
     )
 )
@@ -932,10 +933,12 @@ StageCoverX:Get(EntityMemory *StageCoverX)
 
 // Note Class Memory Layout
 
-*NoteX:32
-*NoteY1:33
-*NoteY2:34
+*NoteZ:32
+*NoteX:33
+*NoteY1:34
+*NoteY2:35
 
+NoteZ:Get(EntityMemory *NoteZ)
 NoteX:Get(EntityMemory *NoteX)
 NoteY1:Get(EntityMemory *NoteY1)
 NoteY2:Get(EntityMemory *NoteY2)
