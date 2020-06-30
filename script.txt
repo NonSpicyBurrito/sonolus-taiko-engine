@@ -2,7 +2,7 @@
 // Taiko Engine
 // For Sonolus 0.3.6
 //
-// A recreation Taiko no Tatsujin engine
+// A recreation of Taiko no Tatsujin engine
 // By Burrito
 //
 
