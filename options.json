@@ -1,6 +1,7 @@
 [
     {
         "name": "#AUTO",
+        "scope": "Taiko",
         "standard": true,
         "type": "toggle",
         "def": 0
