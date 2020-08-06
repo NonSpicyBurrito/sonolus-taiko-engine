@@ -1,6 +1,6 @@
 //
 // Taiko Engine
-// For Sonolus 0.3.6
+// For Sonolus 0.4.1
 //
 // A recreation of Taiko no Tatsujin engine
 // By Burrito
@@ -45,6 +45,45 @@ DrawNote:Execute(
         Add(NoteX NoteRadius) NoteY1
         NoteZ
         1
+    )
+)
+
+
+
+PlayDonSlotEffect:And(
+    SlotEffect
+    SpawnParticleEffect(
+        ParticleEffectSlotC
+        -0.9 -1.9
+        -0.9 -0.1
+        0.9 -0.1
+        0.9 -1.9
+        0.5
+        0
+    )
+)
+
+PlayKatSlotEffect:And(
+    SlotEffect
+    Execute(
+        SpawnParticleEffect(
+            ParticleEffectSlotL
+            StageX1 0
+            -0.9 0
+            -0.9 -1
+            StageX1 -1
+            0.5
+            0
+        )
+        SpawnParticleEffect(
+            ParticleEffectSlotL
+            StageX2 -1
+            0.9 -1
+            0.9 0
+            StageX2 0
+            0.5
+            0
+        )
     )
 )
 
@@ -161,13 +200,7 @@ DrawNote:Execute(
                         Set(LevelMemory *DonST TempTouchST)
                     )
                 )
-                And(
-                    SlotEffect
-                    Spawn(
-                        7
-                        TempTouchST
-                    )
-                )
+                PlayDonSlotEffect
                 And(
                     SoundEffect
                     Play(EffectPerfect MinEffectTime)
@@ -182,13 +215,7 @@ DrawNote:Execute(
                         Set(LevelMemory *KatST TempTouchST)
                     )
                 )
-                And(
-                    SlotEffect
-                    Spawn(
-                        8
-                        TempTouchST
-                    )
-                )
+                PlayKatSlotEffect
                 And(
                     SoundEffect
                     Play(EffectFlick MinEffectTime)
@@ -271,17 +298,10 @@ DrawNote:Execute(
                         NoteTime
                         NoteTexture
                         NoteRadius
-                        TextureSlotDonEffectCF
-                        TextureSlotDonEffectCB
+                        NoteTapEffect
                     )
                 )
-                And(
-                    SlotEffect
-                    Spawn(
-                        7
-                        NoteTime
-                    )
-                )
+                PlayDonSlotEffect
                 true
             )
         )
@@ -302,8 +322,7 @@ DrawNote:Execute(
                         DonST
                         NoteTexture
                         NoteRadius
-                        TextureSlotDonEffectCF
-                        TextureSlotDonEffectCB
+                        NoteTapEffect
                     )
                 )
                 true
@@ -351,17 +370,10 @@ DrawNote:Execute(
                         NoteTime
                         NoteTexture
                         NoteRadius
-                        TextureSlotKatEffectCF
-                        TextureSlotKatEffectCB
+                        NoteTapEffect
                     )
                 )
-                And(
-                    SlotEffect
-                    Spawn(
-                        8
-                        NoteTime
-                    )
-                )
+                PlayKatSlotEffect
                 true
             )
         )
@@ -382,8 +394,7 @@ DrawNote:Execute(
                         KatST
                         NoteTexture
                         NoteRadius
-                        TextureSlotKatEffectCF
-                        TextureSlotKatEffectCB
+                        NoteTapEffect
                     )
                 )
                 true
@@ -438,8 +449,7 @@ DrawNote:Execute(
                             DonST
                             TextureNoteDon
                             NoteRadius
-                            TextureSlotDonEffectCF
-                            TextureSlotDonEffectCB
+                            NoteTapEffect
                         )
                     )
                 )
@@ -455,8 +465,7 @@ DrawNote:Execute(
                             KatST
                             TextureNoteKat
                             NoteRadius
-                            TextureSlotKatEffectCF
-                            TextureSlotKatEffectCB
+                            NoteTapEffect
                         )
                     )
                 )
@@ -503,8 +512,7 @@ DrawNote:Execute(
                             Time
                             NoteTexture
                             0.1875
-                            TextureSlotBalloonEffectCF
-                            TextureSlotBalloonEffectCB
+                            NoteTapEffect
                         )
                     )
                 )
@@ -538,8 +546,7 @@ DrawNote:Execute(
                         NoteTailTime
                         NoteTexture
                         0.1875
-                        TextureSlotBalloonEffectCF
-                        TextureSlotBalloonEffectCB
+                        NoteTapEffect
                     )
                 )
                 true
@@ -555,6 +562,16 @@ DrawNote:Execute(
 
 
 // #6: Note Effect
+
+#6.initialize:SpawnParticleEffect(
+    EffectTapEffect
+    SlotEffectX1 0
+    SlotEffectX1 0.5
+    SlotEffectX2 0.5
+    SlotEffectX2 0
+    0.2
+    0
+)
 
 #6.updateParallel:Execute(
     Set(EntityMemory *EffectTimeDistance Subtract(Time EffectTime))
@@ -592,83 +609,6 @@ DrawNote:Execute(
                     LayerNoteEffect
                     1
                 )
-
-                And(
-                    LessOr(EffectTimeDistance 0.2)
-                    Execute(
-                        Set(EntityMemory *EffectScale Subtract(1 Divide(EffectTimeDistance 0.2)))
-
-                        Draw(
-                            EffectSlotTextureF
-                            SlotEffectX1 0
-                            SlotEffectX1 0.5
-                            SlotEffectX2 0.5
-                            SlotEffectX2 0
-                            LayerNoteSlotEffectF
-                            EffectScale
-                        )
-                        Draw(
-                            EffectSlotTextureB
-                            SlotEffectX1 0
-                            SlotEffectX1 0.5
-                            SlotEffectX2 0.5
-                            SlotEffectX2 0
-                            LayerNoteSlotEffectB
-                            EffectScale
-                        )
-                    )
-                )
-            )
-        )
-    )
-)
-
-
-
-// #7: Don Slot Effect
-
-#7.updateParallel:Execute(
-    Set(EntityMemory *EffectTimeDistance Subtract(Time EffectTime))
-    Or(
-        Greater(EffectTimeDistance 0.5)
-        Draw(
-            TextureDonEffectCB
-            -0.9 -1.9
-            -0.9 -0.1
-            0.9 -0.1
-            0.9 -1.9
-            LayerSlotEffect
-            Subtract(1 Divide(EffectTimeDistance 0.5))
-        )
-    )
-)
-
-
-
-// #8: Kat Slot Effect
-
-#8.updateParallel:Execute(
-    Set(EntityMemory *EffectTimeDistance Subtract(Time EffectTime))
-    Or(
-        Greater(EffectTimeDistance 0.5)
-        Execute(
-            Draw(
-                TextureKatEffectLB
-                StageX1 0
-                -0.9 0
-                -0.9 -1
-                StageX1 -1
-                LayerSlotEffect
-                Subtract(1 Divide(EffectTimeDistance 0.5))
-            )
-            Draw(
-                TextureKatEffectLB
-                StageX2 -1
-                0.9 -1
-                0.9 0
-                StageX2 0
-                LayerSlotEffect
-                Subtract(1 Divide(EffectTimeDistance 0.5))
             )
         )
     )
@@ -704,9 +644,6 @@ LayerNoteEffect:200
 LayerNote:100
 LayerNoteBody:99
 LayerNoteTail:98
-LayerNoteSlotEffectF:90
-LayerNoteSlotEffectB:89
-LayerSlotEffect:10
 LayerSlot:1
 LayerStage:0
 
@@ -724,14 +661,6 @@ TextureLane:40100
 TextureStageCover:42000
 TextureNoteDon:1001
 TextureNoteKat:1006
-TextureSlotDonEffectCF:32001
-TextureSlotKatEffectCF:32006
-TextureSlotBalloonEffectCF:32005
-TextureSlotDonEffectCB:31001
-TextureSlotKatEffectCB:31006
-TextureSlotBalloonEffectCB:31005
-TextureDonEffectCB:31001
-TextureKatEffectLB:33006
 
 
 
@@ -743,6 +672,13 @@ EffectGreat:2
 EffectGood:3
 EffectFlick:4
 EffectEmpty:5
+
+
+
+// Particle Effect identifiers
+
+ParticleEffectSlotC:410000
+ParticleEffectSlotL:420000
 
 
 
@@ -978,7 +914,8 @@ NoteY2:Get(EntityMemory *NoteY2)
 *NoteBalloonCount:4
 *NoteRadius:5
 *NoteTexture:6
-*NoteBucket:7
+*NoteTapEffect:7
+*NoteBucket:8
 
 NoteSpawnTime:Divide(Add(Get(EntityData *NoteSpawnTime) NoteTimeOffset) Speed)
 NoteTime:Divide(Add(Get(EntityData *NoteTime) NoteTimeOffset) Speed)
@@ -987,6 +924,7 @@ NoteTailTime:Divide(Add(Get(EntityData *NoteTailTime) NoteTimeOffset) Speed)
 NoteBalloonCount:Get(EntityData *NoteBalloonCount)
 NoteRadius:Get(EntityData *NoteRadius)
 NoteTexture:Get(EntityData *NoteTexture)
+NoteTapEffect:Get(EntityData *NoteTapEffect)
 NoteBucket:Get(EntityData *NoteBucket)
 
 
@@ -1013,22 +951,20 @@ NoteBalloonInputCount:Get(EntityMemory *NoteBalloonInputCount)
 *EffectTime:0
 *EffectTexture:1
 *EffectRadius:2
-*EffectSlotTextureF:3
-*EffectSlotTextureB:4
-*EffectTimeDistance:5
-*EffectScale:6
-*EffectSX1:7
-*EffectSY1:8
-*EffectSX2:9
-*EffectSY2:10
-*EffectSX3:11
-*EffectSY3:12
+*EffectTapEffect:3
+*EffectTimeDistance:4
+*EffectScale:5
+*EffectSX1:6
+*EffectSY1:7
+*EffectSX2:8
+*EffectSY2:9
+*EffectSX3:10
+*EffectSY3:11
 
 EffectTime:Get(EntityMemory *EffectTime)
 EffectTexture:Get(EntityMemory *EffectTexture)
 EffectRadius:Get(EntityMemory *EffectRadius)
-EffectSlotTextureF:Get(EntityMemory *EffectSlotTextureF)
-EffectSlotTextureB:Get(EntityMemory *EffectSlotTextureB)
+EffectTapEffect:Get(EntityMemory *EffectTapEffect)
 EffectTimeDistance:Get(EntityMemory *EffectTimeDistance)
 EffectScale:Get(EntityMemory *EffectScale)
 EffectSX1:Get(EntityMemory *EffectSX1)
