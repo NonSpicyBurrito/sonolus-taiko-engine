@@ -91,17 +91,7 @@ PlayKatSlotEffect:And(
 
 // #0: Initialization
 
-#0.updateSequential:Execute(
-    Set(LevelMemory *StageX1 Multiply(AspectRatio -1))
-    Set(LevelMemory *StageX2 AspectRatio)
-    Set(LevelMemory *LaneX1 Subtract(0.25 AspectRatio))
-    Set(LevelMemory *LaneX2 Add(AspectRatio 0.25))
-    Set(LevelMemory *SlotEffectX1 Subtract(LaneX1 0.25))
-    Set(LevelMemory *SlotEffectX2 Add(LaneX1 0.25))
-    Set(LevelMemory *SoulX Subtract(AspectRatio 0.25))
-    Set(LevelMemory *NoteTimeOffset Divide(LevelAudioOffset 1000))
-    Set(LevelMemory *InputOffset Add(DeviceInputOffset Divide(LevelInputOffset 1000)))
-
+#0.preprocess:Execute(
     SetShifted(LevelUI *UIMenu *UIAnchorX Subtract(0.05 AspectRatio))
     SetShifted(LevelUI *UIMenu *UIAnchorY 0.95)
     SetShifted(LevelUI *UIMenu *UIPivotX 0)
@@ -153,6 +143,18 @@ PlayKatSlotEffect:And(
     SetShifted(LevelUI *UIScoreValue *UIHeight 0.15)
     SetShifted(LevelUI *UIScoreValue *UIAlpha 1)
     SetShifted(LevelUI *UIScoreValue *UIHorizontalAlign 1)
+)
+
+#0.updateSequential:Execute(
+    Set(LevelMemory *StageX1 Multiply(AspectRatio -1))
+    Set(LevelMemory *StageX2 AspectRatio)
+    Set(LevelMemory *LaneX1 Subtract(0.25 AspectRatio))
+    Set(LevelMemory *LaneX2 Add(AspectRatio 0.25))
+    Set(LevelMemory *SlotEffectX1 Subtract(LaneX1 0.25))
+    Set(LevelMemory *SlotEffectX2 Add(LaneX1 0.25))
+    Set(LevelMemory *SoulX Subtract(AspectRatio 0.25))
+    Set(LevelMemory *NoteTimeOffset Divide(LevelAudioOffset 1000))
+    Set(LevelMemory *InputOffset Add(DeviceInputOffset Divide(LevelInputOffset 1000)))
 
     true
 )
