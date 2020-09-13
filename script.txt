@@ -1,6 +1,6 @@
 //
 // Taiko Engine
-// For Sonolus 0.4.1
+// For Sonolus 0.4.6
 //
 // A recreation of Taiko no Tatsujin engine
 // By Burrito
@@ -143,6 +143,28 @@ PlayKatSlotEffect:And(
     SetShifted(LevelUI *UIScoreValue *UIHeight 0.15)
     SetShifted(LevelUI *UIScoreValue *UIAlpha 1)
     SetShifted(LevelUI *UIScoreValue *UIHorizontalAlign 1)
+
+    Set(LevelBucket 0 -25)
+    Set(LevelBucket 1 25)
+    Set(LevelBucket 2 -75)
+    Set(LevelBucket 3 75)
+    Set(LevelBucket 4 -108)
+    Set(LevelBucket 5 108)
+
+    Set(LevelBucket 6 -25)
+    Set(LevelBucket 7 25)
+    Set(LevelBucket 8 -75)
+    Set(LevelBucket 9 75)
+    Set(LevelBucket 10 -108)
+    Set(LevelBucket 11 108)
+
+    Set(LevelScore *PerfectScoreMultiplier 1)
+    Set(LevelScore *GreatScoreMultiplier 0.5)
+    Set(LevelScore *GoodScoreMultiplier 0.1)
+
+    SetShifted(LevelScore *ConsecutiveGreatScore *ConsecutiveScoreMultiplier 0.1)
+    SetShifted(LevelScore *ConsecutiveGreatScore *ConsecutiveScoreStep 10)
+    SetShifted(LevelScore *ConsecutiveGreatScore *ConsecutiveScoreCap 100)
 )
 
 #0.updateSequential:Execute(
@@ -692,6 +714,9 @@ LevelOption:2
 LevelTransform:3
 LevelBackground:4
 LevelUI:5
+LevelBucket:6
+LevelScore:7
+LevelLife:8
 
 EntityInfoArray:10
 EntityDataArray:11
@@ -702,6 +727,8 @@ EntityMemory:21
 EntityData:22
 EntityInput:23
 EntitySharedMemory:24
+
+ArchetypeLife:30
 
 TemporaryMemory:100
 TemporaryData:101
@@ -806,6 +833,8 @@ UIComboAlpha:Get(LevelOption *UIComboAlpha)
 *UIComboText:33
 *UIScoreBar:44
 *UIScoreValue:55
+*UILifeBar:66
+*UILifeValue:77
 
 *UIAnchorX:0
 *UIAnchorY:1
@@ -818,6 +847,42 @@ UIComboAlpha:Get(LevelOption *UIComboAlpha)
 *UIHorizontalAlign:8
 *UIVerticalAlign:9
 *UIBackground:10
+
+
+
+// Level Score Layout
+
+*PerfectScoreMultiplier:0
+*GreatScoreMultiplier:1
+*GoodScoreMultiplier:2
+
+*ConsecutivePerfectScore:3
+*ConsecutiveGreatScore:6
+*ConsecutiveGoodScore:9
+
+*ConsecutiveScoreMultiplier:0
+*ConsecutiveScoreStep:1
+*ConsecutiveScoreCap:2
+
+
+
+// Level Life Layout
+
+*ConsecutivePerfectLife:0
+*ConsecutiveGreatLife:2
+*ConsecutiveGoodLife:4
+
+*ConsecutiveLifeIncrement:0
+*ConsecutiveLifeStep:1
+
+
+
+// Archetype Life Layout
+
+*PerfectLifeIncrement:0
+*GreatLifeIncrement:1
+*GoodLifeIncrement:2
+*MissLifeIncrement:3
 
 
 
