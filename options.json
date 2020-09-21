@@ -7,6 +7,13 @@
         "def": 0
     },
     {
+        "name": "#NOTE_SPEED_RANDOM",
+        "scope": "Taiko",
+        "standard": true,
+        "type": "toggle",
+        "def": 0
+    },
+    {
         "name": "#OFFSET_AUDIO",
         "type": "slider",
         "def": 0,

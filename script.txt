@@ -11,6 +11,10 @@
 // Note Class
 
 PreprocessNote:Execute(
+    And(
+        NoteSpeedRandom
+        Set(EntityData *NoteSpeed Divide(NoteSpeed Random(1 2)))
+    )
     Set(EntityData *NoteSpawnTime Divide(Add(Subtract(NoteTime Divide(240 NoteSpeed)) NoteTimeOffset) Speed))
     Set(EntityData *NoteTime Divide(Add(NoteTime NoteTimeOffset) Speed))
     Set(EntityData *NoteTailSpawnTime Divide(Add(Subtract(NoteTailTime Divide(240 NoteSpeed)) NoteTimeOffset) Speed))
@@ -807,19 +811,21 @@ DeviceInputOffset:Get(LevelData *DeviceInputOffset)
 // Level Option Layout
 
 *Auto:0
-*LevelAudioOffset:1
-*LevelInputOffset:2
-*Speed:3
-*StageCover:4
-*SoundEffect:5
-*NoteEffect:6
-*SlotEffect:7
-*UIJudgmentSize:8
-*UIJudgmentAlpha:9
-*UIComboSize:10
-*UIComboAlpha:11
+*NoteSpeedRandom:1
+*LevelAudioOffset:2
+*LevelInputOffset:3
+*Speed:4
+*StageCover:5
+*SoundEffect:6
+*NoteEffect:7
+*SlotEffect:8
+*UIJudgmentSize:9
+*UIJudgmentAlpha:10
+*UIComboSize:11
+*UIComboAlpha:12
 
 Auto:Get(LevelOption *Auto)
+NoteSpeedRandom:Get(LevelOption *NoteSpeedRandom)
 LevelAudioOffset:Get(LevelOption *LevelAudioOffset)
 LevelInputOffset:Get(LevelOption *LevelInputOffset)
 Speed:Get(LevelOption *Speed)
