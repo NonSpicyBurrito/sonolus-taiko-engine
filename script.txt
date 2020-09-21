@@ -11,9 +11,9 @@
 // Note Class
 
 PreprocessNote:Execute(
-    Set(EntityData *NoteSpawnTime Divide(Add(NoteSpawnTime NoteTimeOffset) Speed))
+    Set(EntityData *NoteSpawnTime Divide(Add(Subtract(NoteTime Divide(240 NoteSpeed)) NoteTimeOffset) Speed))
     Set(EntityData *NoteTime Divide(Add(NoteTime NoteTimeOffset) Speed))
-    Set(EntityData *NoteTailSpawnTime Divide(Add(NoteTailSpawnTime NoteTimeOffset) Speed))
+    Set(EntityData *NoteTailSpawnTime Divide(Add(Subtract(NoteTailTime Divide(240 NoteSpeed)) NoteTimeOffset) Speed))
     Set(EntityData *NoteTailTime Divide(Add(NoteTailTime NoteTimeOffset) Speed))
 )
 
@@ -969,25 +969,27 @@ NoteY2:Get(EntityMemory *NoteY2)
 
 // Note Class Data Layout
 
-*NoteSpawnTime:0
+*NoteSpeed:0
 *NoteTime:1
-*NoteTailSpawnTime:2
-*NoteTailTime:3
-*NoteBalloonCount:4
-*NoteRadius:5
-*NoteTexture:6
-*NoteTapEffect:7
-*NoteBucket:8
+*NoteTailTime:2
+*NoteBalloonCount:3
+*NoteRadius:4
+*NoteTexture:5
+*NoteTapEffect:6
+*NoteBucket:7
+*NoteSpawnTime:16
+*NoteTailSpawnTime:17
 
-NoteSpawnTime:Get(EntityData *NoteSpawnTime)
+NoteSpeed:Get(EntityData *NoteSpeed)
 NoteTime:Get(EntityData *NoteTime)
-NoteTailSpawnTime:Get(EntityData *NoteTailSpawnTime)
 NoteTailTime:Get(EntityData *NoteTailTime)
 NoteBalloonCount:Get(EntityData *NoteBalloonCount)
 NoteRadius:Get(EntityData *NoteRadius)
 NoteTexture:Get(EntityData *NoteTexture)
 NoteTapEffect:Get(EntityData *NoteTapEffect)
 NoteBucket:Get(EntityData *NoteBucket)
+NoteSpawnTime:Get(EntityData *NoteSpawnTime)
+NoteTailSpawnTime:Get(EntityData *NoteTailSpawnTime)
 
 
 

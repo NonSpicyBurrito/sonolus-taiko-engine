@@ -44,7 +44,7 @@
             "script": 2,
             "input": true,
             "data": {
-                "index": 5,
+                "index": 4,
                 "values": [
                     0.125,
                     1001,
@@ -57,7 +57,7 @@
             "script": 3,
             "input": true,
             "data": {
-                "index": 5,
+                "index": 4,
                 "values": [
                     0.125,
                     1006,
@@ -70,7 +70,7 @@
             "script": 2,
             "input": true,
             "data": {
-                "index": 5,
+                "index": 4,
                 "values": [
                     0.1875,
                     1001,
@@ -83,7 +83,7 @@
             "script": 3,
             "input": true,
             "data": {
-                "index": 5,
+                "index": 4,
                 "values": [
                     0.1875,
                     1006,
@@ -95,7 +95,7 @@
         {
             "script": 4,
             "data": {
-                "index": 5,
+                "index": 4,
                 "values": [
                     0.125,
                     1004,
@@ -106,7 +106,7 @@
         {
             "script": 4,
             "data": {
-                "index": 5,
+                "index": 4,
                 "values": [
                     0.1875,
                     1004,
@@ -117,7 +117,7 @@
         {
             "script": 5,
             "data": {
-                "index": 5,
+                "index": 4,
                 "values": [
                     0.125,
                     1005,
