@@ -91,6 +91,16 @@ PlayKatSlotEffect:And(
 
 // #0: Initialization
 
+StageX1:Multiply(AspectRatio -1)
+StageX2:AspectRatio
+LaneX1:Subtract(0.25 AspectRatio)
+LaneX2:Add(AspectRatio 0.25)
+SlotEffectX1:Subtract(LaneX1 0.25)
+SlotEffectX2:Add(LaneX1 0.25)
+SoulX:Subtract(AspectRatio 0.25)
+NoteTimeOffset:Divide(LevelAudioOffset 1000)
+InputOffset:Add(DeviceInputOffset Divide(LevelInputOffset 1000))
+
 #0.preprocess:Execute(
     SetShifted(LevelUI *UIMenu *UIAnchorX Subtract(0.05 AspectRatio))
     SetShifted(LevelUI *UIMenu *UIAnchorY 0.95)
@@ -101,7 +111,7 @@ PlayKatSlotEffect:And(
     SetShifted(LevelUI *UIMenu *UIAlpha 1)
     SetShifted(LevelUI *UIMenu *UIBackground true)
 
-    SetShifted(LevelUI *UIJudgment *UIAnchorX Subtract(0.25 AspectRatio))
+    SetShifted(LevelUI *UIJudgment *UIAnchorX LaneX1)
     SetShifted(LevelUI *UIJudgment *UIAnchorY 0.5)
     SetShifted(LevelUI *UIJudgment *UIPivotX 0.5)
     SetShifted(LevelUI *UIJudgment *UIPivotY 0)
@@ -109,7 +119,7 @@ PlayKatSlotEffect:And(
     SetShifted(LevelUI *UIJudgment *UIHeight Multiply(0.125 UIJudgmentSize))
     SetShifted(LevelUI *UIJudgment *UIAlpha UIJudgmentAlpha)
 
-    SetShifted(LevelUI *UIComboValue *UIAnchorX Subtract(0.25 AspectRatio))
+    SetShifted(LevelUI *UIComboValue *UIAnchorX LaneX1)
     SetShifted(LevelUI *UIComboValue *UIAnchorY 0)
     SetShifted(LevelUI *UIComboValue *UIPivotX 0.5)
     SetShifted(LevelUI *UIComboValue *UIPivotY 1)
@@ -117,7 +127,7 @@ PlayKatSlotEffect:And(
     SetShifted(LevelUI *UIComboValue *UIHeight Multiply(0.25 UIComboSize))
     SetShifted(LevelUI *UIComboValue *UIAlpha UIComboAlpha)
 
-    SetShifted(LevelUI *UIComboText *UIAnchorX Subtract(0.25 AspectRatio))
+    SetShifted(LevelUI *UIComboText *UIAnchorX LaneX1)
     SetShifted(LevelUI *UIComboText *UIAnchorY 0)
     SetShifted(LevelUI *UIComboText *UIPivotX 0.5)
     SetShifted(LevelUI *UIComboText *UIPivotY 2.6667)
@@ -167,31 +177,17 @@ PlayKatSlotEffect:And(
     SetShifted(LevelScore *ConsecutiveGreatScore *ConsecutiveScoreCap 100)
 )
 
-#0.updateSequential:Execute(
-    Set(LevelMemory *StageX1 Multiply(AspectRatio -1))
-    Set(LevelMemory *StageX2 AspectRatio)
-    Set(LevelMemory *LaneX1 Subtract(0.25 AspectRatio))
-    Set(LevelMemory *LaneX2 Add(AspectRatio 0.25))
-    Set(LevelMemory *SlotEffectX1 Subtract(LaneX1 0.25))
-    Set(LevelMemory *SlotEffectX2 Add(LaneX1 0.25))
-    Set(LevelMemory *SoulX Subtract(AspectRatio 0.25))
-    Set(LevelMemory *NoteTimeOffset Divide(LevelAudioOffset 1000))
-    Set(LevelMemory *InputOffset Add(DeviceInputOffset Divide(LevelInputOffset 1000)))
-
-    true
-)
+#0.updateSequential:true
 
 
 
 // #1: Stage
 
-#1.shouldSpawn:Equal(Get(EntityInfoArray *State) Despawned)
+SlotX1:Subtract(LaneX1 0.1875)
+SlotX2:Add(LaneX1 0.1875)
+StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
 
-#1.initialize:Execute(
-    Set(EntityMemory *SlotX1 Subtract(LaneX1 0.1875))
-    Set(EntityMemory *SlotX2 Add(LaneX1 0.1875))
-    Set(EntityMemory *StageCoverX Lerp(AspectRatio Subtract(0.25 AspectRatio) StageCover))
-)
+#1.shouldSpawn:Equal(Get(EntityInfoArray *State) Despawned)
 
 #1.updateSequential:Execute(
     Set(LevelMemory *HasDonNote Equal(GetShifted(EntityInfoArray Multiply(DonNoteIndex 3) *State) Spawned))
@@ -737,15 +733,6 @@ TemporaryData:101
 
 // Level Memory Layout
 
-*StageX1:0
-*StageX2:1
-*LaneX1:2
-*LaneX2:3
-*SlotEffectX1:4
-*SlotEffectX2:5
-*SoulX:6
-*NoteTimeOffset:7
-*InputOffset:8
 *HasDonNote:64
 *DonNoteIndex:65
 *DonNoteTime:66
@@ -757,15 +744,6 @@ TemporaryData:101
 *KatStarted:130
 *KatST:131
 
-StageX1:Get(LevelMemory *StageX1)
-StageX2:Get(LevelMemory *StageX2)
-LaneX1:Get(LevelMemory *LaneX1)
-LaneX2:Get(LevelMemory *LaneX2)
-SlotEffectX1:Get(LevelMemory *SlotEffectX1)
-SlotEffectX2:Get(LevelMemory *SlotEffectX2)
-SoulX:Get(LevelMemory *SoulX)
-NoteTimeOffset:Get(LevelMemory *NoteTimeOffset)
-InputOffset:Get(LevelMemory *InputOffset)
 HasDonNote:Get(LevelMemory *HasDonNote)
 DonNoteIndex:Get(LevelMemory *DonNoteIndex)
 DonNoteTime:Get(LevelMemory *DonNoteTime)
@@ -943,18 +921,6 @@ TempTouchVX:Get(TemporaryData *TempTouchVX)
 TempTouchVY:Get(TemporaryData *TempTouchVY)
 TempTouchVR:Get(TemporaryData *TempTouchVR)
 TempTouchVW:Get(TemporaryData *TempTouchVW)
-
-
-
-// #1 Memory Layout
-
-*SlotX1:0
-*SlotX2:1
-*StageCoverX:2
-
-SlotX1:Get(EntityMemory *SlotX1)
-SlotX2:Get(EntityMemory *SlotX2)
-StageCoverX:Get(EntityMemory *StageCoverX)
 
 
 
