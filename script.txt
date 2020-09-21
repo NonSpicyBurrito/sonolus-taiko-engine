@@ -10,6 +10,15 @@
 
 // Note Class
 
+PreprocessNote:Execute(
+    Set(EntityData *NoteSpawnTime Divide(Add(NoteSpawnTime NoteTimeOffset) Speed))
+    Set(EntityData *NoteTime Divide(Add(NoteTime NoteTimeOffset) Speed))
+    Set(EntityData *NoteTailSpawnTime Divide(Add(NoteTailSpawnTime NoteTimeOffset) Speed))
+    Set(EntityData *NoteTailTime Divide(Add(NoteTailTime NoteTimeOffset) Speed))
+)
+
+SpawnOrderNote:NoteSpawnTime
+
 IsNoteOnScreen:GreaterOr(Time NoteSpawnTime)
 
 InitNote:Execute(
@@ -177,6 +186,8 @@ InputOffset:Add(DeviceInputOffset Divide(LevelInputOffset 1000))
     SetShifted(LevelScore *ConsecutiveGreatScore *ConsecutiveScoreCap 100)
 )
 
+#0.spawnOrder:-1000
+
 #0.updateSequential:true
 
 
@@ -186,6 +197,8 @@ InputOffset:Add(DeviceInputOffset Divide(LevelInputOffset 1000))
 SlotX1:Subtract(LaneX1 0.1875)
 SlotX2:Add(LaneX1 0.1875)
 StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
+
+#1.spawnOrder:-999
 
 #1.shouldSpawn:Equal(Get(EntityInfoArray *State) Despawned)
 
@@ -284,6 +297,10 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
 
 // #2: Don
 
+#2.preprocess:PreprocessNote
+
+#2.spawnOrder:SpawnOrderNote
+
 #2.shouldSpawn:IsNoteOnScreen
 
 #2.initialize:Execute(
@@ -356,6 +373,10 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
 
 // #3: Kat
 
+#3.preprocess:PreprocessNote
+
+#3.spawnOrder:SpawnOrderNote
+
 #3.shouldSpawn:IsNoteOnScreen
 
 #3.initialize:Execute(
@@ -427,6 +448,10 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
 
 
 // #4: Drum
+
+#4.preprocess:PreprocessNote
+
+#4.spawnOrder:SpawnOrderNote
 
 #4.shouldSpawn:IsNoteOnScreen
 
@@ -503,6 +528,10 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
 
 
 // #5: Balloon Graphics
+
+#5.preprocess:PreprocessNote
+
+#5.spawnOrder:SpawnOrderNote
 
 #5.shouldSpawn:IsNoteOnScreen
 
@@ -950,10 +979,10 @@ NoteY2:Get(EntityMemory *NoteY2)
 *NoteTapEffect:7
 *NoteBucket:8
 
-NoteSpawnTime:Divide(Add(Get(EntityData *NoteSpawnTime) NoteTimeOffset) Speed)
-NoteTime:Divide(Add(Get(EntityData *NoteTime) NoteTimeOffset) Speed)
-NoteTailSpawnTime:Divide(Add(Get(EntityData *NoteTailSpawnTime) NoteTimeOffset) Speed)
-NoteTailTime:Divide(Add(Get(EntityData *NoteTailTime) NoteTimeOffset) Speed)
+NoteSpawnTime:Get(EntityData *NoteSpawnTime)
+NoteTime:Get(EntityData *NoteTime)
+NoteTailSpawnTime:Get(EntityData *NoteTailSpawnTime)
+NoteTailTime:Get(EntityData *NoteTailTime)
 NoteBalloonCount:Get(EntityData *NoteBalloonCount)
 NoteRadius:Get(EntityData *NoteRadius)
 NoteTexture:Get(EntityData *NoteTexture)
