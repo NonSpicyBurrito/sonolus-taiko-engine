@@ -320,9 +320,7 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
 
 #2.updateSequential:UpdateDonNote
 
-#2.updateParallel:Execute(
-    DrawNote
-
+#2.updateParallel:Or(
     If(
         Auto
         And(
@@ -367,6 +365,8 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
             Greater(Subtract(Time NoteTime InputOffset) GoodWindow)
         )
     )
+
+    DrawNote
 )
 
 
@@ -396,9 +396,7 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
 
 #3.updateSequential:UpdateKatNote
 
-#3.updateParallel:Execute(
-    DrawNote
-
+#3.updateParallel:Or(
     If(
         Auto
         And(
@@ -443,6 +441,8 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
             Greater(Subtract(Time NoteTime InputOffset) GoodWindow)
         )
     )
+
+    DrawNote
 )
 
 
@@ -457,71 +457,73 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
 
 #4.initialize:InitNote
 
-#4.updateParallel:Execute(
-    DrawNote
-
-    Set(EntityMemory *NoteTailX Remap(NoteTailSpawnTime NoteTailTime LaneX2 LaneX1 Time))
-    Draw(
-        11004
-        NoteX NoteY2
-        NoteTailX NoteY2
-        NoteTailX NoteY1
-        NoteX NoteY1
-        LayerNoteBody
-        1
-    )
-    Draw(
-        3004
-        Subtract(NoteTailX NoteRadius) NoteY1
-        Subtract(NoteTailX NoteRadius) NoteY2
-        Add(NoteTailX NoteRadius) NoteY2
-        Add(NoteTailX NoteRadius) NoteY1
-        LayerNoteTail
-        1
+#4.updateParallel:Or(
+    If(
+        Auto
+        Greater(Time NoteTailTime)
+        Greater(Subtract(Time InputOffset) NoteTailTime)
     )
 
-    And(
-        Greater(Subtract(Time InputOffset) NoteTime)
-        Execute(
-            And(
-                DonStarted
-                Execute(
-                    Set(EntityInput *Judgment JudgmentPerfect)
-                    And(
-                        NoteEffect
-                        Spawn(
-                            6
-                            DonST
-                            TextureNoteDon
-                            NoteRadius
-                            NoteTapEffect
+    Execute(
+        DrawNote
+
+        Set(EntityMemory *NoteTailX Remap(NoteTailSpawnTime NoteTailTime LaneX2 LaneX1 Time))
+        Draw(
+            11004
+            NoteX NoteY2
+            NoteTailX NoteY2
+            NoteTailX NoteY1
+            NoteX NoteY1
+            LayerNoteBody
+            1
+        )
+        Draw(
+            3004
+            Subtract(NoteTailX NoteRadius) NoteY1
+            Subtract(NoteTailX NoteRadius) NoteY2
+            Add(NoteTailX NoteRadius) NoteY2
+            Add(NoteTailX NoteRadius) NoteY1
+            LayerNoteTail
+            1
+        )
+
+        And(
+            Greater(Subtract(Time InputOffset) NoteTime)
+            Execute(
+                And(
+                    DonStarted
+                    Execute(
+                        Set(EntityInput *Judgment JudgmentPerfect)
+                        And(
+                            NoteEffect
+                            Spawn(
+                                6
+                                DonST
+                                TextureNoteDon
+                                NoteRadius
+                                NoteTapEffect
+                            )
                         )
                     )
                 )
-            )
-            And(
-                KatStarted
-                Execute(
-                    Set(EntityInput *Judgment JudgmentPerfect)
-                    And(
-                        NoteEffect
-                        Spawn(
-                            6
-                            KatST
-                            TextureNoteKat
-                            NoteRadius
-                            NoteTapEffect
+                And(
+                    KatStarted
+                    Execute(
+                        Set(EntityInput *Judgment JudgmentPerfect)
+                        And(
+                            NoteEffect
+                            Spawn(
+                                6
+                                KatST
+                                TextureNoteKat
+                                NoteRadius
+                                NoteTapEffect
+                            )
                         )
                     )
                 )
             )
         )
-    )
-
-    If(
-        Auto
-        Greater(Time NoteTailTime)
-        Greater(Subtract(Time InputOffset) NoteTailTime)
     )
 )
 
