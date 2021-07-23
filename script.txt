@@ -15,10 +15,10 @@ PreprocessNote:Execute(
         NoteSpeedRandom
         Set(EntityData *NoteSpeed Divide(NoteSpeed Random(1 2)))
     )
-    Set(EntityData *NoteSpawnTime Divide(Add(Subtract(NoteTime Divide(240 NoteSpeed)) NoteTimeOffset) Speed))
-    Set(EntityData *NoteTime Divide(Add(NoteTime NoteTimeOffset) Speed))
-    Set(EntityData *NoteTailSpawnTime Divide(Add(Subtract(NoteTailTime Divide(240 NoteSpeed)) NoteTimeOffset) Speed))
-    Set(EntityData *NoteTailTime Divide(Add(NoteTailTime NoteTimeOffset) Speed))
+    Set(EntityData *NoteSpawnTime Divide(Subtract(NoteTime Divide(240 NoteSpeed)) Speed))
+    Set(EntityData *NoteTime Divide(NoteTime Speed))
+    Set(EntityData *NoteTailSpawnTime Divide(Subtract(NoteTailTime Divide(240 NoteSpeed)) Speed))
+    Set(EntityData *NoteTailTime Divide(NoteTailTime Speed))
 )
 
 SpawnOrderNote:NoteSpawnTime
@@ -111,8 +111,6 @@ LaneX2:Add(AspectRatio 0.25)
 SlotEffectX1:Subtract(LaneX1 0.25)
 SlotEffectX2:Add(LaneX1 0.25)
 SoulX:Subtract(AspectRatio 0.25)
-NoteTimeOffset:Divide(LevelAudioOffset 1000)
-InputOffset:Add(DeviceInputOffset Divide(LevelInputOffset 1000))
 
 #0.preprocess:Execute(
     SetShifted(LevelUI *UIMenu *UIAnchorX Subtract(0.05 AspectRatio))
@@ -797,14 +795,14 @@ KatST:Get(LevelMemory *KatST)
 *Time:0
 *DeltaTime:1
 *AspectRatio:2
-*DeviceAudioOffset:3
-*DeviceInputOffset:4
+*AudioOffset:3
+*InputOffset:4
 
 Time:Get(LevelData *Time)
 DeltaTime:Get(LevelData *DeltaTime)
 AspectRatio:Get(LevelData *AspectRatio)
-DeviceAudioOffset:Get(LevelData *DeviceAudioOffset)
-DeviceInputOffset:Get(LevelData *DeviceInputOffset)
+AudioOffset:Get(LevelData *AudioOffset)
+InputOffset:Get(LevelData *InputOffset)
 
 
 
@@ -812,22 +810,18 @@ DeviceInputOffset:Get(LevelData *DeviceInputOffset)
 
 *Auto:0
 *NoteSpeedRandom:1
-*LevelAudioOffset:2
-*LevelInputOffset:3
-*Speed:4
-*StageCover:5
-*SoundEffect:6
-*NoteEffect:7
-*SlotEffect:8
-*UIJudgmentSize:9
-*UIJudgmentAlpha:10
-*UIComboSize:11
-*UIComboAlpha:12
+*Speed:2
+*StageCover:3
+*SoundEffect:4
+*NoteEffect:5
+*SlotEffect:6
+*UIJudgmentSize:7
+*UIJudgmentAlpha:8
+*UIComboSize:9
+*UIComboAlpha:10
 
 Auto:Get(LevelOption *Auto)
 NoteSpeedRandom:Get(LevelOption *NoteSpeedRandom)
-LevelAudioOffset:Get(LevelOption *LevelAudioOffset)
-LevelInputOffset:Get(LevelOption *LevelInputOffset)
 Speed:Get(LevelOption *Speed)
 StageCover:Get(LevelOption *StageCover)
 SoundEffect:Get(LevelOption *SoundEffect)
@@ -843,13 +837,13 @@ UIComboAlpha:Get(LevelOption *UIComboAlpha)
 // Level UI Layout
 
 *UIMenu:0
-*UIJudgment:11
-*UIComboValue:22
-*UIComboText:33
-*UIScoreBar:44
-*UIScoreValue:55
-*UILifeBar:66
-*UILifeValue:77
+*UIJudgment:10
+*UIComboValue:20
+*UIComboText:30
+*UIScoreBar:40
+*UIScoreValue:50
+*UILifeBar:60
+*UILifeValue:70
 
 *UIAnchorX:0
 *UIAnchorY:1
@@ -860,8 +854,7 @@ UIComboAlpha:Get(LevelOption *UIComboAlpha)
 *UIRotation:6
 *UIAlpha:7
 *UIHorizontalAlign:8
-*UIVerticalAlign:9
-*UIBackground:10
+*UIBackground:9
 
 
 
