@@ -299,7 +299,13 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
 
 // #2: Don
 
-#2.preprocess:PreprocessNote
+#2.preprocess:Execute(
+    PreprocessNote
+    Or(
+        Auto
+        Set(EntityInput *Accuracy GoodWindow)
+    )
+)
 
 #2.spawnOrder:SpawnOrderNote
 
@@ -350,8 +356,9 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
             )
             Execute(
                 Set(EntityInput *Judgment JudgeSimple(Subtract(DonST InputOffset) NoteTime PerfectWindow GreatWindow GoodWindow))
+                Set(EntityInput *Accuracy Subtract(DonST InputOffset NoteTime))
                 Set(EntityInput *Bucket NoteBucket)
-                Set(EntityInput *BucketValue Multiply(1000 Subtract(DonST InputOffset NoteTime)))
+                Set(EntityInput *BucketValue Multiply(1000 Accuracy))
                 And(
                     NoteEffect
                     Spawn(
@@ -375,7 +382,13 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
 
 // #3: Kat
 
-#3.preprocess:PreprocessNote
+#3.preprocess:Execute(
+    PreprocessNote
+    Or(
+        Auto
+        Set(EntityInput *Accuracy GoodWindow)
+    )
+)
 
 #3.spawnOrder:SpawnOrderNote
 
@@ -426,8 +439,9 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
             )
             Execute(
                 Set(EntityInput *Judgment JudgeSimple(Subtract(KatST InputOffset) NoteTime PerfectWindow GreatWindow GoodWindow))
+                Set(EntityInput *Accuracy Subtract(KatST InputOffset NoteTime))
                 Set(EntityInput *Bucket NoteBucket)
-                Set(EntityInput *BucketValue Multiply(1000 Subtract(KatST InputOffset NoteTime)))
+                Set(EntityInput *BucketValue Multiply(1000 Accuracy))
                 And(
                     NoteEffect
                     Spawn(
@@ -909,10 +923,12 @@ State:Get(EntityInfo *State)
 // Entity Input Layout
 
 *Judgment:0
-*Bucket:1
-*BucketValue:2
+*Accuracy:1
+*Bucket:2
+*BucketValue:3
 
 Judgment:Get(EntityInput *Judgment)
+Accuracy:Get(EntityInput *Accuracy)
 Bucket:Get(EntityInput *Bucket)
 BucketValue:Get(EntityInput *BucketValue)
 
