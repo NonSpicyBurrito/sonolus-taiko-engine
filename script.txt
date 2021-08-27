@@ -253,7 +253,7 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
                 PlayKatSlotEffect
                 And(
                     SoundEffect
-                    Play(EffectFlick MinEffectTime)
+                    Play(EffectPerfectAlternative MinEffectTime)
                 )
             )
         )
@@ -401,7 +401,7 @@ StageCoverX:Lerp(AspectRatio LaneX1 StageCover)
         Execute(
             And(
                 SoundEffect
-                PlayScheduled(EffectFlick NoteTime MinEffectTime)
+                PlayScheduled(EffectPerfectAlternative NoteTime MinEffectTime)
             )
             Set(EntityInput *Judgment JudgmentPerfect)
             Set(EntityInput *Bucket NoteBucket)
@@ -737,8 +737,13 @@ EffectMiss:0
 EffectPerfect:1
 EffectGreat:2
 EffectGood:3
-EffectFlick:4
-EffectEmpty:5
+
+EffectMissAlternative:1000
+EffectPerfectAlternative:1001
+EffectGreatAlternative:1002
+EffectGoodAlternative:1003
+
+EffectStage:10000
 
 
 
