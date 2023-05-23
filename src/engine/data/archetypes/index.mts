@@ -1,0 +1,43 @@
+import { Initialization } from './Initialization.mjs'
+import { InputManager } from './InputManager.mjs'
+import { Stage } from './Stage.mjs'
+import { DaiBalloonNoteEffect } from './noteEffects/DaiBalloonNoteEffect.mjs'
+import { DaiDonNoteEffect } from './noteEffects/DaiDonNoteEffect.mjs'
+import { DaiKaNoteEffect } from './noteEffects/DaiKaNoteEffect.mjs'
+import { NormalBalloonNoteEffect } from './noteEffects/NormalBalloonNoteEffect.mjs'
+import { NormalDonNoteEffect } from './noteEffects/NormalDonNoteEffect.mjs'
+import { NormalKaNoteEffect } from './noteEffects/NormalKaNoteEffect.mjs'
+import { DaiBalloonNote } from './notes/longNotes/balloonNotes/DaiBalloonNote.mjs'
+import { NormalBalloonNote } from './notes/longNotes/balloonNotes/NormalBalloonNote.mjs'
+import { DaiDrumrollNote } from './notes/longNotes/drumrollNotes/DaiDrumrollNote.mjs'
+import { NormalDrumrollNote } from './notes/longNotes/drumrollNotes/NormalDrumrollNote.mjs'
+import { DaiDonNote } from './notes/tapNotes/donNotes/DaiDonNote.mjs'
+import { NormalDonNote } from './notes/tapNotes/donNotes/NormalDonNote.mjs'
+import { DaiKaNote } from './notes/tapNotes/kaNotes/DaiKaNote.mjs'
+import { NormalKaNote } from './notes/tapNotes/kaNotes/NormalKaNote.mjs'
+
+export const archetypes = defineArchetypes({
+    Initialization,
+    InputManager,
+
+    Stage,
+
+    NormalDonNote,
+    DaiDonNote,
+
+    NormalKaNote,
+    DaiKaNote,
+
+    NormalBalloonNote,
+    DaiBalloonNote,
+
+    NormalDrumrollNote,
+    DaiDrumrollNote,
+
+    NormalDonNoteEffect,
+    DaiDonNoteEffect,
+    NormalKaNoteEffect,
+    DaiKaNoteEffect,
+    NormalBalloonNoteEffect,
+    DaiBalloonNoteEffect,
+})

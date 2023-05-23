@@ -1,0 +1,6711 @@
+{
+    "bgmOffset": 0,
+    "entities": [
+        {
+            "archetype": "Initialization",
+            "data": []
+        },
+        {
+            "archetype": "InputManager",
+            "data": []
+        },
+        {
+            "archetype": "Stage",
+            "data": []
+        },
+        {
+            "archetype": "#BPM_CHANGE",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 0
+                },
+                {
+                    "name": "#BPM",
+                    "value": 20.99370188943317
+                }
+            ]
+        },
+        {
+            "archetype": "#BPM_CHANGE",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 4
+                },
+                {
+                    "name": "#BPM",
+                    "value": 186
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 8
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 8.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 12
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 12.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 16
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 16.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 20
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 20.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 21
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 21.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 21.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 22
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 23
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 23.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 24
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 26
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 26.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 26.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 27
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 28
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 29
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 30
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 30.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 30.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 31
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 32
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 32.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 32.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 33
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 33.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 33.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 34
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 34.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 35
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 35.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 35.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 36
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 36.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 36.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 37
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 37.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 40
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 41.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 42
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 43.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 44
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 45
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 46
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 48
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 49.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 50
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 51
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 51.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 52
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 53
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 54
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 56
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 57.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 58
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 59.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 60
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 61.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 62
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 63
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 64
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 65
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 65.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 67
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 67.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 69
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 69.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 70
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 71
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 72
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 73
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 73.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 74
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 75.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 76
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 77
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 78
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 79
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 79.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 80
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 81
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 81.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 82
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 83
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 83.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 83.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 84
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 85
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 86
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 88
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 89
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 89.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 90
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 91
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 92
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 93
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 93.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 94
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 95
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 95.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 95.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 96
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 97
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 97.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 99
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 99.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 102
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 103
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 104
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 105
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 105.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 106.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 107
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 110
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 111
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 112
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 113
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 113.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 114.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 115
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 118
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 119
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 120
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 121
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 122
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 123
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 124
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 126
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 127
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 128
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 129
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 130
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 131
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 132
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 134
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 135
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 136
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 137
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 137.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 138
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 138.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 139
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 139.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 140
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 140.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 141
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 141.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 142
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 143
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 143.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 144
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 145
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 145.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 146
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 146.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 147
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 148
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 149
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 149.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 150
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 151
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 151.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 152
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 153
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 153.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 154
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 155
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 155.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 156
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 156.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 157
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 158
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 159
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 159.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 160
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 160.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 160.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 161
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 161.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 161.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 162
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 162.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 162.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 163
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 163.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 163.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 164
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 164.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 165
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 166
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 167
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 167.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 168
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 169
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 169.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 170
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 170.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 171
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 171.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 172
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 172.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 173
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 173.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 174
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 175
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 175.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 176
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 177
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 177.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 178
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 178.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 179
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 180
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 181
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 182
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 183
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 183.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 184
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 185
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 185.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 186
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 187
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 187.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 188
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 188.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 189
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 190
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 191
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 191.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 192
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 192.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 192.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 193
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 193.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 193.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 194
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 194.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 194.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 195
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 195.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 195.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 196
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 196.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 197
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 198
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 200
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 201
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 201.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 202
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 202.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 203
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 203.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 204
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 204.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 205
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 206
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 208
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 209
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 209.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 210
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 210.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 210.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 211
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 212
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 213
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 213.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 214
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 216
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 217
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 218
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 218.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 219
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 220
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 220.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 221
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 222
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDrumrollNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 224
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                },
+                {
+                    "name": "tailBeat",
+                    "value": 230.91666666666666
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 232
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 232.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 234
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 234.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 236
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 237
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 238
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 240
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 240.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 242
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 242.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 244
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 245
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 246
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 248
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 249
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 249.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 250
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 251
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 252
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 252.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 253
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 254
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 256
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 258
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 260
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 260.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 261
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 262
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 264
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 265
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 266
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 267
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 268
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 268.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 269
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDrumrollNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 270
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                },
+                {
+                    "name": "tailBeat",
+                    "value": 271.9166666666667
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 276
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 288
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 289
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 289.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 290
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 291
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 292
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 293
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 293.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 294
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 295
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 295.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 296
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 296.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 297
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 298
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 299
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 299.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 300
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 300.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 300.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 301
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 301.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 301.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 302
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 302.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 302.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 303
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 303.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 303.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 304
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 304.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 305
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 306
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 307
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 307.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 308
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 309
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 309.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 310
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 310.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 311
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 311.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 312
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 312.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 313
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 313.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 314
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 315
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 315.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 316
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 317
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 317.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 318
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 318.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 319
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 320
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 321
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "DaiDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 322
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 323
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 323.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 324
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 325
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 325.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 326
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 327
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 327.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 328
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 328.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 329
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 330
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 331
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 331.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 332
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 332.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 332.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 333
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 333.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 333.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 334
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 334.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 334.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 335
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 335.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 335.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 336
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 336.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 337
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 338
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 339
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 339.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "#BPM_CHANGE",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 343
+                },
+                {
+                    "name": "#BPM",
+                    "value": 160
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 340
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 341
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 341.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 342
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 343
+                },
+                {
+                    "name": "speed",
+                    "value": 1.1625
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 343.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1.1625
+                }
+            ]
+        },
+        {
+            "archetype": "#BPM_CHANGE",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 345
+                },
+                {
+                    "name": "#BPM",
+                    "value": 142
+                }
+            ]
+        },
+        {
+            "archetype": "#BPM_CHANGE",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 346
+                },
+                {
+                    "name": "#BPM",
+                    "value": 125
+                }
+            ]
+        },
+        {
+            "archetype": "#BPM_CHANGE",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 347
+                },
+                {
+                    "name": "#BPM",
+                    "value": 115
+                }
+            ]
+        },
+        {
+            "archetype": "#BPM_CHANGE",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 348
+                },
+                {
+                    "name": "#BPM",
+                    "value": 59
+                }
+            ]
+        },
+        {
+            "archetype": "NormalBalloonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 344
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                },
+                {
+                    "name": "tailBeat",
+                    "value": 348
+                }
+            ]
+        },
+        {
+            "archetype": "#BPM_CHANGE",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 349
+                },
+                {
+                    "name": "#BPM",
+                    "value": 186
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 349
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 350
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 351
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 351.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 351.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 352
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 352.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 352.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 353
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 353.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 353.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 354
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 354.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 354.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 355
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 355.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 356
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 357
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 359
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 360
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 361
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 361.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 361.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 362
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 363
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 364
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 365
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 365.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 365.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 366
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 367
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 368
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 369
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 369.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 369.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 370
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 371
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 371.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 372
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 372.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 372.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 373
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 375
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 375.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 376
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 377
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 377.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 377.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 378
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 379
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 379.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalKaNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 380
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 381
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 381.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 381.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 382
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 383
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 383.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 383.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 384
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 384.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 384.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 385
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 385.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 386
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 386.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 386.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 387
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 387.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 387.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 388
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 388.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 391
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 391.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 391.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 392
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 392.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 392.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 393
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 393.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 394
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 394.25
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 394.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 395
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 395.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 395.75
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 396
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "archetype": "NormalDonNote",
+            "data": [
+                {
+                    "name": "#BEAT",
+                    "value": 396.5
+                },
+                {
+                    "name": "speed",
+                    "value": 1
+                }
+            ]
+        }
+    ]
+}
