@@ -1,40 +1,45 @@
 export type TJC = {
     offset: number
-    objects: ChartObject[]
+    objects: TJCObject[]
 }
 
-export type ChartObject = BPMObject | DonNote | KaNote | BalloonNote | DrumrollNote
+export type TJCObject =
+    | TJCBPMChangeObject
+    | TJCDonNote
+    | TJCKaNote
+    | TJCBalloonNote
+    | TJCDrumrollNote
 
-type ObjectBase = {
+type BaseTJCObject = {
     beat: number
 }
 
-export type BPMObject = ObjectBase & {
+export type TJCBPMChangeObject = BaseTJCObject & {
     type: 'bpm'
     bpm: number
 }
 
-type NoteBase = ObjectBase & {
+type BaseTJCNote = BaseTJCObject & {
     isDai: boolean
     speed: number
 }
 
-export type DonNote = NoteBase & {
+export type TJCDonNote = BaseTJCNote & {
     type: 'don'
 }
 
-export type KaNote = NoteBase & {
+export type TJCKaNote = BaseTJCNote & {
     type: 'ka'
 }
 
-type LongNoteBase = NoteBase & {
+type BaseTJCLongNote = BaseTJCNote & {
     tailBeat: number
 }
 
-export type BalloonNote = LongNoteBase & {
+export type TJCBalloonNote = BaseTJCLongNote & {
     type: 'balloon'
 }
 
-export type DrumrollNote = LongNoteBase & {
+export type TJCDrumrollNote = BaseTJCLongNote & {
     type: 'drumroll'
 }

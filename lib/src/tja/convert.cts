@@ -1,7 +1,7 @@
 import { TJC } from '../tjc/index.cjs'
 import parseTJA from './parse.cjs'
 
-export const tjaToTjc = (tja: string, courseId: number): TJC => {
+export const tjaToTJC = (tja: string, courseId: number): TJC => {
     const { headers, courses } = parseTJA(tja)
 
     const course = courses[courseId]

@@ -1,8 +1,8 @@
 import { EngineInfo } from 'sonolus-core'
 import { Resource } from './Resource.cjs'
 
-export { osuToTjc } from './osu/convert.cjs'
-export { tjaToTjc } from './tja/convert.cjs'
+export { osuToTJC } from './osu/convert.cjs'
+export { tjaToTJC } from './tja/convert.cjs'
 export { tjcToLevelData } from './tjc/convert.cjs'
 
 export const version = '1.0.0'

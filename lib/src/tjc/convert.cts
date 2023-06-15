@@ -5,16 +5,16 @@ import {
     LevelDataEntity,
 } from 'sonolus-core'
 import {
-    BPMObject,
-    BalloonNote,
-    ChartObject,
-    DonNote,
-    DrumrollNote,
-    KaNote,
     TJC,
+    TJCBPMChangeObject,
+    TJCBalloonNote,
+    TJCDonNote,
+    TJCDrumrollNote,
+    TJCKaNote,
+    TJCObject,
 } from './index.cjs'
 
-type Handler<T extends ChartObject> = (object: T) => {
+type Handler<T extends TJCObject> = (object: T) => {
     archetype: string
     data: Record<string, number>
 }
@@ -50,7 +50,7 @@ export const tjcToLevelData = (tjc: TJC): LevelData => {
     }
 }
 
-const bpm: Handler<BPMObject> = (object) => ({
+const bpm: Handler<TJCBPMChangeObject> = (object) => ({
     archetype: EngineArchetypeName.BpmChange,
     data: {
         [EngineArchetypeDataName.Beat]: object.beat,
@@ -58,7 +58,7 @@ const bpm: Handler<BPMObject> = (object) => ({
     },
 })
 
-const don: Handler<DonNote> = (object) => ({
+const don: Handler<TJCDonNote> = (object) => ({
     archetype: object.isDai ? 'DaiDonNote' : 'NormalDonNote',
     data: {
         [EngineArchetypeDataName.Beat]: object.beat,
@@ -66,7 +66,7 @@ const don: Handler<DonNote> = (object) => ({
     },
 })
 
-const ka: Handler<KaNote> = (object) => ({
+const ka: Handler<TJCKaNote> = (object) => ({
     archetype: object.isDai ? 'DaiKaNote' : 'NormalKaNote',
     data: {
         [EngineArchetypeDataName.Beat]: object.beat,
@@ -74,7 +74,7 @@ const ka: Handler<KaNote> = (object) => ({
     },
 })
 
-const balloon: Handler<BalloonNote> = (object) => ({
+const balloon: Handler<TJCBalloonNote> = (object) => ({
     archetype: object.isDai ? 'DaiBalloonNote' : 'NormalBalloonNote',
     data: {
         [EngineArchetypeDataName.Beat]: object.beat,
@@ -83,7 +83,7 @@ const balloon: Handler<BalloonNote> = (object) => ({
     },
 })
 
-const drumroll: Handler<DrumrollNote> = (object) => ({
+const drumroll: Handler<TJCDrumrollNote> = (object) => ({
     archetype: object.isDai ? 'DaiDrumrollNote' : 'NormalDrumrollNote',
     data: {
         [EngineArchetypeDataName.Beat]: object.beat,
@@ -93,7 +93,7 @@ const drumroll: Handler<DrumrollNote> = (object) => ({
 })
 
 const handlers: {
-    [K in ChartObject['type']]: Handler<Extract<ChartObject, { type: K }>>
+    [K in TJCObject['type']]: Handler<Extract<TJCObject, { type: K }>>
 } = {
     bpm,
     don,

@@ -1,6 +1,6 @@
-import { ChartObject, TJC } from '../tjc/index.cjs'
+import { TJC, TJCObject } from '../tjc/index.cjs'
 
-export const osuToTjc = (osu: string): TJC => {
+export const osuToTJC = (osu: string): TJC => {
     const sections: Record<string, string[]> = {
         '': [],
     }
@@ -80,7 +80,7 @@ export const osuToTjc = (osu: string): TJC => {
     }[] = []
 
     let offset = 0
-    const objects: ChartObject[] = []
+    const objects: TJCObject[] = []
 
     let beat = 0
 
