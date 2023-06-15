@@ -92,4 +92,14 @@ export const options = defineOptions({
         step: 0.05,
         unit: UnitText.Percentage,
     },
+    stageCover: {
+        name: NameText.HorizontalStageCover,
+        scope: 'Taiko',
+        type: 'slider',
+        def: 0,
+        min: 0,
+        max: 1,
+        step: 0.05,
+        unit: UnitText.Percentage,
+    },
 })

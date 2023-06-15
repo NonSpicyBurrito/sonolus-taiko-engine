@@ -35,5 +35,7 @@ export const skin = defineSkin({
         drumrollConnection: 'Taiko Drumroll Connection',
         daiDrumrollConnection: 'Taiko Dai Drumroll Connection',
         drumrollConnectionFallback: SkinSpriteName.NoteConnectionYellow,
+
+        cover: SkinSpriteName.StageCover,
     },
 })

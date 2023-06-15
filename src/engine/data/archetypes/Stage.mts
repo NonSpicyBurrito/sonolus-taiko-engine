@@ -43,6 +43,8 @@ export class Stage extends Archetype {
         this.drawStage()
         this.drawDrum()
         this.drawTouchDrum()
+
+        this.drawStageCover()
     }
 
     get shouldPlaySFX() {
@@ -132,6 +134,21 @@ export class Stage extends Archetype {
         }).translate(0, Math.lerp(-0.1 * h, 0, this.scaleHitTime(hitTimes.any)))
 
         skin.sprites.touchDrum.draw(layout, layer.touchDrum, 1)
+    }
+
+    drawStageCover() {
+        if (options.stageCover <= 0) return
+
+        skin.sprites.cover.draw(
+            new Rect({
+                l: Math.lerp(scaledScreen.r, 1, options.stageCover),
+                r: scaledScreen.r,
+                t: -stage.h,
+                b: stage.h,
+            }),
+            layer.cover,
+            1,
+        )
     }
 
     scaleHitTime(hitTime: number) {

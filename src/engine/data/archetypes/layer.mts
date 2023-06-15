@@ -1,4 +1,6 @@
 export const layer = {
+    cover: 1000,
+
     effect: 110,
 
     note: 100,
