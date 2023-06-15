@@ -19,7 +19,7 @@ type Handler<T extends TJCObject> = (object: T) => {
     data: Record<string, number>
 }
 
-export const tjcToLevelData = (tjc: TJC): LevelData => {
+export const tjcToLevelData = (tjc: TJC, offset = 0): LevelData => {
     const entities: LevelDataEntity[] = [
         {
             archetype: 'Initialization',
@@ -45,7 +45,7 @@ export const tjcToLevelData = (tjc: TJC): LevelData => {
     }
 
     return {
-        bgmOffset: tjc.offset,
+        bgmOffset: tjc.offset + offset,
         entities,
     }
 }
