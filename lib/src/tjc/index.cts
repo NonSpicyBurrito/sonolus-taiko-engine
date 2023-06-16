@@ -4,7 +4,7 @@ export type TJC = {
 }
 
 export type TJCObject =
-    | TJCBPMChangeObject
+    | TJCBpmChangeObject
     | TJCDonNote
     | TJCKaNote
     | TJCBalloonNote
@@ -14,7 +14,7 @@ type BaseTJCObject = {
     beat: number
 }
 
-export type TJCBPMChangeObject = BaseTJCObject & {
+export type TJCBpmChangeObject = BaseTJCObject & {
     type: 'bpm'
     bpm: number
 }
