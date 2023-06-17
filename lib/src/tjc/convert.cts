@@ -6,8 +6,8 @@ import {
 } from 'sonolus-core'
 import {
     TJC,
-    TJCBPMChangeObject,
     TJCBalloonNote,
+    TJCBpmChangeObject,
     TJCDonNote,
     TJCDrumrollNote,
     TJCKaNote,
@@ -50,7 +50,7 @@ export const tjcToLevelData = (tjc: TJC, offset = 0): LevelData => {
     }
 }
 
-const bpm: Handler<TJCBPMChangeObject> = (object) => ({
+const bpm: Handler<TJCBpmChangeObject> = (object) => ({
     archetype: EngineArchetypeName.BpmChange,
     data: {
         [EngineArchetypeDataName.Beat]: object.beat,
