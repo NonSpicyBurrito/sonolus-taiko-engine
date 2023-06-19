@@ -123,8 +123,8 @@ export class Stage extends Archetype {
     drawTouchDrum() {
         if (!skin.sprites.touchDrum.exists) return
 
-        const w = 0.25
-        const h = (w * 2 * 436) / 842
+        const h = (scaledScreen.t - scaledScreen.b) * 0.45
+        const w = (h * 842) / (2 * 436)
 
         const layout = new Rect({
             l: Math.lerp(scaledScreen.l, scaledScreen.r, 0.5) + w,

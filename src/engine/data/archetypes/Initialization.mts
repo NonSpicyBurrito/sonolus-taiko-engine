@@ -1,3 +1,4 @@
+import { options } from '../../configuration/options.mjs'
 import { buckets } from '../buckets.mjs'
 import { particle } from '../particle.mjs'
 import { skin } from '../skin.mjs'
@@ -7,7 +8,7 @@ import { windows } from './windows.mjs'
 
 export class Initialization extends Archetype {
     preprocess() {
-        const w = screen.w
+        const w = screen.w * options.slotPosition
         const h = screen.h / 8
 
         const r = screen.r + h
