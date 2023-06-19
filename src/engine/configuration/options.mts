@@ -28,6 +28,16 @@ export const options = defineOptions({
         step: 0.05,
         unit: UnitText.Percentage,
     },
+    drumSize: {
+        name: 'Drum Size',
+        scope: 'Taiko',
+        type: 'slider',
+        def: 0.45,
+        min: 0.05,
+        max: 1,
+        step: 0.05,
+        unit: UnitText.Percentage,
+    },
     slotPosition: {
         name: 'Slot Position',
         scope: 'Taiko',

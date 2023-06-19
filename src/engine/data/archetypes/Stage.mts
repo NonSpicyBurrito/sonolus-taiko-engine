@@ -123,7 +123,7 @@ export class Stage extends Archetype {
     drawTouchDrum() {
         if (!skin.sprites.touchDrum.exists) return
 
-        const h = (scaledScreen.t - scaledScreen.b) * 0.45
+        const h = (scaledScreen.t - scaledScreen.b) * options.drumSize
         const w = (h * 842) / (2 * 436)
 
         const layout = new Rect({
