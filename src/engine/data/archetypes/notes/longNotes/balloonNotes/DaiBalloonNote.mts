@@ -8,7 +8,6 @@ export class DaiBalloonNote extends BalloonNote {
     sprites = {
         note: skin.sprites.daiBalloon,
         fallback: skin.sprites.balloonFallback,
-        attachment: skin.sprites.balloonAttachment,
     }
 
     get noteEffect() {
