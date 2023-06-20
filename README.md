@@ -31,7 +31,14 @@ npm install sonolus-taiko-engine
 | `Taiko Dai Ka`                  |
 | `Taiko Balloon`                 |
 | `Taiko Dai Balloon`             |
-| `Taiko Balloon Attachment`      |
+| `Taiko Balloon Attachment 1`    |
+| `Taiko Balloon Attachment 2`    |
+| `Taiko Balloon Attachment 3`    |
+| `Taiko Balloon Attachment 4`    |
+| `Taiko Balloon Attachment 5`    |
+| `Taiko Balloon Attachment 6`    |
+| `Taiko Balloon Attachment 7`    |
+| `Taiko Balloon Attachment 8`    |
 | `Taiko Drumroll`                |
 | `Taiko Dai Drumroll`            |
 | `Taiko Drumroll Tail`           |
