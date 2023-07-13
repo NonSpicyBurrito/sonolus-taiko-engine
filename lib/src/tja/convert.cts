@@ -5,7 +5,7 @@ export const tjaToTJC = (tja: string, courseId: number): TJC => {
     const { headers, courses } = parseTJA(tja)
 
     const course = courses[courseId]
-    if (!course) throw `Course ${courseId} not found`
+    if (!course) throw new Error(`Course ${courseId} not found`)
 
     const tjc: TJC = {
         offset: 0,
@@ -42,7 +42,7 @@ export const tjaToTJC = (tja: string, courseId: number): TJC => {
     }
     const getSpeed = (beat: number) => {
         const speed = speeds.find((speed) => beat >= speed.from && beat < speed.to)
-        if (!speed) throw 'Unexpected missing speed'
+        if (!speed) throw new Error('Unexpected missing speed')
 
         return speed.value
     }
