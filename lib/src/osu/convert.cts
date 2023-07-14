@@ -24,7 +24,7 @@ export const osuToTJC = (osu: string): TJC => {
     }
 
     let sliderMultiplier = 1
-    for (const line of sections['Difficulty']) {
+    for (const line of sections.Difficulty) {
         const [name, value] = line.split(':').map((value) => value.trim())
         if (name !== 'SliderMultiplier') continue
 
@@ -47,7 +47,7 @@ export const osuToTJC = (osu: string): TJC => {
         },
     ]
 
-    for (const line of sections['TimingPoints']) {
+    for (const line of sections.TimingPoints) {
         const [ms, value, , , , , uninherited] = line
             .split(',')
             .map((value) => value.trim())
@@ -119,19 +119,19 @@ export const osuToTJC = (osu: string): TJC => {
         const bpmSection = bpmSections.find(
             (bpmSection) => time >= bpmSection.from && time < bpmSection.to,
         )
-        if (!bpmSection) throw 'Unexpected missing bpmSection' + time
+        if (!bpmSection) throw new Error(`Unexpected missing bpmSection ${time}`)
 
         return bpmSection.beat + ((time - bpmSection.from) * bpmSection.value) / 60
     }
 
     const timeToSpeed = (time: number) => {
         const speed = speeds.find((speed) => time >= speed.from && time < speed.to)
-        if (!speed) throw 'Unexpected missing speed'
+        if (!speed) throw new Error('Unexpected missing speed')
 
         return speed.value
     }
 
-    for (const line of sections['HitObjects']) {
+    for (const line of sections.HitObjects) {
         const [, , ms, type, hitSound, value1, value2, value3] = line
             .split(',')
             .map((value) => value.trim())

@@ -10,34 +10,35 @@ export default function parseTJA(tja: string): {
     }
     courses: Record<
         number,
-        {
-            course: number
-            headers: {
-                course: string
-                level: number
-                balloon: number[]
-                scoreInit: number
-                scoreDiff: number
-                ttRowBeat: number
-            }
-            measures: {
-                length: [dividend: number, divisor: number]
-                properties: {
-                    ttBreak?: boolean
-                }
-                data: string
-                events: (
-                    | {
-                          name: 'bpm' | 'scroll'
-                          position: number
-                          value: number
-                      }
-                    | {
-                          name: 'gogoStart' | 'gogoEnd'
-                          position: number
-                      }
-                )[]
-            }[]
-        }
+        | {
+              course: number
+              headers: {
+                  course: string
+                  level: number
+                  balloon: number[]
+                  scoreInit: number
+                  scoreDiff: number
+                  ttRowBeat: number
+              }
+              measures: {
+                  length: [dividend: number, divisor: number]
+                  properties: {
+                      ttBreak?: boolean
+                  }
+                  data: string
+                  events: (
+                      | {
+                            name: 'bpm' | 'scroll'
+                            position: number
+                            value: number
+                        }
+                      | {
+                            name: 'gogoStart' | 'gogoEnd'
+                            position: number
+                        }
+                  )[]
+              }[]
+          }
+        | undefined
     >
 }

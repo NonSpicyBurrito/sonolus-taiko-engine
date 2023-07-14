@@ -39,7 +39,7 @@ export const options = defineOptions({
         unit: UnitText.Percentage,
     },
     slotPosition: {
-        name: 'Slot Position',
+        name: NameText.SlotPosition,
         scope: 'Taiko',
         type: 'slider',
         def: 1,
