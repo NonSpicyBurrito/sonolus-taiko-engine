@@ -12,8 +12,5 @@
         "exactOptionalPropertyTypes": true,
         "forceConsistentCasingInFileNames": true,
         "moduleResolution": "Node16"
-    },
-    "include": [
-        "./src"
-    ]
+    }
 }
