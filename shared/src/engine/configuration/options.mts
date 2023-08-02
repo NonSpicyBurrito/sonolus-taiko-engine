@@ -11,6 +11,7 @@ export const optionsDefinition = {
     speed: {
         name: NameText.LevelSpeed,
         standard: true,
+        advanced: true,
         type: 'slider',
         def: 1,
         min: 0.5,
@@ -21,6 +22,7 @@ export const optionsDefinition = {
     hidden: {
         name: NameText.Hidden,
         standard: true,
+        advanced: true,
         type: 'slider',
         def: 0,
         min: 0,
@@ -115,6 +117,7 @@ export const optionsDefinition = {
     stageCover: {
         name: NameText.HorizontalStageCover,
         scope: 'Taiko',
+        advanced: true,
         type: 'slider',
         def: 0,
         min: 0,
