@@ -1,5 +1,5 @@
+import { layout } from '../../../../shared/src/engine/data/utils.mjs'
 import { options } from '../configuration/options.mjs'
-import { layout } from './utils.mjs'
 
 export const note = levelData({
     radius: {
