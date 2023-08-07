@@ -1,6 +1,6 @@
 import { options } from '../../../../../configuration/options.mjs'
-import { layer } from '../../../../layer.mjs'
 import { note } from '../../../../note.mjs'
+import { layer } from '../../../../skin.mjs'
 import { getZ, noteLayout } from '../../../../utils.mjs'
 import { isDon, isUsed } from '../../../InputManager.mjs'
 import { NoteEffect } from '../../../noteEffects/NoteEffect.mjs'

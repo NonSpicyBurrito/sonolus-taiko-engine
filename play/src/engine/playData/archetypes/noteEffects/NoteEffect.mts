@@ -1,5 +1,5 @@
-import { layer } from '../../layer.mjs'
 import { scaledScreen } from '../../scaledScreen.mjs'
+import { layer } from '../../skin.mjs'
 import { stage } from '../../stage.mjs'
 import { getZ, noteEffectLayout } from '../../utils.mjs'
 
