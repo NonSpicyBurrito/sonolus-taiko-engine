@@ -1,12 +1,12 @@
 import { options } from '../../configuration/options.mjs'
 import { effect, sfxDistance } from '../effect.mjs'
+import { hitTimes } from '../hitTimes.mjs'
+import { layer } from '../layer.mjs'
+import { note } from '../note.mjs'
+import { scaledScreen } from '../scaledScreen.mjs'
 import { skin } from '../skin.mjs'
+import { stage } from '../stage.mjs'
 import { isDon } from './InputManager.mjs'
-import { stage } from './_stage.mjs'
-import { hitTimes } from './hitTimes.mjs'
-import { layer } from './layer.mjs'
-import { note } from './note.mjs'
-import { scaledScreen } from './scaledScreen.mjs'
 
 export class Stage extends Archetype {
     spawnOrder() {

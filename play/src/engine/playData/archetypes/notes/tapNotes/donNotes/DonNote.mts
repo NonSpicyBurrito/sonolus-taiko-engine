@@ -1,9 +1,9 @@
 import { options } from '../../../../../configuration/options.mjs'
 import { buckets } from '../../../../buckets.mjs'
 import { effect } from '../../../../effect.mjs'
+import { hitTimes } from '../../../../hitTimes.mjs'
 import { particle } from '../../../../particle.mjs'
 import { isDon, isUsed } from '../../../InputManager.mjs'
-import { hitTimes } from '../../../hitTimes.mjs'
 import { TapNote } from '../TapNote.mjs'
 
 export abstract class DonNote extends TapNote {

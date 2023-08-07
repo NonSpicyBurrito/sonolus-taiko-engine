@@ -1,13 +1,13 @@
 import { options } from '../../configuration/options.mjs'
 import { buckets } from '../buckets.mjs'
+import { hitTimes } from '../hitTimes.mjs'
+import { note } from '../note.mjs'
 import { particle } from '../particle.mjs'
+import { scaledScreen } from '../scaledScreen.mjs'
 import { skin } from '../skin.mjs'
-import { stage } from './_stage.mjs'
-import { hitTimes } from './hitTimes.mjs'
+import { stage } from '../stage.mjs'
+import { windows } from '../windows.mjs'
 import { archetypes } from './index.mjs'
-import { note } from './note.mjs'
-import { scaledScreen } from './scaledScreen.mjs'
-import { windows } from './windows.mjs'
 
 export class Initialization extends Archetype {
     preprocess() {

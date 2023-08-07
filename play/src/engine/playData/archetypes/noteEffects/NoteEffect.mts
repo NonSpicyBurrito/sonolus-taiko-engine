@@ -1,7 +1,7 @@
-import { stage } from '../_stage.mjs'
-import { layer } from '../layer.mjs'
-import { scaledScreen } from '../scaledScreen.mjs'
-import { getZ, noteEffectLayout } from '../utils.mjs'
+import { layer } from '../../layer.mjs'
+import { scaledScreen } from '../../scaledScreen.mjs'
+import { stage } from '../../stage.mjs'
+import { getZ, noteEffectLayout } from '../../utils.mjs'
 
 const lerp = (x: VecLike, y: VecLike, s: number) =>
     new Vec(Math.lerp(x.x, y.x, s), Math.lerp(x.y, y.y, s))

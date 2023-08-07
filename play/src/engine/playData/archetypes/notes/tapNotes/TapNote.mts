@@ -1,10 +1,10 @@
 import { options } from '../../../../configuration/options.mjs'
 import { sfxDistance } from '../../../effect.mjs'
+import { layer } from '../../../layer.mjs'
+import { getScheduleSFXTime, getZ, noteLayout, slotEffectLayout } from '../../../utils.mjs'
+import { windows } from '../../../windows.mjs'
 import { markAsUsed } from '../../InputManager.mjs'
-import { layer } from '../../layer.mjs'
 import { NoteEffect } from '../../noteEffects/NoteEffect.mjs'
-import { getScheduleSFXTime, getZ, noteLayout, slotEffectLayout } from '../../utils.mjs'
-import { windows } from '../../windows.mjs'
 import { Note } from '../Note.mjs'
 
 export abstract class TapNote extends Note {

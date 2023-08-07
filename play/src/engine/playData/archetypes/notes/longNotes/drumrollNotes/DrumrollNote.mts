@@ -1,9 +1,9 @@
 import { options } from '../../../../../configuration/options.mjs'
+import { layer } from '../../../../layer.mjs'
+import { note } from '../../../../note.mjs'
+import { getZ, noteLayout } from '../../../../utils.mjs'
 import { isDon, isUsed } from '../../../InputManager.mjs'
-import { layer } from '../../../layer.mjs'
-import { note } from '../../../note.mjs'
 import { NoteEffect } from '../../../noteEffects/NoteEffect.mjs'
-import { getZ, noteLayout } from '../../../utils.mjs'
 import { Note } from '../../Note.mjs'
 import { LongNote } from '../LongNote.mjs'
 
