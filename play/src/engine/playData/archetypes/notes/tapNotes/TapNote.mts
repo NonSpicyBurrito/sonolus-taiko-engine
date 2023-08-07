@@ -1,6 +1,6 @@
 import { options } from '../../../../configuration/options.mjs'
+import { sfxDistance } from '../../../effect.mjs'
 import { markAsUsed } from '../../InputManager.mjs'
-import { minSFXDistance } from '../../constants.mjs'
 import { layer } from '../../layer.mjs'
 import { NoteEffect } from '../../noteEffects/NoteEffect.mjs'
 import { getScheduleSFXTime, getZ, noteLayout, slotEffectLayout } from '../../utils.mjs'
@@ -137,9 +137,9 @@ export abstract class TapNote extends Note {
 
     scheduleSFX() {
         if (this.useFallbackClip) {
-            this.clips.fallback.schedule(this.targetTime, minSFXDistance)
+            this.clips.fallback.schedule(this.targetTime, sfxDistance)
         } else {
-            this.clips.hit.schedule(this.targetTime, minSFXDistance)
+            this.clips.hit.schedule(this.targetTime, sfxDistance)
         }
 
         this.hasSFXScheduled = true

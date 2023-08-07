@@ -1,10 +1,12 @@
 import { options } from '../../configuration/options.mjs'
-import { effect } from '../effect.mjs'
+import { effect, sfxDistance } from '../effect.mjs'
 import { skin } from '../skin.mjs'
 import { isDon } from './InputManager.mjs'
-import { minSFXDistance } from './constants.mjs'
+import { stage } from './_stage.mjs'
+import { hitTimes } from './hitTimes.mjs'
 import { layer } from './layer.mjs'
-import { hitTimes, note, scaledScreen, stage } from './shared.mjs'
+import { note } from './note.mjs'
+import { scaledScreen } from './scaledScreen.mjs'
 
 export class Stage extends Archetype {
     spawnOrder() {
@@ -54,15 +56,15 @@ export class Stage extends Archetype {
     playSFX(isDon: boolean) {
         if (isDon) {
             if (effect.clips.don.exists) {
-                effect.clips.don.play(minSFXDistance)
+                effect.clips.don.play(sfxDistance)
             } else {
-                effect.clips.donFallback.play(minSFXDistance)
+                effect.clips.donFallback.play(sfxDistance)
             }
         } else {
             if (effect.clips.ka.exists) {
-                effect.clips.ka.play(minSFXDistance)
+                effect.clips.ka.play(sfxDistance)
             } else {
-                effect.clips.kaFallback.play(minSFXDistance)
+                effect.clips.kaFallback.play(sfxDistance)
             }
         }
     }

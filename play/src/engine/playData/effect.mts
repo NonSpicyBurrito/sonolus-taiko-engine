@@ -9,3 +9,5 @@ export const effect = defineEffect({
         kaFallback: EffectClipName.PerfectAlternative,
     },
 })
+
+export const sfxDistance = 0.02

@@ -3,7 +3,7 @@ import { buckets } from '../../../../buckets.mjs'
 import { effect } from '../../../../effect.mjs'
 import { particle } from '../../../../particle.mjs'
 import { isDon, isUsed } from '../../../InputManager.mjs'
-import { hitTimes } from '../../../shared.mjs'
+import { hitTimes } from '../../../hitTimes.mjs'
 import { TapNote } from '../TapNote.mjs'
 
 export abstract class KaNote extends TapNote {

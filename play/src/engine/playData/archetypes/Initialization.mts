@@ -2,8 +2,11 @@ import { options } from '../../configuration/options.mjs'
 import { buckets } from '../buckets.mjs'
 import { particle } from '../particle.mjs'
 import { skin } from '../skin.mjs'
+import { stage } from './_stage.mjs'
+import { hitTimes } from './hitTimes.mjs'
 import { archetypes } from './index.mjs'
-import { hitTimes, note, scaledScreen, stage } from './shared.mjs'
+import { note } from './note.mjs'
+import { scaledScreen } from './scaledScreen.mjs'
 import { windows } from './windows.mjs'
 
 export class Initialization extends Archetype {

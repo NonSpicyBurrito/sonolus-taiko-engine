@@ -1,5 +1,6 @@
 import { options } from '../../configuration/options.mjs'
-import { note, stage } from './shared.mjs'
+import { stage } from './_stage.mjs'
+import { note } from './note.mjs'
 
 export const noteLayout = (isDai: boolean) =>
     layout((isDai ? note.radius.dai : note.radius.normal) * options.noteSize)
