@@ -1,6 +1,6 @@
-import { layer } from '../layer.mjs'
-import { segment, stage } from '../shared.mjs'
-import { skin } from '../skin.mjs'
+import { segment } from '../segment.mjs'
+import { layer, skin } from '../skin.mjs'
+import { stage } from '../stage.mjs'
 
 const sprites = {
     drum: skin.sprites.drum,

@@ -1,6 +1,9 @@
+import { hand } from '../hand.mjs'
+import { note } from '../note.mjs'
 import { particle } from '../particle.mjs'
-import { hand, note, scaledScreen, stage } from '../shared.mjs'
+import { scaledScreen } from '../scaledScreen.mjs'
 import { skin } from '../skin.mjs'
+import { stage } from '../stage.mjs'
 
 export const initialization = {
     preprocess() {

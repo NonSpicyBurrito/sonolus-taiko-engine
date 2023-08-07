@@ -1,7 +1,7 @@
-import { layer } from '../layer.mjs'
-import { scaledScreen, segment } from '../shared.mjs'
-import { skin } from '../skin.mjs'
-import { approach, noteLayout } from '../utils.mjs'
+import { noteLayout } from '../note.mjs'
+import { scaledScreen } from '../scaledScreen.mjs'
+import { segment } from '../segment.mjs'
+import { layer, skin } from '../skin.mjs'
 
 const sprites = {
     don: {
@@ -31,7 +31,7 @@ export const noteDisplay = {
 
             skin.sprites.draw(id, layout, layer.note, a)
         } else {
-            const x = mode === 2 ? approach(segment.time) : 1
+            const x = mode === 2 ? Math.unlerp(0, 2, segment.time) : 1
 
             skin.sprites.draw(id, noteLayout().translate(x, 0), layer.note, 1)
         }

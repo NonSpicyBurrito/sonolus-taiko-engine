@@ -1,6 +1,7 @@
-import { layer } from '../layer.mjs'
-import { note, scaledScreen, stage } from '../shared.mjs'
-import { skin } from '../skin.mjs'
+import { note } from '../note.mjs'
+import { scaledScreen } from '../scaledScreen.mjs'
+import { layer, skin } from '../skin.mjs'
+import { stage } from '../stage.mjs'
 
 const sprites = {
     lane: skin.sprites.lane,

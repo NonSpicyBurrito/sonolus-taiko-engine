@@ -4,6 +4,7 @@ import { noteDisplay } from './components/noteDisplay.mjs'
 import { noteEffect } from './components/noteEffect.mjs'
 import { stageDisplay } from './components/stageDisplay.mjs'
 import { touchDrum } from './components/touchDrum.mjs'
+import { segment } from './segment.mjs'
 import { donNoteFall } from './segments/donNote/fall.mjs'
 import { donNoteFrozen } from './segments/donNote/frozen.mjs'
 import { donNoteHit } from './segments/donNote/hit.mjs'
@@ -12,7 +13,6 @@ import { kaNoteFall } from './segments/kaNote/fall.mjs'
 import { kaNoteFrozen } from './segments/kaNote/frozen.mjs'
 import { kaNoteHit } from './segments/kaNote/hit.mjs'
 import { kaNoteIntro } from './segments/kaNote/intro.mjs'
-import { segment } from './shared.mjs'
 
 const components = [initialization, drum, touchDrum, stageDisplay, noteDisplay, noteEffect] as const
 
