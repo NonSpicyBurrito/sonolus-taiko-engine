@@ -1,7 +1,8 @@
 import { options } from '../../../../configuration/options.mjs'
-import { sfxDistance } from '../../../effect.mjs'
-import { layer } from '../../../skin.mjs'
-import { getScheduleSFXTime, getZ, noteLayout, slotEffectLayout } from '../../../utils.mjs'
+import { getScheduleSFXTime, sfxDistance } from '../../../effect.mjs'
+import { getDuration, noteLayout } from '../../../note.mjs'
+import { slotEffectLayout } from '../../../particle.mjs'
+import { getZ, layer } from '../../../skin.mjs'
 import { windows } from '../../../windows.mjs'
 import { markAsUsed } from '../../InputManager.mjs'
 import { NoteEffect } from '../../noteEffects/NoteEffect.mjs'
@@ -56,7 +57,7 @@ export abstract class TapNote extends Note {
 
         this.scheduleSFXTime = getScheduleSFXTime(this.targetTime)
 
-        const duration = Note.getDuration(bpmChanges.at(this.data.beat).bpm, this.data.speed)
+        const duration = getDuration(bpmChanges.at(this.data.beat).bpm, this.data.speed)
 
         this.visualTime.max = this.targetTime
         this.visualTime.min = this.visualTime.max - duration

@@ -1,5 +1,4 @@
 import { EngineArchetypeDataName } from 'sonolus-core'
-import { options } from '../../../configuration/options.mjs'
 
 export abstract class Note extends Archetype {
     abstract isDai: boolean
@@ -17,9 +16,5 @@ export abstract class Note extends Archetype {
 
     shouldSpawn() {
         return time.now >= this.spawnTime
-    }
-
-    static getDuration(bpm: number, speed: number) {
-        return 240 / bpm / speed / options.noteSpeed
     }
 }

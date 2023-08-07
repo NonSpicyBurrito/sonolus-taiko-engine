@@ -1,10 +1,8 @@
 import { options } from '../../../../../configuration/options.mjs'
-import { note } from '../../../../note.mjs'
-import { layer } from '../../../../skin.mjs'
-import { getZ, noteLayout } from '../../../../utils.mjs'
+import { getDuration, note, noteLayout } from '../../../../note.mjs'
+import { getZ, layer } from '../../../../skin.mjs'
 import { isDon, isUsed } from '../../../InputManager.mjs'
 import { NoteEffect } from '../../../noteEffects/NoteEffect.mjs'
-import { Note } from '../../Note.mjs'
 import { LongNote } from '../LongNote.mjs'
 
 export abstract class DrumrollNote extends LongNote {
@@ -46,7 +44,7 @@ export abstract class DrumrollNote extends LongNote {
     })
 
     preprocess() {
-        const duration = Note.getDuration(bpmChanges.at(this.data.beat).bpm, this.data.speed)
+        const duration = getDuration(bpmChanges.at(this.data.beat).bpm, this.data.speed)
 
         this.visualTime.head.max = bpmChanges.at(this.data.beat).time
         this.visualTime.head.min = this.visualTime.head.max - duration

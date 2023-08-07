@@ -1,9 +1,7 @@
 import { options } from '../../../../../configuration/options.mjs'
-import { note } from '../../../../note.mjs'
-import { layer, skin } from '../../../../skin.mjs'
-import { getZ, noteLayout } from '../../../../utils.mjs'
+import { getDuration, note, noteLayout } from '../../../../note.mjs'
+import { getZ, layer, skin } from '../../../../skin.mjs'
 import { NoteEffect } from '../../../noteEffects/NoteEffect.mjs'
-import { Note } from '../../Note.mjs'
 import { LongNote } from '../LongNote.mjs'
 
 const attachmentSprites = [
@@ -40,7 +38,7 @@ export abstract class BalloonNote extends LongNote {
     })
 
     preprocess() {
-        const duration = Note.getDuration(bpmChanges.at(this.data.beat).bpm, this.data.speed)
+        const duration = getDuration(bpmChanges.at(this.data.beat).bpm, this.data.speed)
 
         this.visualTime.max = bpmChanges.at(this.data.beat).time
         this.visualTime.min = this.visualTime.max - duration
