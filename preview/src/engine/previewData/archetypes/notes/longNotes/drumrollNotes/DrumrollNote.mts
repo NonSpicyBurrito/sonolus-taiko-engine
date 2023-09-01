@@ -48,7 +48,7 @@ export abstract class DrumrollNote extends LongNote {
             }).translate(0, i)
 
             if (this.useFallbackConnectionSprite) {
-                this.sprites.connectionFallback.draw(layout, z, 1)
+                this.sprites.connectionFallback.draw(layout.toQuad().swapRotate90(), z, 1)
             } else {
                 this.sprites.connection.draw(layout, z, 1)
             }
