@@ -48,8 +48,8 @@ export const line = (sprite: SkinSprite, beat: number, a: number) => {
         new Rect({
             l: -0.0025,
             r: 0.0025,
-            t: -0.3,
-            b: 0.3,
+            t: -1.5,
+            b: 1.5,
         }).add(pos),
         layer.line,
         a,

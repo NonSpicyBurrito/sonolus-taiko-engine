@@ -23,12 +23,14 @@ export class Stage extends Archetype {
 
     renderPanels() {
         for (let i = 0; i < panel.count; i++) {
+            const y = i * panel.h
+
             skin.sprites.lane.draw(
                 new Rect({
                     l: 0,
                     r: panel.w,
-                    t: i - 0.3,
-                    b: i + 0.3,
+                    t: y - 1.5,
+                    b: y + 1.5,
                 })
                     .toQuad()
                     .swapRotate90(),

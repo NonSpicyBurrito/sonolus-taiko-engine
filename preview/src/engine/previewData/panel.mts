@@ -4,6 +4,7 @@ export const panel = {
     get w() {
         return screen.aspectRatio
     },
+    h: 5,
 
     get count() {
         return Math.ceil(chart.duration / this.w)
@@ -14,7 +15,7 @@ export const panel = {
     },
 
     getY(time: number) {
-        return Math.floor(time / this.w)
+        return Math.floor(time / this.w) * this.h
     },
 
     getPos(time: number) {

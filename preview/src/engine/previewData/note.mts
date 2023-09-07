@@ -1,6 +1,13 @@
+import { panel } from './panel.mjs'
+
 export const note = {
     radius: {
-        normal: (0.78 * 104) / 158,
-        dai: 0.78,
+        get normal() {
+            return (this.dai * 104) / 158
+        },
+
+        get dai() {
+            return panel.h * 0.78
+        },
     },
 }

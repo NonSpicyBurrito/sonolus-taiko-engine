@@ -4,8 +4,8 @@ import { skin } from '../skin.mjs'
 export class Initialization extends Archetype {
     preprocess() {
         const transform = Mat.identity
-            .translate(0, 0.5)
-            .scale(screen.w / panel.w, -screen.h / 4)
+            .translate(0, panel.h / 2)
+            .scale(screen.w / panel.w, -screen.h / 20)
             .translate(screen.l, screen.t)
         skin.transform.set(transform)
 

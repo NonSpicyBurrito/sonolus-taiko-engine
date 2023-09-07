@@ -35,6 +35,8 @@ export abstract class DrumrollNote extends LongNote {
         const z = getZ(layer.note, t.min, 1)
 
         for (let i = index.min; i <= index.max; i++) {
+            const y = i * panel.h
+
             const pt = {
                 min: Math.max(t.min, i * panel.w),
                 max: Math.min(t.max, (i + 1) * panel.w),
@@ -45,7 +47,7 @@ export abstract class DrumrollNote extends LongNote {
                 r: pt.max - i * panel.w,
                 t: -this.h,
                 b: this.h,
-            }).translate(0, i)
+            }).translate(0, y)
 
             if (this.useFallbackConnectionSprite) {
                 this.sprites.connectionFallback.draw(layout.toQuad().swapRotate90(), z, 1)

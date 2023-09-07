@@ -13,7 +13,7 @@ export const print = (
         value,
         format,
         decimalPlaces,
-        anchor: getAnchor(panel.getPos(time).translate(0, side === 'top' ? -0.3 : 0.3)),
+        anchor: getAnchor(panel.getPos(time).translate(0, side === 'top' ? -1.5 : 1.5)),
         pivot: { x: 0.5, y: side === 'top' ? 0 : 1 },
         size: { x: screen.h / 10, y: screen.h / 20 },
         rotation: 0,
