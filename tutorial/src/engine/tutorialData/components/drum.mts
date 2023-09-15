@@ -14,7 +14,13 @@ const sprites = {
     },
 }
 
-let mode = tutorialMemory(DataType<0 | 1 | 2>)
+enum Mode {
+    None,
+    Don,
+    Ka,
+}
+
+let mode = tutorialMemory(DataType<Mode>)
 
 export const drum = {
     update() {
@@ -43,7 +49,7 @@ export const drum = {
 
         const a = 1 - Math.unlerpClamped(0, 0.1, segment.time)
 
-        if (mode === 1) {
+        if (mode === Mode.Don) {
             sprites.don.left.draw(layout, layer.drumHit, a)
             sprites.don.right.draw(layout, layer.drumHit, a)
         } else {
@@ -53,10 +59,10 @@ export const drum = {
     },
 
     hit(type: 'don' | 'ka') {
-        mode = type === 'don' ? 1 : 2
+        mode = type === 'don' ? Mode.Don : Mode.Ka
     },
 
     clear() {
-        mode = 0
+        mode = Mode.None
     },
 }

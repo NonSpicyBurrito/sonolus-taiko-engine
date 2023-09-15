@@ -6,11 +6,11 @@ export { tjaToTJC } from './tja/convert.cjs'
 export { tjcToLevelData } from './tjc/convert.cjs'
 export * from './tjc/index.cjs'
 
-export const version = '1.1.0'
+export const version = '1.2.0'
 
 export const engineInfo = {
     name: 'taiko',
-    version: 9,
+    version: 10,
     title: {
         en: 'Taiko',
         ja: '太鼓',
@@ -43,5 +43,6 @@ export const engineInfo = {
 
 export const engineConfiguration = new Resource('EngineConfiguration')
 export const enginePlayData = new Resource('EnginePlayData')
+export const enginePreviewData = new Resource('EnginePreviewData')
 export const engineTutorialData = new Resource('EngineTutorialData')
 export const engineThumbnail = new Resource('thumbnail.png')
