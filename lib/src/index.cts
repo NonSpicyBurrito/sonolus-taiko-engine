@@ -10,7 +10,7 @@ export const version = '1.2.0'
 
 export const engineInfo = {
     name: 'taiko',
-    version: 10,
+    version: 11,
     title: {
         en: 'Taiko',
         ja: '太鼓',
