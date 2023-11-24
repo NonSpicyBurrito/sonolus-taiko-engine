@@ -80,7 +80,6 @@ export abstract class DrumrollNote extends LongNote {
 
     touchOrder = 2
     touch() {
-        if (options.autoplay) return
         if (!options.noteEffectEnabled) return
 
         if (time.now < this.visualTime.head.max) return

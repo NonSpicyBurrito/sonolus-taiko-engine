@@ -13,8 +13,6 @@ export class Stage extends Archetype {
     }
 
     touch() {
-        if (options.autoplay) return
-
         for (const touch of touches) {
             if (!touch.started) continue
 
@@ -49,7 +47,7 @@ export class Stage extends Archetype {
     }
 
     get shouldPlaySFX() {
-        return options.sfxEnabled && !options.autoplay && !options.autoSFX
+        return options.sfxEnabled && !options.autoSFX
     }
 
     playSFX(isDon: boolean) {

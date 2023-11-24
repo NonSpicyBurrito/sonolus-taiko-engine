@@ -95,7 +95,7 @@ export abstract class TapNote extends Note {
     }
 
     get shouldScheduleSFX() {
-        return options.sfxEnabled && (options.autoplay || options.autoSFX)
+        return options.sfxEnabled && options.autoSFX
     }
 
     globalInitialize() {

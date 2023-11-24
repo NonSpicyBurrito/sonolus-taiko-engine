@@ -78,19 +78,12 @@ export abstract class TapNote extends Note {
 
         this.z = getZ(layer.note, this.targetTime)
 
-        if (options.autoplay) {
-            this.result.judgment = Judgment.Perfect
-
-            this.result.bucket.index = this.bucket.index
-        } else {
-            this.result.accuracy = windows.good.max
-        }
+        this.result.accuracy = windows.good.max
     }
 
     touchOrder = 1
 
     updateParallel() {
-        if (options.autoplay && time.now >= this.targetTime) this.despawn = true
         if (time.now > this.inputTime.max) this.despawn = true
         if (this.despawn) return
 
@@ -103,13 +96,6 @@ export abstract class TapNote extends Note {
         this.render()
     }
 
-    terminate() {
-        if (!options.autoplay) return
-
-        if (options.noteEffectEnabled) this.playNoteEffect()
-        if (options.slotEffectEnabled) this.playSlotEffect()
-    }
-
     get useFallbackSprite() {
         return !this.sprites.note.exists
     }
@@ -119,7 +105,7 @@ export abstract class TapNote extends Note {
     }
 
     get shouldScheduleSFX() {
-        return options.sfxEnabled && (options.autoplay || options.autoSFX)
+        return options.sfxEnabled && options.autoSFX
     }
 
     complete(touch: Touch) {
