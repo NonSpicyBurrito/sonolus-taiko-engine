@@ -108,18 +108,18 @@ export abstract class BalloonNote extends LongNote {
             t < 0.125
                 ? attachmentSprites[0].id
                 : t < 0.25
-                ? attachmentSprites[1].id
-                : t < 0.375
-                ? attachmentSprites[2].id
-                : t < 0.5
-                ? attachmentSprites[3].id
-                : t < 0.625
-                ? attachmentSprites[4].id
-                : t < 0.75
-                ? attachmentSprites[5].id
-                : t < 0.875
-                ? attachmentSprites[6].id
-                : attachmentSprites[7].id
+                  ? attachmentSprites[1].id
+                  : t < 0.375
+                    ? attachmentSprites[2].id
+                    : t < 0.5
+                      ? attachmentSprites[3].id
+                      : t < 0.625
+                        ? attachmentSprites[4].id
+                        : t < 0.75
+                          ? attachmentSprites[5].id
+                          : t < 0.875
+                            ? attachmentSprites[6].id
+                            : attachmentSprites[7].id
 
         const layout = new Rect({
             l: 0,
