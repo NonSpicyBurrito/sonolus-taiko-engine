@@ -1,6 +1,6 @@
 {
   "name": "sonolus-taiko-engine",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A recreation of Taiko no Tatsujin engine in Sonolus",
   "author": "NonSpicyBurrito",
   "repository": "github:NonSpicyBurrito/sonolus-taiko-engine",
