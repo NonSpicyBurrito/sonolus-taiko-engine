@@ -23,6 +23,8 @@ export abstract class BalloonNote extends LongNote {
 
     abstract noteEffect: NoteEffect
 
+    initialized = this.entityMemory(Boolean)
+
     visualTime = this.entityMemory({
         min: Number,
         max: Number,
@@ -42,13 +44,41 @@ export abstract class BalloonNote extends LongNote {
 
         this.visualTime.max = bpmChanges.at(this.data.beat).time
         this.visualTime.min = this.visualTime.max - duration
+        this.visualTime.tail = bpmChanges.at(this.longData.tailBeat).time
 
-        this.spawnTime = this.visualTime.min
+        if (options.noteEffectEnabled) this.spawnNoteEffect()
+    }
+
+    spawnTime() {
+        return this.visualTime.min
+    }
+
+    despawnTime() {
+        return this.visualTime.tail
     }
 
     initialize() {
-        this.visualTime.tail = bpmChanges.at(this.longData.tailBeat).time
+        if (this.initialized) return
+        this.initialized = true
 
+        this.globalInitialize()
+    }
+
+    updateParallel() {
+        if (options.hidden > 0 && time.now > this.visualTime.hidden) return
+
+        this.render()
+    }
+
+    get useFallbackSprite() {
+        return !this.sprites.note.exists
+    }
+
+    get shouldRenderAttachment() {
+        return attachmentSprites.every((sprite) => sprite.exists)
+    }
+
+    globalInitialize() {
         if (options.hidden > 0)
             this.visualTime.hidden = Math.lerp(
                 this.visualTime.max,
@@ -59,27 +89,6 @@ export abstract class BalloonNote extends LongNote {
         this.note.z = getZ(layer.note, this.visualTime.max)
 
         this.attachment.z = getZ(layer.note, this.visualTime.max, -1)
-    }
-
-    updateParallel() {
-        if (time.now >= this.visualTime.tail) this.despawn = true
-        if (this.despawn) return
-
-        if (options.hidden > 0 && time.now > this.visualTime.hidden) return
-
-        this.render()
-    }
-
-    terminate() {
-        if (options.noteEffectEnabled) this.playNoteEffect()
-    }
-
-    get useFallbackSprite() {
-        return !this.sprites.note.exists
-    }
-
-    get shouldRenderAttachment() {
-        return attachmentSprites.every((sprite) => sprite.exists)
     }
 
     render() {
@@ -133,9 +142,9 @@ export abstract class BalloonNote extends LongNote {
         skin.sprites.draw(id, layout, this.attachment.z, 1)
     }
 
-    playNoteEffect() {
+    spawnNoteEffect() {
         this.noteEffect.spawn({
-            startTime: time.now,
+            startTime: this.visualTime.tail,
         })
     }
 }

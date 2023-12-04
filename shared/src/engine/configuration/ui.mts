@@ -24,6 +24,10 @@ export const ui: EngineConfigurationUI = {
         scale: 0,
         alpha: 0,
     },
+    progressVisibility: {
+        scale: 1,
+        alpha: 1,
+    },
     tutorialNavigationVisibility: {
         scale: 1,
         alpha: 1,

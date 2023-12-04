@@ -1,11 +1,10 @@
 import { options } from '../../../../configuration/options.mjs'
-import { getScheduleSFXTime, sfxDistance } from '../../../effect.mjs'
+import { sfxDistance } from '../../../effect.mjs'
 import { getDuration, noteLayout } from '../../../note.mjs'
 import { slotEffectLayout } from '../../../particle.mjs'
 import { getZ, layer } from '../../../skin.mjs'
-import { windows } from '../../../windows.mjs'
-import { markAsUsed } from '../../InputManager.mjs'
 import { NoteEffect } from '../../noteEffects/NoteEffect.mjs'
+import { NoteHit } from '../../noteHits/NoteHit.mjs'
 import { Note } from '../Note.mjs'
 
 export abstract class TapNote extends Note {
@@ -21,29 +20,20 @@ export abstract class TapNote extends Note {
         fallback: EffectClip
     }
 
-    abstract effects: {
-        hit: ParticleEffect
-    }
-
-    abstract bucket: Bucket
+    abstract effect: ParticleEffect
 
     abstract noteEffect: NoteEffect
 
-    targetTime = this.entityMemory(Number)
+    abstract noteHit: NoteHit
 
-    scheduleSFXTime = this.entityMemory(Number)
+    initialized = this.entityMemory(Boolean)
+
+    targetTime = this.entityMemory(Number)
 
     visualTime = this.entityMemory({
         min: Number,
         max: Number,
         hidden: Number,
-    })
-
-    hasSFXScheduled = this.entityMemory(Boolean)
-
-    inputTime = this.entityMemory({
-        min: Number,
-        max: Number,
     })
 
     z = this.entityMemory(Number)
@@ -55,45 +45,45 @@ export abstract class TapNote extends Note {
     preprocess() {
         this.targetTime = bpmChanges.at(this.data.beat).time
 
-        this.scheduleSFXTime = getScheduleSFXTime(this.targetTime)
-
         const duration = getDuration(bpmChanges.at(this.data.beat).bpm, this.data.speed)
 
         this.visualTime.max = this.targetTime
         this.visualTime.min = this.visualTime.max - duration
 
-        this.spawnTime = Math.min(this.visualTime.min, this.scheduleSFXTime)
+        if (options.noteEffectEnabled) this.spawnNoteEffect()
+
+        this.spawnNoteHit()
+
+        if (options.sfxEnabled) this.scheduleSFX()
+
+        this.result.time = this.targetTime
+    }
+
+    spawnTime() {
+        return this.visualTime.min
+    }
+
+    despawnTime() {
+        return this.visualTime.max
     }
 
     initialize() {
-        if (options.hidden > 0)
-            this.visualTime.hidden = Math.lerp(
-                this.visualTime.max,
-                this.visualTime.min,
-                options.hidden,
-            )
+        if (this.initialized) return
+        this.initialized = true
 
-        this.inputTime.min = this.targetTime + windows.good.min + input.offset
-        this.inputTime.max = this.targetTime + windows.good.max + input.offset
-
-        this.z = getZ(layer.note, this.targetTime)
-
-        this.result.accuracy = windows.good.max
+        this.globalInitialize()
     }
 
-    touchOrder = 1
-
     updateParallel() {
-        if (time.now > this.inputTime.max) this.despawn = true
-        if (this.despawn) return
-
-        if (this.shouldScheduleSFX && !this.hasSFXScheduled && time.now >= this.scheduleSFXTime)
-            this.scheduleSFX()
-
-        if (time.now < this.visualTime.min) return
         if (options.hidden > 0 && time.now > this.visualTime.hidden) return
 
         this.render()
+    }
+
+    terminate() {
+        if (time.skip) return
+
+        this.despawnTerminate()
     }
 
     get useFallbackSprite() {
@@ -108,18 +98,15 @@ export abstract class TapNote extends Note {
         return options.sfxEnabled && options.autoSFX
     }
 
-    complete(touch: Touch) {
-        markAsUsed(touch)
+    globalInitialize() {
+        if (options.hidden > 0)
+            this.visualTime.hidden = Math.lerp(
+                this.visualTime.max,
+                this.visualTime.min,
+                options.hidden,
+            )
 
-        this.result.judgment = input.judge(touch.startTime, this.targetTime, windows)
-        this.result.accuracy = touch.startTime - this.targetTime
-
-        this.result.bucket.index = this.bucket.index
-        this.result.bucket.value = this.result.accuracy * 1000
-
-        this.playHitEffects()
-
-        this.despawn = true
+        this.z = getZ(layer.note, this.targetTime)
     }
 
     scheduleSFX() {
@@ -128,8 +115,6 @@ export abstract class TapNote extends Note {
         } else {
             this.clips.hit.schedule(this.targetTime, sfxDistance)
         }
-
-        this.hasSFXScheduled = true
     }
 
     render() {
@@ -144,20 +129,25 @@ export abstract class TapNote extends Note {
         }
     }
 
-    playHitEffects() {
-        if (options.noteEffectEnabled) this.playNoteEffect()
+    despawnTerminate() {
         if (options.slotEffectEnabled) this.playSlotEffect()
     }
 
-    playNoteEffect() {
+    spawnNoteEffect() {
         this.noteEffect.spawn({
-            startTime: time.now,
+            startTime: this.targetTime,
+        })
+    }
+
+    spawnNoteHit() {
+        this.noteHit.spawn({
+            startTime: this.targetTime,
         })
     }
 
     playSlotEffect() {
         const layout = slotEffectLayout().translate(1, 0)
 
-        this.effects.hit.spawn(layout, 0.3, false)
+        this.effect.spawn(layout, 0.3, false)
     }
 }

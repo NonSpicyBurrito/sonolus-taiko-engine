@@ -1,8 +1,6 @@
 import { options } from '../../../../../configuration/options.mjs'
 import { getDuration, note, noteLayout } from '../../../../note.mjs'
 import { getZ, layer } from '../../../../skin.mjs'
-import { isDon, isUsed } from '../../../InputManager.mjs'
-import { NoteEffect } from '../../../noteEffects/NoteEffect.mjs'
 import { LongNote } from '../LongNote.mjs'
 
 export abstract class DrumrollNote extends LongNote {
@@ -15,10 +13,7 @@ export abstract class DrumrollNote extends LongNote {
         connectionFallback: SkinSprite
     }
 
-    abstract noteEffects: {
-        don: NoteEffect
-        ka: NoteEffect
-    }
+    initialized = this.entityMemory(Boolean)
 
     visualTime = this.entityMemory({
         head: {
@@ -49,11 +44,41 @@ export abstract class DrumrollNote extends LongNote {
         this.visualTime.head.max = bpmChanges.at(this.data.beat).time
         this.visualTime.head.min = this.visualTime.head.max - duration
 
-        this.spawnTime = this.visualTime.head.min
+        this.visualTime.tail.max = bpmChanges.at(this.longData.tailBeat).time
+    }
+
+    spawnTime() {
+        return this.visualTime.head.min
+    }
+
+    despawnTime() {
+        return this.visualTime.tail.max
     }
 
     initialize() {
-        this.visualTime.tail.max = bpmChanges.at(this.longData.tailBeat).time
+        if (this.initialized) return
+        this.initialized = true
+
+        this.globalInitialize()
+    }
+
+    updateParallel() {
+        this.render()
+    }
+
+    get useFallbackHeadSprite() {
+        return !this.sprites.head.exists
+    }
+
+    get useFallbackTailSprite() {
+        return !this.sprites.tail.exists
+    }
+
+    get useFallbackConnectionSprite() {
+        return !this.sprites.connection.exists
+    }
+
+    globalInitialize() {
         this.visualTime.tail.min =
             this.visualTime.tail.max - this.visualTime.head.max + this.visualTime.head.min
 
@@ -76,47 +101,6 @@ export abstract class DrumrollNote extends LongNote {
         this.connection.z = getZ(layer.note, this.visualTime.head.max, 1)
 
         this.tail.z = getZ(layer.note, this.visualTime.head.max, 2)
-    }
-
-    touchOrder = 2
-    touch() {
-        if (!options.noteEffectEnabled) return
-
-        if (time.now < this.visualTime.head.max) return
-
-        for (const touch of touches) {
-            if (!touch.started) continue
-            if (isUsed(touch)) continue
-
-            if (isDon(touch)) {
-                this.noteEffects.don.spawn({
-                    startTime: time.now,
-                })
-            } else {
-                this.noteEffects.ka.spawn({
-                    startTime: time.now,
-                })
-            }
-        }
-    }
-
-    updateParallel() {
-        if (time.now >= this.visualTime.tail.max) this.despawn = true
-        if (this.despawn) return
-
-        this.render()
-    }
-
-    get useFallbackHeadSprite() {
-        return !this.sprites.head.exists
-    }
-
-    get useFallbackTailSprite() {
-        return !this.sprites.tail.exists
-    }
-
-    get useFallbackConnectionSprite() {
-        return !this.sprites.connection.exists
     }
 
     render() {

@@ -1,41 +1,21 @@
 import { options } from '../../configuration/options.mjs'
-import { effect, sfxDistance } from '../effect.mjs'
-import { hitTimes } from '../hitTimes.mjs'
+import { hitTimes, resetHitTimes } from '../hitTimes.mjs'
 import { note } from '../note.mjs'
 import { scaledScreen } from '../scaledScreen.mjs'
 import { layer, skin } from '../skin.mjs'
 import { stage } from '../stage.mjs'
-import { isDon } from './InputManager.mjs'
 
 export class Stage extends Archetype {
-    spawnOrder() {
-        return 2
+    spawnTime() {
+        return -999999
     }
 
-    touch() {
-        for (const touch of touches) {
-            if (!touch.started) continue
+    despawnTime() {
+        return 999999
+    }
 
-            hitTimes.any = time.now
-
-            if (isDon(touch)) {
-                if (touch.position.x >= 0) {
-                    hitTimes.don.right = time.now
-                } else {
-                    hitTimes.don.left = time.now
-                }
-
-                if (this.shouldPlaySFX) this.playSFX(true)
-            } else {
-                if (touch.position.x >= 0) {
-                    hitTimes.ka.right = time.now
-                } else {
-                    hitTimes.ka.left = time.now
-                }
-
-                if (this.shouldPlaySFX) this.playSFX(false)
-            }
-        }
+    updateSequential() {
+        if (time.skip) resetHitTimes()
     }
 
     updateParallel() {
@@ -44,26 +24,6 @@ export class Stage extends Archetype {
         this.drawTouchDrum()
 
         this.drawStageCover()
-    }
-
-    get shouldPlaySFX() {
-        return options.sfxEnabled && !options.autoSFX
-    }
-
-    playSFX(isDon: boolean) {
-        if (isDon) {
-            if (effect.clips.don.exists) {
-                effect.clips.don.play(sfxDistance)
-            } else {
-                effect.clips.donFallback.play(sfxDistance)
-            }
-        } else {
-            if (effect.clips.ka.exists) {
-                effect.clips.ka.play(sfxDistance)
-            } else {
-                effect.clips.kaFallback.play(sfxDistance)
-            }
-        }
     }
 
     drawStage() {
@@ -92,10 +52,10 @@ export class Stage extends Archetype {
 
     drawDrum() {
         const parts = [
-            [skin.sprites.drumDonLeft, hitTimes.don.left],
-            [skin.sprites.drumDonRight, hitTimes.don.right],
-            [skin.sprites.drumKaLeft, hitTimes.ka.left],
-            [skin.sprites.drumKaRight, hitTimes.ka.right],
+            [skin.sprites.drumDonLeft, hitTimes.don],
+            [skin.sprites.drumDonRight, hitTimes.don],
+            [skin.sprites.drumKaLeft, hitTimes.ka],
+            [skin.sprites.drumKaRight, hitTimes.ka],
         ] as const
 
         for (const [sprite] of parts) {
