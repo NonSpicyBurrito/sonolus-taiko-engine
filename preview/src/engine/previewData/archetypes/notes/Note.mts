@@ -13,12 +13,12 @@ export abstract class Note extends Archetype {
         fallback: SkinSprite
     }
 
-    data = this.defineData({
+    import = this.defineImport({
         beat: { name: EngineArchetypeDataName.Beat, type: Number },
     })
 
     render() {
-        const time = bpmChanges.at(this.data.beat).time
+        const time = bpmChanges.at(this.import.beat).time
         const pos = panel.getPos(time)
 
         const z = getZ(layer.note, time)

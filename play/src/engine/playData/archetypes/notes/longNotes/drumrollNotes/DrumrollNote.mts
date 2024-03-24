@@ -44,16 +44,16 @@ export abstract class DrumrollNote extends LongNote {
     })
 
     preprocess() {
-        const duration = getDuration(bpmChanges.at(this.data.beat).bpm, this.data.speed)
+        const duration = getDuration(bpmChanges.at(this.import.beat).bpm, this.import.speed)
 
-        this.visualTime.head.max = bpmChanges.at(this.data.beat).time
+        this.visualTime.head.max = bpmChanges.at(this.import.beat).time
         this.visualTime.head.min = this.visualTime.head.max - duration
 
         this.spawnTime = this.visualTime.head.min
     }
 
     initialize() {
-        this.visualTime.tail.max = bpmChanges.at(this.longData.tailBeat).time
+        this.visualTime.tail.max = bpmChanges.at(this.longImport.tailBeat).time
         this.visualTime.tail.min =
             this.visualTime.tail.max - this.visualTime.head.max + this.visualTime.head.min
 
