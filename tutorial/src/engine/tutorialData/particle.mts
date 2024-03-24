@@ -5,7 +5,7 @@ import { stage } from './stage.mjs'
 export const particle = defineParticle({
     effects: {
         donHit: ParticleEffectName.NoteCircularTapRed,
-        kaHit: ParticleEffectName.NoteCircularTapBlue,
+        kaHit: ParticleEffectName.NoteCircularTapCyan,
     },
 })
 
