@@ -9,15 +9,7 @@ export const markAsUsed = (touch: Touch) => usedTouchIds.add(touch.id)
 export const isDon = (touch: Touch) =>
     touch.position.sub(new Vec(0, screen.b)).length <= screen.h * options.drumSize
 
-export class InputManager extends Archetype {
-    spawnOrder() {
-        return 1
-    }
-
-    shouldSpawn() {
-        return entityInfos.get(0).state === EntityState.Despawned
-    }
-
+export class InputManager extends SpawnableArchetype({}) {
     touch() {
         usedTouchIds.clear()
     }

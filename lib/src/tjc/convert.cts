@@ -26,10 +26,6 @@ export const tjcToLevelData = (tjc: TJC, offset = 0): LevelData => {
             data: [],
         },
         {
-            archetype: 'InputManager',
-            data: [],
-        },
-        {
             archetype: 'Stage',
             data: [],
         },

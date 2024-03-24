@@ -136,6 +136,8 @@ export class Initialization extends Archetype {
     }
 
     updateSequential() {
+        archetypes.InputManager.spawn({})
+
         this.despawn = true
     }
 }
