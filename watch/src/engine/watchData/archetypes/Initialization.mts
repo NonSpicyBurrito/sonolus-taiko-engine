@@ -1,4 +1,6 @@
+import { windows } from '../../../../../shared/src/engine/data/windows.mjs'
 import { options } from '../../configuration/options.mjs'
+import { buckets } from '../buckets.mjs'
 import { resetHitTimes } from '../hitTimes.mjs'
 import { note } from '../note.mjs'
 import { particle } from '../particle.mjs'
@@ -30,6 +32,19 @@ export class Initialization extends Archetype {
         particle.transform.set(transform)
 
         resetHitTimes()
+
+        const toMs = ({ min, max }: JudgmentWindow) => ({
+            min: Math.round(min * 1000),
+            max: Math.round(max * 1000),
+        })
+
+        for (const bucket of [buckets.donNote, buckets.kaNote]) {
+            bucket.set({
+                perfect: toMs(windows.perfect),
+                great: toMs(windows.great),
+                good: toMs(windows.good),
+            })
+        }
 
         score.base.set({
             perfect: 1,

@@ -1,33 +1,4 @@
-import { Text } from 'sonolus-core'
+import { createBucketDefinition } from '../../../../shared/src/engine/data/buckets.mjs'
 import { skin } from './skin.mjs'
 
-export const buckets = defineBuckets({
-    donNote: {
-        sprites: [
-            {
-                id: skin.sprites.don.id,
-                fallbackId: skin.sprites.donFallback.id,
-                x: 0,
-                y: 0,
-                w: 2,
-                h: 2,
-                rotation: 0,
-            },
-        ],
-        unit: Text.MillisecondUnit,
-    },
-    kaNote: {
-        sprites: [
-            {
-                id: skin.sprites.ka.id,
-                fallbackId: skin.sprites.kaFallback.id,
-                x: 0,
-                y: 0,
-                w: 2,
-                h: 2,
-                rotation: 0,
-            },
-        ],
-        unit: Text.MillisecondUnit,
-    },
-})
+export const buckets = defineBuckets(createBucketDefinition(skin.sprites))

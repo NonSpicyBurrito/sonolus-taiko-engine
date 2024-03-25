@@ -28,6 +28,8 @@ export abstract class TapNote extends Note {
 
     abstract effect: ParticleEffect
 
+    abstract bucket: Bucket
+
     abstract noteEffect: NoteEffect
 
     abstract noteHit: NoteHit
@@ -71,6 +73,13 @@ export abstract class TapNote extends Note {
         }
 
         this.result.time = this.targetTime
+
+        if (!replay.isReplay) {
+            this.result.bucket.index = this.bucket.index
+        } else if (this.tapImport.judgment) {
+            this.result.bucket.index = this.bucket.index
+            this.result.bucket.value = this.tapImport.accuracy * 1000
+        }
     }
 
     spawnTime() {
