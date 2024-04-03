@@ -1,5 +1,5 @@
+import { DatabaseEngineItem } from '@sonolus/core'
 import { resolve } from 'node:path'
-import { DatabaseEngineItem } from 'sonolus-core'
 
 export { osuToTJC } from './osu/convert.cjs'
 export { tjaToTJC } from './tja/convert.cjs'

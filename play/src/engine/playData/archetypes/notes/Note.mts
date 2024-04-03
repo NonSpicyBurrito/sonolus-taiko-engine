@@ -1,4 +1,4 @@
-import { EngineArchetypeDataName } from 'sonolus-core'
+import { EngineArchetypeDataName } from '@sonolus/core'
 
 export abstract class Note extends Archetype {
     abstract isDai: boolean
