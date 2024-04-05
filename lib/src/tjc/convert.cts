@@ -3,7 +3,7 @@ import {
     EngineArchetypeName,
     LevelData,
     LevelDataEntity,
-} from 'sonolus-core'
+} from '@sonolus/core'
 import {
     TJC,
     TJCBalloonNote,
@@ -23,10 +23,6 @@ export const tjcToLevelData = (tjc: TJC, offset = 0): LevelData => {
     const entities: LevelDataEntity[] = [
         {
             archetype: 'Initialization',
-            data: [],
-        },
-        {
-            archetype: 'InputManager',
             data: [],
         },
         {

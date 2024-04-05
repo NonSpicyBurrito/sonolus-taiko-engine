@@ -1,4 +1,4 @@
-import { EngineArchetypeDataName } from 'sonolus-core'
+import { EngineArchetypeDataName } from '@sonolus/core'
 import { options } from '../../../configuration/options.mjs'
 import { note } from '../../note.mjs'
 import { panel } from '../../panel.mjs'
@@ -13,12 +13,12 @@ export abstract class Note extends Archetype {
         fallback: SkinSprite
     }
 
-    data = this.defineData({
+    import = this.defineImport({
         beat: { name: EngineArchetypeDataName.Beat, type: Number },
     })
 
     render() {
-        const time = bpmChanges.at(this.data.beat).time
+        const time = bpmChanges.at(this.import.beat).time
         const pos = panel.getPos(time)
 
         const z = getZ(layer.note, time)

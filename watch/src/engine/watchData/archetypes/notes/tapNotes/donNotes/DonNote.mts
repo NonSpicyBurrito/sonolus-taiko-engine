@@ -1,3 +1,4 @@
+import { buckets } from '../../../../buckets.mjs'
 import { effect } from '../../../../effect.mjs'
 import { particle } from '../../../../particle.mjs'
 import { archetypes } from '../../../index.mjs'
@@ -10,6 +11,8 @@ export abstract class DonNote extends TapNote {
     }
 
     effect = particle.effects.donHit
+
+    bucket = buckets.donNote
 
     get noteHit() {
         return archetypes.DonNoteHit

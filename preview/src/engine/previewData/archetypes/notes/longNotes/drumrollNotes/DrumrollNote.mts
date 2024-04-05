@@ -23,8 +23,8 @@ export abstract class DrumrollNote extends LongNote {
 
     renderConnection() {
         const t = {
-            min: bpmChanges.at(this.data.beat).time,
-            max: bpmChanges.at(this.longData.tailBeat).time,
+            min: bpmChanges.at(this.import.beat).time,
+            max: bpmChanges.at(this.longImport.tailBeat).time,
         }
 
         const index = {
@@ -58,7 +58,7 @@ export abstract class DrumrollNote extends LongNote {
     }
 
     renderTail() {
-        const time = bpmChanges.at(this.longData.tailBeat).time
+        const time = bpmChanges.at(this.longImport.tailBeat).time
         const pos = panel.getPos(time)
 
         const z = getZ(layer.note, time, 2)

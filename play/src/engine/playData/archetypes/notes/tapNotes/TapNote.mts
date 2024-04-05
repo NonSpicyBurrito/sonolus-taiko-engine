@@ -1,9 +1,9 @@
+import { windows } from '../../../../../../../shared/src/engine/data/windows.mjs'
 import { options } from '../../../../configuration/options.mjs'
 import { getScheduleSFXTime, sfxDistance } from '../../../effect.mjs'
 import { getDuration, noteLayout } from '../../../note.mjs'
 import { slotEffectLayout } from '../../../particle.mjs'
 import { getZ, layer } from '../../../skin.mjs'
-import { windows } from '../../../windows.mjs'
 import { markAsUsed } from '../../InputManager.mjs'
 import { NoteEffect } from '../../noteEffects/NoteEffect.mjs'
 import { Note } from '../Note.mjs'
@@ -53,11 +53,11 @@ export abstract class TapNote extends Note {
     }
 
     preprocess() {
-        this.targetTime = bpmChanges.at(this.data.beat).time
+        this.targetTime = bpmChanges.at(this.import.beat).time
 
         this.scheduleSFXTime = getScheduleSFXTime(this.targetTime)
 
-        const duration = getDuration(bpmChanges.at(this.data.beat).bpm, this.data.speed)
+        const duration = getDuration(bpmChanges.at(this.import.beat).bpm, this.import.speed)
 
         this.visualTime.max = this.targetTime
         this.visualTime.min = this.visualTime.max - duration

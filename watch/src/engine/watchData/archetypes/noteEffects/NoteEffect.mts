@@ -56,9 +56,6 @@ export abstract class NoteEffect extends SpawnableArchetype({
     }
 
     globalInitialize() {
-        debug.log(this.spawnData.startTime)
-        debug.log(this.animationTimes.middle)
-        debug.log(this.animationTimes.end)
         this.z = getZ(layer.effect, this.spawnData.startTime)
     }
 

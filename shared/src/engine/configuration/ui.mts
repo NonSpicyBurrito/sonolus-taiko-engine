@@ -1,4 +1,4 @@
-import { EngineConfigurationUI } from 'sonolus-core'
+import { EngineConfigurationUI } from '@sonolus/core'
 
 export const ui: EngineConfigurationUI = {
     scope: 'Taiko',
@@ -41,13 +41,13 @@ export const ui: EngineConfigurationUI = {
             from: 1,
             to: 1,
             duration: 0,
-            ease: 'Linear',
+            ease: 'linear',
         },
         alpha: {
             from: 1,
             to: 0,
             duration: 0.2,
-            ease: 'InQuart',
+            ease: 'inQuart',
         },
     },
     comboAnimation: {
@@ -55,13 +55,13 @@ export const ui: EngineConfigurationUI = {
             from: 1.1,
             to: 1,
             duration: 0.2,
-            ease: 'OutCubic',
+            ease: 'outCubic',
         },
         alpha: {
             from: 1,
             to: 1,
             duration: 0,
-            ease: 'Linear',
+            ease: 'linear',
         },
     },
     judgmentErrorStyle: 'arrowLeft',

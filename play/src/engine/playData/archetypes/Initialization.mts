@@ -1,3 +1,4 @@
+import { windows } from '../../../../../shared/src/engine/data/windows.mjs'
 import { options } from '../../configuration/options.mjs'
 import { buckets } from '../buckets.mjs'
 import { hitTimes } from '../hitTimes.mjs'
@@ -6,7 +7,6 @@ import { particle } from '../particle.mjs'
 import { scaledScreen } from '../scaledScreen.mjs'
 import { skin } from '../skin.mjs'
 import { stage } from '../stage.mjs'
-import { windows } from '../windows.mjs'
 import { archetypes } from './index.mjs'
 
 export class Initialization extends Archetype {
@@ -136,6 +136,8 @@ export class Initialization extends Archetype {
     }
 
     updateSequential() {
+        archetypes.InputManager.spawn({})
+
         this.despawn = true
     }
 }

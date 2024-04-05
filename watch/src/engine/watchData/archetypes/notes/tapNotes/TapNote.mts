@@ -1,3 +1,4 @@
+import { EngineArchetypeDataName } from '@sonolus/core'
 import { options } from '../../../../configuration/options.mjs'
 import { sfxDistance } from '../../../effect.mjs'
 import { getDuration, noteLayout } from '../../../note.mjs'
@@ -10,6 +11,11 @@ import { Note } from '../Note.mjs'
 export abstract class TapNote extends Note {
     hasInput = true
 
+    tapImport = this.defineImport({
+        judgment: { name: EngineArchetypeDataName.Judgment, type: DataType<Judgment> },
+        accuracy: { name: EngineArchetypeDataName.Accuracy, type: Number },
+    })
+
     abstract sprites: {
         note: SkinSprite
         fallback: SkinSprite
@@ -21,6 +27,8 @@ export abstract class TapNote extends Note {
     }
 
     abstract effect: ParticleEffect
+
+    abstract bucket: Bucket
 
     abstract noteEffect: NoteEffect
 
@@ -43,20 +51,35 @@ export abstract class TapNote extends Note {
     }
 
     preprocess() {
-        this.targetTime = bpmChanges.at(this.data.beat).time
+        this.targetTime = bpmChanges.at(this.import.beat).time
 
-        const duration = getDuration(bpmChanges.at(this.data.beat).bpm, this.data.speed)
+        const duration = getDuration(bpmChanges.at(this.import.beat).bpm, this.import.speed)
 
         this.visualTime.max = this.targetTime
         this.visualTime.min = this.visualTime.max - duration
 
-        if (options.noteEffectEnabled) this.spawnNoteEffect()
+        if (!replay.isReplay || this.tapImport.judgment) {
+            if (options.noteEffectEnabled) this.spawnNoteEffect()
 
-        this.spawnNoteHit()
+            this.spawnNoteHit()
+        }
 
-        if (options.sfxEnabled) this.scheduleSFX()
+        if (options.sfxEnabled) {
+            if (replay.isReplay) {
+                this.scheduleReplaySFX()
+            } else {
+                this.scheduleSFX()
+            }
+        }
 
         this.result.time = this.targetTime
+
+        if (!replay.isReplay) {
+            this.result.bucket.index = this.bucket.index
+        } else if (this.tapImport.judgment) {
+            this.result.bucket.index = this.bucket.index
+            this.result.bucket.value = this.tapImport.accuracy * 1000
+        }
     }
 
     spawnTime() {
@@ -64,7 +87,7 @@ export abstract class TapNote extends Note {
     }
 
     despawnTime() {
-        return this.visualTime.max
+        return this.hitTime
     }
 
     initialize() {
@@ -86,16 +109,16 @@ export abstract class TapNote extends Note {
         this.despawnTerminate()
     }
 
+    get hitTime() {
+        return this.targetTime + (replay.isReplay ? this.tapImport.accuracy : 0)
+    }
+
     get useFallbackSprite() {
         return !this.sprites.note.exists
     }
 
     get useFallbackClip() {
         return !this.clips.hit.exists
-    }
-
-    get shouldScheduleSFX() {
-        return options.sfxEnabled && options.autoSFX
     }
 
     globalInitialize() {
@@ -111,10 +134,16 @@ export abstract class TapNote extends Note {
 
     scheduleSFX() {
         if (this.useFallbackClip) {
-            this.clips.fallback.schedule(this.targetTime, sfxDistance)
+            this.clips.fallback.schedule(this.hitTime, sfxDistance)
         } else {
-            this.clips.hit.schedule(this.targetTime, sfxDistance)
+            this.clips.hit.schedule(this.hitTime, sfxDistance)
         }
+    }
+
+    scheduleReplaySFX() {
+        if (!this.tapImport.judgment) return
+
+        this.scheduleSFX()
     }
 
     render() {
@@ -130,18 +159,20 @@ export abstract class TapNote extends Note {
     }
 
     despawnTerminate() {
+        if (replay.isReplay && !this.tapImport.judgment) return
+
         if (options.slotEffectEnabled) this.playSlotEffect()
     }
 
     spawnNoteEffect() {
         this.noteEffect.spawn({
-            startTime: this.targetTime,
+            startTime: this.hitTime,
         })
     }
 
     spawnNoteHit() {
         this.noteHit.spawn({
-            startTime: this.targetTime,
+            startTime: this.hitTime,
         })
     }
 

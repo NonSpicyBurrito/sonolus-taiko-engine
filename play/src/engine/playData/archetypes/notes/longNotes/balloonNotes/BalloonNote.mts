@@ -38,16 +38,16 @@ export abstract class BalloonNote extends LongNote {
     })
 
     preprocess() {
-        const duration = getDuration(bpmChanges.at(this.data.beat).bpm, this.data.speed)
+        const duration = getDuration(bpmChanges.at(this.import.beat).bpm, this.import.speed)
 
-        this.visualTime.max = bpmChanges.at(this.data.beat).time
+        this.visualTime.max = bpmChanges.at(this.import.beat).time
         this.visualTime.min = this.visualTime.max - duration
 
         this.spawnTime = this.visualTime.min
     }
 
     initialize() {
-        this.visualTime.tail = bpmChanges.at(this.longData.tailBeat).time
+        this.visualTime.tail = bpmChanges.at(this.longImport.tailBeat).time
 
         if (options.hidden > 0)
             this.visualTime.hidden = Math.lerp(
