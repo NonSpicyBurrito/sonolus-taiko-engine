@@ -7,7 +7,6 @@ export default tsEslint.config(
         ignores: [
             '**/*.*',
 
-            '!lib/build.mjs',
             '!lib/src/**/*.*',
             'lib/src/tja/parse.cjs',
 
@@ -30,7 +29,7 @@ export default tsEslint.config(
     {
         languageOptions: {
             parserOptions: {
-                project: true,
+                projectService: true,
                 tsconfigRootDir: import.meta.dirname,
             },
         },
