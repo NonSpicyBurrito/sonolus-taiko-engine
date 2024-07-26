@@ -1,6 +1,6 @@
 import { windows } from '../../../../../../../shared/src/engine/data/windows.mjs'
 import { options } from '../../../../configuration/options.mjs'
-import { getScheduleSFXTime, sfxDistance } from '../../../effect.mjs'
+import { sfxDistance } from '../../../effect.mjs'
 import { getDuration, noteLayout } from '../../../note.mjs'
 import { slotEffectLayout } from '../../../particle.mjs'
 import { getZ, layer } from '../../../skin.mjs'
@@ -31,15 +31,11 @@ export abstract class TapNote extends Note {
 
     targetTime = this.entityMemory(Number)
 
-    scheduleSFXTime = this.entityMemory(Number)
-
     visualTime = this.entityMemory({
         min: Number,
         max: Number,
         hidden: Number,
     })
-
-    hasSFXScheduled = this.entityMemory(Boolean)
 
     inputTime = this.entityMemory({
         min: Number,
@@ -55,14 +51,14 @@ export abstract class TapNote extends Note {
     preprocess() {
         this.targetTime = bpmChanges.at(this.import.beat).time
 
-        this.scheduleSFXTime = getScheduleSFXTime(this.targetTime)
-
         const duration = getDuration(bpmChanges.at(this.import.beat).bpm, this.import.speed)
 
         this.visualTime.max = this.targetTime
         this.visualTime.min = this.visualTime.max - duration
 
-        this.spawnTime = Math.min(this.visualTime.min, this.scheduleSFXTime)
+        this.spawnTime = this.visualTime.min
+
+        if (this.shouldScheduleSFX) this.scheduleSFX()
     }
 
     initialize() {
@@ -86,9 +82,6 @@ export abstract class TapNote extends Note {
     updateParallel() {
         if (time.now > this.inputTime.max) this.despawn = true
         if (this.despawn) return
-
-        if (this.shouldScheduleSFX && !this.hasSFXScheduled && time.now >= this.scheduleSFXTime)
-            this.scheduleSFX()
 
         if (time.now < this.visualTime.min) return
         if (options.hidden > 0 && time.now > this.visualTime.hidden) return
@@ -128,8 +121,6 @@ export abstract class TapNote extends Note {
         } else {
             this.clips.hit.schedule(this.targetTime, sfxDistance)
         }
-
-        this.hasSFXScheduled = true
     }
 
     render() {
