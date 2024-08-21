@@ -56,7 +56,9 @@ export abstract class TapNote extends Note {
         this.visualTime.max = this.targetTime
         this.visualTime.min = this.visualTime.max - duration
 
-        this.spawnTime = this.visualTime.min
+        this.inputTime.min = this.targetTime + windows.good.min + input.offset
+
+        this.spawnTime = Math.min(this.visualTime.min, this.inputTime.min)
 
         if (this.shouldScheduleSFX) this.scheduleSFX()
     }
@@ -69,7 +71,6 @@ export abstract class TapNote extends Note {
                 options.hidden,
             )
 
-        this.inputTime.min = this.targetTime + windows.good.min + input.offset
         this.inputTime.max = this.targetTime + windows.good.max + input.offset
 
         this.z = getZ(layer.note, this.targetTime)
