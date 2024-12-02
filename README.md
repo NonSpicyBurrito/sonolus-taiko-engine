@@ -4,8 +4,8 @@ A recreation of Taiko no Tatsujin engine in [Sonolus](https://sonolus.com).
 
 ## Links
 
--   [Sonolus Website](https://sonolus.com)
--   [Sonolus Wiki](https://github.com/NonSpicyBurrito/sonolus-wiki)
+- [Sonolus Website](https://sonolus.com)
+- [Sonolus Wiki](https://github.com/NonSpicyBurrito/sonolus-wiki)
 
 ## Installation
 
@@ -67,31 +67,31 @@ Partial database engine item compatible with [sonolus-express](https://github.co
 
 Converts osu to TJC (Taiko no Tatsujin Chart).
 
--   `osu`: osu.
+- `osu`: osu.
 
 ### `tjaToTJC(tja, courseId)`
 
 Converts TJA to TJC (Taiko no Tatsujin Chart).
 
--   `tja`: TJA.
--   `courseId`: course ID.
+- `tja`: TJA.
+- `courseId`: course ID.
 
 ### `tjcToLevelData(tjc, offset?)`
 
 Converts TJC (Taiko no Tatsujin Chart) to Level Data.
 
--   `tjc`: Taiko no Tatsujin chart.
--   `offset`: offset (default: `0`).
+- `tjc`: Taiko no Tatsujin chart.
+- `offset`: offset (default: `0`).
 
 ### Assets
 
 The following assets are exposed as package entry points:
 
--   `EngineConfiguration`
--   `EnginePlayData`
--   `EngineWatchData`
--   `EnginePreviewData`
--   `EngineTutorialData`
--   `EngineThumbnail`
+- `EngineConfiguration`
+- `EnginePlayData`
+- `EngineWatchData`
+- `EnginePreviewData`
+- `EngineTutorialData`
+- `EngineThumbnail`
 
 In Node.js, you can obtain path to assets using `require.resolve('sonolus-taiko-engine/EngineConfiguration')` or `import.meta.resolve('sonolus-taiko-engine/EngineConfiguration')`.
