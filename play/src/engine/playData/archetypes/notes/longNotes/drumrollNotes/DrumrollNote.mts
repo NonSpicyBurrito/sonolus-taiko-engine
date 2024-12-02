@@ -20,69 +20,62 @@ export abstract class DrumrollNote extends LongNote {
         ka: NoteEffect
     }
 
-    visualTime = this.entityMemory({
-        head: {
-            min: Number,
-            max: Number,
-            hidden: Number,
-        },
-        tail: {
-            min: Number,
-            max: Number,
-            hidden: Number,
-        },
-    })
-
     head = this.entityMemory({
+        visualTime: Range,
+        hiddenTime: Number,
         z: Number,
     })
+
     connection = this.entityMemory({
         z: Number,
     })
+
     tail = this.entityMemory({
+        visualTime: Range,
+        hiddenTime: Number,
         z: Number,
     })
 
     preprocess() {
         const duration = getDuration(bpmChanges.at(this.import.beat).bpm, this.import.speed)
 
-        this.visualTime.head.max = bpmChanges.at(this.import.beat).time
-        this.visualTime.head.min = this.visualTime.head.max - duration
+        this.head.visualTime.copyFrom(
+            Range.l.mul(duration).add(bpmChanges.at(this.import.beat).time),
+        )
+        this.tail.visualTime.copyFrom(
+            Range.l.mul(duration).add(bpmChanges.at(this.longImport.tailBeat).time),
+        )
 
-        this.spawnTime = this.visualTime.head.min
+        this.spawnTime = this.head.visualTime.min
     }
 
     initialize() {
-        this.visualTime.tail.max = bpmChanges.at(this.longImport.tailBeat).time
-        this.visualTime.tail.min =
-            this.visualTime.tail.max - this.visualTime.head.max + this.visualTime.head.min
-
         if (options.hidden > 0) {
-            this.visualTime.head.hidden = Math.lerp(
-                this.visualTime.head.max,
-                this.visualTime.head.min,
+            this.head.hiddenTime = Math.lerp(
+                this.head.visualTime.max,
+                this.head.visualTime.min,
                 options.hidden,
             )
 
-            this.visualTime.tail.hidden = Math.lerp(
-                this.visualTime.tail.max,
-                this.visualTime.tail.min,
+            this.tail.hiddenTime = Math.lerp(
+                this.tail.visualTime.max,
+                this.tail.visualTime.min,
                 options.hidden,
             )
         }
 
-        this.head.z = getZ(layer.note, this.visualTime.head.max)
+        this.head.z = getZ(layer.note, this.head.visualTime.max)
 
-        this.connection.z = getZ(layer.note, this.visualTime.head.max, 1)
+        this.connection.z = getZ(layer.note, this.head.visualTime.max, 1)
 
-        this.tail.z = getZ(layer.note, this.visualTime.head.max, 2)
+        this.tail.z = getZ(layer.note, this.head.visualTime.max, 2)
     }
 
     touchOrder = 2
     touch() {
         if (!options.noteEffectEnabled) return
 
-        if (time.now < this.visualTime.head.max) return
+        if (time.now < this.head.visualTime.max) return
 
         for (const touch of touches) {
             if (!touch.started) continue
@@ -101,7 +94,7 @@ export abstract class DrumrollNote extends LongNote {
     }
 
     updateParallel() {
-        if (time.now >= this.visualTime.tail.max) this.despawn = true
+        if (time.now >= this.tail.visualTime.max) this.despawn = true
         if (this.despawn) return
 
         this.render()
@@ -120,10 +113,10 @@ export abstract class DrumrollNote extends LongNote {
     }
 
     render() {
-        if (options.hidden > 0 && time.now >= this.visualTime.tail.hidden) return
+        if (options.hidden > 0 && time.now >= this.tail.hiddenTime) return
 
-        const headX = Math.remap(this.visualTime.head.min, this.visualTime.head.max, 0, 1, time.now)
-        const tailX = Math.remap(this.visualTime.tail.min, this.visualTime.tail.max, 0, 1, time.now)
+        const headX = Math.remap(this.head.visualTime.min, this.head.visualTime.max, 0, 1, time.now)
+        const tailX = Math.remap(this.tail.visualTime.min, this.tail.visualTime.max, 0, 1, time.now)
 
         this.renderHead(headX)
         this.renderTail(tailX)
@@ -131,7 +124,7 @@ export abstract class DrumrollNote extends LongNote {
     }
 
     renderHead(x: number) {
-        if (options.hidden > 0 && time.now >= this.visualTime.head.hidden) return
+        if (options.hidden > 0 && time.now >= this.head.hiddenTime) return
 
         const layout = noteLayout(this.isDai).translate(x, 0)
 
@@ -143,7 +136,7 @@ export abstract class DrumrollNote extends LongNote {
     }
 
     renderTail(x: number) {
-        if (time.now < this.visualTime.tail.min) return
+        if (time.now < this.tail.visualTime.min) return
 
         const layout = noteLayout(this.isDai).translate(x, 0)
 

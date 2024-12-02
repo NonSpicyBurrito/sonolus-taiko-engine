@@ -23,12 +23,9 @@ export abstract class BalloonNote extends LongNote {
 
     abstract noteEffect: NoteEffect
 
-    visualTime = this.entityMemory({
-        min: Number,
-        max: Number,
-        tail: Number,
-        hidden: Number,
-    })
+    visualTime = this.entityMemory(Range)
+    tailTime = this.entityMemory(Number)
+    hiddenTime = this.entityMemory(Number)
 
     note = this.entityMemory({
         z: Number,
@@ -40,21 +37,16 @@ export abstract class BalloonNote extends LongNote {
     preprocess() {
         const duration = getDuration(bpmChanges.at(this.import.beat).bpm, this.import.speed)
 
-        this.visualTime.max = bpmChanges.at(this.import.beat).time
-        this.visualTime.min = this.visualTime.max - duration
+        this.visualTime.copyFrom(Range.l.mul(duration).add(bpmChanges.at(this.import.beat).time))
 
         this.spawnTime = this.visualTime.min
     }
 
     initialize() {
-        this.visualTime.tail = bpmChanges.at(this.longImport.tailBeat).time
+        this.tailTime = bpmChanges.at(this.longImport.tailBeat).time
 
         if (options.hidden > 0)
-            this.visualTime.hidden = Math.lerp(
-                this.visualTime.max,
-                this.visualTime.min,
-                options.hidden,
-            )
+            this.hiddenTime = Math.lerp(this.visualTime.max, this.visualTime.min, options.hidden)
 
         this.note.z = getZ(layer.note, this.visualTime.max)
 
@@ -62,10 +54,10 @@ export abstract class BalloonNote extends LongNote {
     }
 
     updateParallel() {
-        if (time.now >= this.visualTime.tail) this.despawn = true
+        if (time.now >= this.tailTime) this.despawn = true
         if (this.despawn) return
 
-        if (options.hidden > 0 && time.now > this.visualTime.hidden) return
+        if (options.hidden > 0 && time.now > this.hiddenTime) return
 
         this.render()
     }
@@ -102,7 +94,7 @@ export abstract class BalloonNote extends LongNote {
     renderAttachment(x: number) {
         if (!this.shouldRenderAttachment) return
 
-        const t = Math.unlerp(this.visualTime.max, this.visualTime.tail, time.now)
+        const t = Math.unlerp(this.visualTime.max, this.tailTime, time.now)
 
         const id =
             t < 0.125

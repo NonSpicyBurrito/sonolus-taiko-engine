@@ -1,4 +1,4 @@
-import { windows } from '../../../../../shared/src/engine/data/windows.mjs'
+import { bucketWindows } from '../../../../../shared/src/engine/data/windows.mjs'
 import { options } from '../../configuration/options.mjs'
 import { buckets } from '../buckets.mjs'
 import { resetHitTimes } from '../hitTimes.mjs'
@@ -33,17 +33,8 @@ export class Initialization extends Archetype {
 
         resetHitTimes()
 
-        const toMs = ({ min, max }: RangeLike) => ({
-            min: Math.round(min * 1000),
-            max: Math.round(max * 1000),
-        })
-
         for (const bucket of [buckets.donNote, buckets.kaNote]) {
-            bucket.set({
-                perfect: toMs(windows.perfect),
-                great: toMs(windows.great),
-                good: toMs(windows.good),
-            })
+            bucket.set(bucketWindows)
         }
 
         score.base.set({
