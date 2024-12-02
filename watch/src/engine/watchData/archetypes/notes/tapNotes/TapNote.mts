@@ -38,11 +38,8 @@ export abstract class TapNote extends Note {
 
     targetTime = this.entityMemory(Number)
 
-    visualTime = this.entityMemory({
-        min: Number,
-        max: Number,
-        hidden: Number,
-    })
+    visualTime = this.entityMemory(Range)
+    hiddenTime = this.entityMemory(Number)
 
     z = this.entityMemory(Number)
 
@@ -55,8 +52,7 @@ export abstract class TapNote extends Note {
 
         const duration = getDuration(bpmChanges.at(this.import.beat).bpm, this.import.speed)
 
-        this.visualTime.max = this.targetTime
-        this.visualTime.min = this.visualTime.max - duration
+        this.visualTime.copyFrom(Range.l.mul(duration).add(this.targetTime))
 
         if (!replay.isReplay || this.tapImport.judgment) {
             if (options.noteEffectEnabled) this.spawnNoteEffect()
@@ -98,7 +94,7 @@ export abstract class TapNote extends Note {
     }
 
     updateParallel() {
-        if (options.hidden > 0 && time.now > this.visualTime.hidden) return
+        if (options.hidden > 0 && time.now > this.hiddenTime) return
 
         this.render()
     }
@@ -123,11 +119,7 @@ export abstract class TapNote extends Note {
 
     globalInitialize() {
         if (options.hidden > 0)
-            this.visualTime.hidden = Math.lerp(
-                this.visualTime.max,
-                this.visualTime.min,
-                options.hidden,
-            )
+            this.hiddenTime = Math.lerp(this.visualTime.max, this.visualTime.min, options.hidden)
 
         this.z = getZ(layer.note, this.targetTime)
     }

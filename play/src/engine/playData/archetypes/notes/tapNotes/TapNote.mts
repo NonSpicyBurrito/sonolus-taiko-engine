@@ -31,16 +31,10 @@ export abstract class TapNote extends Note {
 
     targetTime = this.entityMemory(Number)
 
-    visualTime = this.entityMemory({
-        min: Number,
-        max: Number,
-        hidden: Number,
-    })
+    visualTime = this.entityMemory(Range)
+    hiddenTime = this.entityMemory(Number)
 
-    inputTime = this.entityMemory({
-        min: Number,
-        max: Number,
-    })
+    inputTime = this.entityMemory(Range)
 
     z = this.entityMemory(Number)
 
@@ -53,10 +47,9 @@ export abstract class TapNote extends Note {
 
         const duration = getDuration(bpmChanges.at(this.import.beat).bpm, this.import.speed)
 
-        this.visualTime.max = this.targetTime
-        this.visualTime.min = this.visualTime.max - duration
+        this.visualTime.copyFrom(Range.l.mul(duration).add(this.targetTime))
 
-        this.inputTime.min = this.targetTime + windows.good.min + input.offset
+        this.inputTime.copyFrom(windows.good.add(this.targetTime).add(input.offset))
 
         this.spawnTime = Math.min(this.visualTime.min, this.inputTime.min)
 
@@ -65,13 +58,7 @@ export abstract class TapNote extends Note {
 
     initialize() {
         if (options.hidden > 0)
-            this.visualTime.hidden = Math.lerp(
-                this.visualTime.max,
-                this.visualTime.min,
-                options.hidden,
-            )
-
-        this.inputTime.max = this.targetTime + windows.good.max + input.offset
+            this.hiddenTime = Math.lerp(this.visualTime.max, this.visualTime.min, options.hidden)
 
         this.z = getZ(layer.note, this.targetTime)
 
@@ -85,7 +72,7 @@ export abstract class TapNote extends Note {
         if (this.despawn) return
 
         if (time.now < this.visualTime.min) return
-        if (options.hidden > 0 && time.now > this.visualTime.hidden) return
+        if (options.hidden > 0 && time.now > this.hiddenTime) return
 
         this.render()
     }
