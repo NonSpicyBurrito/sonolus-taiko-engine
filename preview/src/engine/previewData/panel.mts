@@ -1,8 +1,9 @@
+import { options } from '../configuration/options.mjs'
 import { chart } from './chart.mjs'
 
 export const panel = {
     get w() {
-        return screen.aspectRatio
+        return screen.aspectRatio / options.previewHorizontalScale
     },
     h: 5,
 
