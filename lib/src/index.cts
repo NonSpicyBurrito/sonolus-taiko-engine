@@ -9,7 +9,7 @@ export const version = '1.5.1'
 
 export const databaseEngineItem = {
     name: 'taiko',
-    version: 12,
+    version: 13,
     title: {
         en: 'Taiko',
         ja: '太鼓',
