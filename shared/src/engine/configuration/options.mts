@@ -118,4 +118,38 @@ export const optionsDefinition = {
         step: 0.05,
         unit: Text.PercentageUnit,
     },
+    previewHorizontalScale: {
+        name: Text.PreviewScaleHorizontal,
+        scope: 'Taiko',
+        type: 'slider',
+        def: 1,
+        min: 0.5,
+        max: 2,
+        step: 0.05,
+        unit: Text.PercentageUnit,
+    },
+    previewMeasure: {
+        name: Text.PreviewMeasure,
+        scope: 'Taiko',
+        type: 'toggle',
+        def: 1,
+    },
+    previewBeat: {
+        name: Text.PreviewBeat,
+        scope: 'Taiko',
+        type: 'toggle',
+        def: 1,
+    },
+    previewTime: {
+        name: Text.PreviewTime,
+        scope: 'Taiko',
+        type: 'toggle',
+        def: 1,
+    },
+    previewBpm: {
+        name: Text.PreviewBpm,
+        scope: 'Taiko',
+        type: 'toggle',
+        def: 1,
+    },
 } satisfies Record<string, EngineConfigurationOption>
