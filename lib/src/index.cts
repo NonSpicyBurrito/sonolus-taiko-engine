@@ -25,7 +25,7 @@ export const databaseEngineItem = {
         zht: '太鼓達人',
     },
     author: {
-        en: 'Burrito',
+        en: 'Burrito#1000',
     },
     description: {
         en: [
