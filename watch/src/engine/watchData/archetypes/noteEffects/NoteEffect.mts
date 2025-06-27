@@ -1,5 +1,4 @@
 import { noteEffectLayout } from '../../note.mjs'
-import { scaledScreen } from '../../scaledScreen.mjs'
 import { getZ, layer } from '../../skin.mjs'
 import { stage } from '../../stage.mjs'
 
@@ -61,7 +60,7 @@ export abstract class NoteEffect extends SpawnableArchetype({
 
     renderFlying() {
         const p0 = new Vec(1, 0)
-        const p1 = new Vec(0.5 + stage.h, scaledScreen.t)
+        const p1 = new Vec(0.5 + stage.h, 3 * stage.h)
         const p2 = new Vec(2 * stage.h, 2 * stage.h)
 
         const s = Math.unlerp(this.spawnData.startTime, this.animationTimes.middle, time.now)

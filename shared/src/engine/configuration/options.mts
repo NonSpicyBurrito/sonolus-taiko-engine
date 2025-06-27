@@ -118,6 +118,13 @@ export const optionsDefinition = {
         step: 0.05,
         unit: Text.PercentageUnit,
     },
+    stageDirection: {
+        name: Text.StageDirection,
+        scope: 'Taiko',
+        type: 'select',
+        def: 0,
+        values: [Text.Left, Text.Up],
+    },
     previewHorizontalScale: {
         name: Text.PreviewScaleHorizontal,
         scope: 'Taiko',

@@ -1,11 +1,12 @@
 import { options } from '../../configuration/options.mjs'
+import { drum } from '../drum.mjs'
 import { effect, sfxDistance } from '../effect.mjs'
 import { hitTimes } from '../hitTimes.mjs'
 import { note } from '../note.mjs'
 import { scaledScreen } from '../scaledScreen.mjs'
 import { layer, skin } from '../skin.mjs'
 import { stage } from '../stage.mjs'
-import { isDon } from './InputManager.mjs'
+import { isDon, isRight } from './InputManager.mjs'
 
 export class Stage extends Archetype {
     spawnOrder() {
@@ -23,7 +24,7 @@ export class Stage extends Archetype {
             hitTimes.any = time.now
 
             if (isDon(touch)) {
-                if (touch.position.x >= 0) {
+                if (isRight(touch)) {
                     streams.set(-9999, time.now, 0)
                     hitTimes.don.right = time.now
                 } else {
@@ -33,7 +34,7 @@ export class Stage extends Archetype {
 
                 if (this.shouldPlaySFX) this.playSFX(true)
             } else {
-                if (touch.position.x >= 0) {
+                if (isRight(touch)) {
                     streams.set(-9997, time.now, 0)
                     hitTimes.ka.right = time.now
                 } else {
@@ -130,7 +131,7 @@ export class Stage extends Archetype {
     drawTouchDrum() {
         if (!skin.sprites.touchDrum.exists) return
 
-        const h = (scaledScreen.t - scaledScreen.b) * options.drumSize
+        const h = drum.radius * options.drumSize
         const w = (h * 842) / (2 * 436)
 
         const layout = new Rect({
