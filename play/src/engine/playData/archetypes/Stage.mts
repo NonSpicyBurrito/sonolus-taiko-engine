@@ -24,16 +24,20 @@ export class Stage extends Archetype {
 
             if (isDon(touch)) {
                 if (touch.position.x >= 0) {
+                    streams.set(-9999, time.now, 0)
                     hitTimes.don.right = time.now
                 } else {
+                    streams.set(-9998, time.now, 0)
                     hitTimes.don.left = time.now
                 }
 
                 if (this.shouldPlaySFX) this.playSFX(true)
             } else {
                 if (touch.position.x >= 0) {
+                    streams.set(-9997, time.now, 0)
                     hitTimes.ka.right = time.now
                 } else {
+                    streams.set(-9996, time.now, 0)
                     hitTimes.ka.left = time.now
                 }
 

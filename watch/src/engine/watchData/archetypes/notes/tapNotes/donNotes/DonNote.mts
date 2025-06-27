@@ -14,7 +14,10 @@ export abstract class DonNote extends TapNote {
 
     bucket = buckets.donNote
 
-    get noteHit() {
-        return archetypes.DonNoteHit
+    get noteHits() {
+        return {
+            left: archetypes.DonLeftNoteHit,
+            right: archetypes.DonRightNoteHit,
+        }
     }
 }

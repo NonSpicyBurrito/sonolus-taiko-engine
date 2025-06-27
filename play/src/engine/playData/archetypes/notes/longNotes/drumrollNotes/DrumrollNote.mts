@@ -82,10 +82,12 @@ export abstract class DrumrollNote extends LongNote {
             if (isUsed(touch)) continue
 
             if (isDon(touch)) {
+                streams.set(this.info.index * 2, time.now, 0)
                 this.noteEffects.don.spawn({
                     startTime: time.now,
                 })
             } else {
+                streams.set(this.info.index * 2 + 1, time.now, 0)
                 this.noteEffects.ka.spawn({
                     startTime: time.now,
                 })

@@ -6,8 +6,10 @@ import { DaiKaNoteEffect } from './noteEffects/DaiKaNoteEffect.mjs'
 import { NormalBalloonNoteEffect } from './noteEffects/NormalBalloonNoteEffect.mjs'
 import { NormalDonNoteEffect } from './noteEffects/NormalDonNoteEffect.mjs'
 import { NormalKaNoteEffect } from './noteEffects/NormalKaNoteEffect.mjs'
-import { DonNoteHit } from './noteHits/DonNoteHit.mjs'
-import { KaNoteHit } from './noteHits/KaNoteHit.mjs'
+import { DonLeftNoteHit } from './noteHits/DonLeftNoteHit.mjs'
+import { DonRightNoteHit } from './noteHits/DonRightNoteHit.mjs'
+import { KaLeftNoteHit } from './noteHits/KaLeftNoteHit.mjs'
+import { KaRightNoteHit } from './noteHits/KaRightNoteHit.mjs'
 import { DaiBalloonNote } from './notes/longNotes/balloonNotes/DaiBalloonNote.mjs'
 import { NormalBalloonNote } from './notes/longNotes/balloonNotes/NormalBalloonNote.mjs'
 import { DaiDrumrollNote } from './notes/longNotes/drumrollNotes/DaiDrumrollNote.mjs'
@@ -41,6 +43,8 @@ export const archetypes = defineArchetypes({
     NormalBalloonNoteEffect,
     DaiBalloonNoteEffect,
 
-    DonNoteHit,
-    KaNoteHit,
+    DonLeftNoteHit,
+    DonRightNoteHit,
+    KaLeftNoteHit,
+    KaRightNoteHit,
 })

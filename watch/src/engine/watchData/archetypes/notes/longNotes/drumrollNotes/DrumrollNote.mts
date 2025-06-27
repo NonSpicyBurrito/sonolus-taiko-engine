@@ -1,6 +1,7 @@
 import { options } from '../../../../../configuration/options.mjs'
 import { getDuration, note, noteLayout } from '../../../../note.mjs'
 import { getZ, layer } from '../../../../skin.mjs'
+import { NoteEffect } from '../../../noteEffects/NoteEffect.mjs'
 import { LongNote } from '../LongNote.mjs'
 
 export abstract class DrumrollNote extends LongNote {
@@ -11,6 +12,11 @@ export abstract class DrumrollNote extends LongNote {
         tailFallback: SkinSprite
         connection: SkinSprite
         connectionFallback: SkinSprite
+    }
+
+    abstract noteEffects: {
+        don: NoteEffect
+        ka: NoteEffect
     }
 
     initialized = this.entityMemory(Boolean)
@@ -40,6 +46,9 @@ export abstract class DrumrollNote extends LongNote {
         this.tail.visualTime.copyFrom(
             Range.l.mul(duration).add(bpmChanges.at(this.longImport.tailBeat).time),
         )
+
+        this.scheduleHits(0, this.noteEffects.don)
+        this.scheduleHits(1, this.noteEffects.ka)
     }
 
     spawnTime() {
@@ -71,6 +80,20 @@ export abstract class DrumrollNote extends LongNote {
 
     get useFallbackConnectionSprite() {
         return !this.sprites.connection.exists
+    }
+
+    scheduleHits(offset: number, noteEffect: NoteEffect) {
+        let t = -999999
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        while (true) {
+            const nt = streams.getNextKey(this.info.index * 2 + offset, t)
+            if (nt === t) break
+
+            t = nt
+            noteEffect.spawn({
+                startTime: t,
+            })
+        }
     }
 
     globalInitialize() {
