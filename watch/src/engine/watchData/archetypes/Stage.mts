@@ -1,4 +1,5 @@
 import { options } from '../../configuration/options.mjs'
+import { drum } from '../drum.mjs'
 import { effect, sfxDistance } from '../effect.mjs'
 import { hitTimes, resetHitTimes } from '../hitTimes.mjs'
 import { note } from '../note.mjs'
@@ -133,7 +134,7 @@ export class Stage extends Archetype {
     drawTouchDrum() {
         if (!skin.sprites.touchDrum.exists) return
 
-        const h = (scaledScreen.t - scaledScreen.b) * options.drumSize
+        const h = drum.radius * options.drumSize
         const w = (h * 842) / (2 * 436)
 
         const layout = new Rect({

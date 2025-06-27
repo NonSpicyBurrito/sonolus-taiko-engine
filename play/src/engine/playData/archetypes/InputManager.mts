@@ -1,4 +1,5 @@
 import { options } from '../../configuration/options.mjs'
+import { drum } from '../drum.mjs'
 
 const usedTouchIds = levelMemory(Collection(16, TouchId))
 
@@ -9,7 +10,10 @@ export const markAsUsed = (touch: Touch) => {
 }
 
 export const isDon = (touch: Touch) =>
-    touch.position.sub(new Vec(0, screen.b)).length <= screen.h * options.drumSize
+    touch.position.sub(drum.center).length <= screen.h * options.drumSize
+
+export const isRight = (touch: Touch) =>
+    options.stageDirection ? touch.position.y >= 0 : touch.position.x >= 0
 
 export class InputManager extends SpawnableArchetype({}) {
     touch() {
