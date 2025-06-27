@@ -5,7 +5,7 @@ export { tjaToTJC } from './tja/convert.cjs'
 export { tjcToLevelData } from './tjc/convert.cjs'
 export * from './tjc/index.cjs'
 
-export const version = '1.5.3'
+export const version = '1.5.4'
 
 export const databaseEngineItem = {
     name: 'taiko',
