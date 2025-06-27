@@ -4,6 +4,7 @@ export abstract class NoteHit extends SpawnableArchetype({
     startTime: Number,
 }) {
     abstract type: 'don' | 'ka'
+    abstract direction: 'left' | 'right'
 
     spawnTime() {
         return this.spawnData.startTime
@@ -16,6 +17,9 @@ export abstract class NoteHit extends SpawnableArchetype({
     updateSequentialOrder = 1
     updateSequential() {
         hitTimes.any = Math.max(hitTimes.any, this.spawnData.startTime)
-        hitTimes[this.type] = Math.max(hitTimes[this.type], this.spawnData.startTime)
+        hitTimes[this.type][this.direction] = Math.max(
+            hitTimes[this.type][this.direction],
+            this.spawnData.startTime,
+        )
     }
 }

@@ -1,4 +1,5 @@
 import { skin } from '../../../../skin.mjs'
+import { archetypes } from '../../../index.mjs'
 import { DrumrollNote } from './DrumrollNote.mjs'
 
 export class DaiDrumrollNote extends DrumrollNote {
@@ -11,5 +12,12 @@ export class DaiDrumrollNote extends DrumrollNote {
         tailFallback: skin.sprites.drumrollTailFallback,
         connection: skin.sprites.daiDrumrollConnection,
         connectionFallback: skin.sprites.drumrollConnectionFallback,
+    }
+
+    get noteEffects() {
+        return {
+            don: archetypes.DaiDonNoteEffect,
+            ka: archetypes.DaiKaNoteEffect,
+        }
     }
 }

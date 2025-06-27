@@ -32,7 +32,10 @@ export abstract class TapNote extends Note {
 
     abstract noteEffect: NoteEffect
 
-    abstract noteHit: NoteHit
+    abstract noteHits: {
+        left: NoteHit
+        right: NoteHit
+    }
 
     initialized = this.entityMemory(Boolean)
 
@@ -56,16 +59,14 @@ export abstract class TapNote extends Note {
 
         if (!replay.isReplay || this.tapImport.judgment) {
             if (options.noteEffectEnabled) this.spawnNoteEffect()
-
-            this.spawnNoteHit()
         }
 
-        if (options.sfxEnabled) {
-            if (replay.isReplay) {
-                this.scheduleReplaySFX()
-            } else {
-                this.scheduleSFX()
-            }
+        if (!replay.isReplay) {
+            this.spawnNoteHits()
+        }
+
+        if (options.sfxEnabled && !replay.isReplay) {
+            this.scheduleSFX()
         }
 
         this.result.time = this.targetTime
@@ -132,12 +133,6 @@ export abstract class TapNote extends Note {
         }
     }
 
-    scheduleReplaySFX() {
-        if (!this.tapImport.judgment) return
-
-        this.scheduleSFX()
-    }
-
     render() {
         const x = Math.remap(this.visualTime.min, this.visualTime.max, 0, 1, time.now)
 
@@ -162,8 +157,11 @@ export abstract class TapNote extends Note {
         })
     }
 
-    spawnNoteHit() {
-        this.noteHit.spawn({
+    spawnNoteHits() {
+        this.noteHits.left.spawn({
+            startTime: this.hitTime,
+        })
+        this.noteHits.right.spawn({
             startTime: this.hitTime,
         })
     }

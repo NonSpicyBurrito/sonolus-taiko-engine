@@ -14,7 +14,10 @@ export abstract class KaNote extends TapNote {
 
     bucket = buckets.kaNote
 
-    get noteHit() {
-        return archetypes.KaNoteHit
+    get noteHits() {
+        return {
+            left: archetypes.KaLeftNoteHit,
+            right: archetypes.KaRightNoteHit,
+        }
     }
 }
