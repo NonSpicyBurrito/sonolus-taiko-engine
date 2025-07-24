@@ -1,0 +1,15 @@
+import { ParticleEffectName } from '@sonolus/core'
+import { layout } from '../../../../shared/src/engine/data/utils.js'
+import { stage } from './stage.js'
+
+export const particle = defineParticle({
+    effects: {
+        donHit: ParticleEffectName.NoteCircularTapRed,
+        kaHit: ParticleEffectName.NoteCircularTapCyan,
+    },
+})
+
+const slotEffectLayout = () => layout(stage.h)
+
+export const playSlotEffect = (effect: ParticleEffect) =>
+    effect.spawn(slotEffectLayout().translate(1, 0), 0.3, false)
