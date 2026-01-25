@@ -47,7 +47,7 @@ export abstract class TapNote extends Note {
     z = this.entityMemory(Number)
 
     globalPreprocess() {
-        this.life.miss = -20
+        this.archetypeLife.miss = -20
     }
 
     preprocess() {
