@@ -45,14 +45,14 @@ export const noteEffect = {
 
         const layout = noteEffectLayout().add(p)
 
-        skin.sprites.draw(id, layout, layer.effect, 1)
+        skin.sprites.draw(id, layout, [layer.effect], 1)
     },
 
     renderFading() {
         const layout = noteEffectLayout().translate(2 * stage.h, 2 * stage.h)
         const a = Math.unlerp(0.75, 0.5, segment.time)
 
-        skin.sprites.draw(id, layout, layer.effect, a)
+        skin.sprites.draw(id, layout, [layer.effect], a)
     },
 
     play(type: keyof typeof sprites) {

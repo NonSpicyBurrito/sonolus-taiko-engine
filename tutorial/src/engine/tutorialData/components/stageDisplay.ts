@@ -29,7 +29,7 @@ export const stageDisplay = {
             }).translate(1, 0),
         }
 
-        sprites.lane.draw(layouts.lane, layer.lane, 1)
-        sprites.slot.draw(layouts.slot, layer.slot, 1)
+        sprites.lane.draw(layouts.lane, [layer.lane], 1)
+        sprites.slot.draw(layouts.slot, [layer.slot], 1)
     },
 }

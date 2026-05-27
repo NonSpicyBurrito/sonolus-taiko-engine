@@ -1,6 +1,6 @@
 import { options } from '../../../../../configuration/options.js'
 import { getDuration, note, noteLayout } from '../../../../note.js'
-import { getZ, layer } from '../../../../skin.js'
+import { layer } from '../../../../skin.js'
 import { NoteEffect } from '../../../noteEffects/NoteEffect.js'
 import { LongNote } from '../LongNote.js'
 
@@ -24,17 +24,11 @@ export abstract class DrumrollNote extends LongNote {
     head = this.entityMemory({
         visualTime: Range,
         hiddenTime: Number,
-        z: Number,
-    })
-
-    connection = this.entityMemory({
-        z: Number,
     })
 
     tail = this.entityMemory({
         visualTime: Range,
         hiddenTime: Number,
-        z: Number,
     })
 
     preprocess() {
@@ -110,12 +104,6 @@ export abstract class DrumrollNote extends LongNote {
                 options.hidden,
             )
         }
-
-        this.head.z = getZ(layer.note, this.head.visualTime.max)
-
-        this.connection.z = getZ(layer.note, this.head.visualTime.max, 1)
-
-        this.tail.z = getZ(layer.note, this.head.visualTime.max, 2)
     }
 
     render() {
@@ -135,9 +123,9 @@ export abstract class DrumrollNote extends LongNote {
         const layout = noteLayout(this.isDai).translate(x, 0)
 
         if (this.useFallbackHeadSprite) {
-            this.sprites.headFallback.draw(layout, this.head.z, 1)
+            this.sprites.headFallback.draw(layout, [layer.note, -this.head.visualTime.max], 1)
         } else {
-            this.sprites.head.draw(layout, this.head.z, 1)
+            this.sprites.head.draw(layout, [layer.note, -this.head.visualTime.max], 1)
         }
     }
 
@@ -147,9 +135,9 @@ export abstract class DrumrollNote extends LongNote {
         const layout = noteLayout(this.isDai).translate(x, 0)
 
         if (this.useFallbackTailSprite) {
-            this.sprites.tailFallback.draw(layout, this.tail.z, 1)
+            this.sprites.tailFallback.draw(layout, [layer.note, -this.head.visualTime.max, -2], 1)
         } else {
-            this.sprites.tail.draw(layout, this.tail.z, 1)
+            this.sprites.tail.draw(layout, [layer.note, -this.head.visualTime.max, -2], 1)
         }
     }
 
@@ -169,7 +157,11 @@ export abstract class DrumrollNote extends LongNote {
                 y4: (this.isDai ? note.radius.dai : note.radius.normal) * -options.noteSize,
             }
 
-            this.sprites.connectionFallback.draw(layout, this.connection.z, 1)
+            this.sprites.connectionFallback.draw(
+                layout,
+                [layer.note, -this.head.visualTime.max, -1],
+                1,
+            )
         } else {
             const layout = new Rect({
                 l: l,
@@ -178,7 +170,7 @@ export abstract class DrumrollNote extends LongNote {
                 b: (this.isDai ? note.radius.dai : note.radius.normal) * -options.noteSize,
             })
 
-            this.sprites.connection.draw(layout, this.connection.z, 1)
+            this.sprites.connection.draw(layout, [layer.note, -this.head.visualTime.max, -1], 1)
         }
     }
 }

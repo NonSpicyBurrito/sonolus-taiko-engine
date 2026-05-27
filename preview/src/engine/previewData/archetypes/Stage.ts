@@ -35,7 +35,7 @@ export class Stage extends Archetype {
                 })
                     .toQuad()
                     .swapRotate90(),
-                layer.stage,
+                [layer.stage],
                 1,
             )
         }

@@ -1,4 +1,4 @@
-import { getZ, layer, skin } from '../../../../skin.js'
+import { layer, skin } from '../../../../skin.js'
 import { LongNote } from '../LongNote.js'
 
 export abstract class BalloonNote extends LongNote {
@@ -10,8 +10,6 @@ export abstract class BalloonNote extends LongNote {
     render() {
         const { time, pos } = super.render()
 
-        const z = getZ(layer.note, time, -1)
-
         const layout = new Rect({
             l: 0,
             r: (this.w * 264) / 26,
@@ -21,7 +19,7 @@ export abstract class BalloonNote extends LongNote {
             .translate(0.7 * this.w, 0)
             .add(pos)
 
-        skin.sprites.balloonAttachment1.draw(layout, z, 1)
+        skin.sprites.balloonAttachment1.draw(layout, [layer.note, -time, 1], 1)
 
         return { time, pos }
     }

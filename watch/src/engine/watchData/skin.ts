@@ -62,5 +62,3 @@ export const layer = {
 
     touchDrum: 0,
 }
-
-export const getZ = (layer: number, time: number, order = 0) => layer - time / 1000 - order / 100000

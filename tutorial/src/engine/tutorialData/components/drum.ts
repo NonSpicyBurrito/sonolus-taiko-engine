@@ -43,18 +43,18 @@ export const drum = {
             b: -h,
         }).translate(1, -2 * h)
 
-        sprites.drum.draw(layout, layer.drum, 1)
+        sprites.drum.draw(layout, [layer.drum], 1)
 
         if (!mode) return
 
         const a = 1 - Math.unlerpClamped(0, 0.1, segment.time)
 
         if (mode === Mode.Don) {
-            sprites.don.left.draw(layout, layer.drumHit, a)
-            sprites.don.right.draw(layout, layer.drumHit, a)
+            sprites.don.left.draw(layout, [layer.drumHit], a)
+            sprites.don.right.draw(layout, [layer.drumHit], a)
         } else {
-            sprites.ka.left.draw(layout, layer.drumHit, a)
-            sprites.ka.right.draw(layout, layer.drumHit, a)
+            sprites.ka.left.draw(layout, [layer.drumHit], a)
+            sprites.ka.right.draw(layout, [layer.drumHit], a)
         }
     },
 

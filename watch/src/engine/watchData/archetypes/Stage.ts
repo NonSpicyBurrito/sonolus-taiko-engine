@@ -98,8 +98,8 @@ export class Stage extends Archetype {
             }).translate(1, 0),
         }
 
-        skin.sprites.lane.draw(layouts.lane, layer.lane, 1)
-        skin.sprites.slot.draw(layouts.slot, layer.slot, 1)
+        skin.sprites.lane.draw(layouts.lane, [layer.lane], 1)
+        skin.sprites.slot.draw(layouts.slot, [layer.slot], 1)
     }
 
     drawDrum() {
@@ -124,10 +124,10 @@ export class Stage extends Archetype {
             b: -h,
         }).translate(1, -2 * h)
 
-        skin.sprites.drum.draw(layout, layer.drum, 1)
+        skin.sprites.drum.draw(layout, [layer.drum], 1)
 
         for (const [sprite, hitTime] of parts) {
-            sprite.draw(layout, layer.drumHit, 1 - this.scaleHitTime(hitTime))
+            sprite.draw(layout, [layer.drumHit], 1 - this.scaleHitTime(hitTime))
         }
     }
 
@@ -144,7 +144,7 @@ export class Stage extends Archetype {
             b: scaledScreen.b,
         }).translate(0, Math.lerp(-0.1 * h, 0, this.scaleHitTime(hitTimes.any)))
 
-        skin.sprites.touchDrum.draw(layout, layer.touchDrum, 1)
+        skin.sprites.touchDrum.draw(layout, [layer.touchDrum], 1)
     }
 
     drawStageCover() {
@@ -157,7 +157,7 @@ export class Stage extends Archetype {
                 t: -stage.h,
                 b: stage.h,
             }),
-            layer.cover,
+            [layer.cover],
             1,
         )
     }

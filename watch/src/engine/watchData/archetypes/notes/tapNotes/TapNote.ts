@@ -3,7 +3,7 @@ import { options } from '../../../../configuration/options.js'
 import { sfxDistance } from '../../../effect.js'
 import { getDuration, noteLayout } from '../../../note.js'
 import { slotEffectLayout } from '../../../particle.js'
-import { getZ, layer } from '../../../skin.js'
+import { layer } from '../../../skin.js'
 import { NoteEffect } from '../../noteEffects/NoteEffect.js'
 import { NoteHit } from '../../noteHits/NoteHit.js'
 import { Note } from '../Note.js'
@@ -43,8 +43,6 @@ export abstract class TapNote extends Note {
 
     visualTime = this.entityMemory(Range)
     hiddenTime = this.entityMemory(Number)
-
-    z = this.entityMemory(Number)
 
     globalPreprocess() {
         this.archetypeLife.miss = -20
@@ -121,8 +119,6 @@ export abstract class TapNote extends Note {
     globalInitialize() {
         if (options.hidden > 0)
             this.hiddenTime = Math.lerp(this.visualTime.max, this.visualTime.min, options.hidden)
-
-        this.z = getZ(layer.note, this.targetTime)
     }
 
     scheduleSFX() {
@@ -139,9 +135,9 @@ export abstract class TapNote extends Note {
         const layout = noteLayout(this.isDai).translate(x, 0)
 
         if (this.useFallbackSprite) {
-            this.sprites.fallback.draw(layout, this.z, 1)
+            this.sprites.fallback.draw(layout, [layer.note, -this.targetTime], 1)
         } else {
-            this.sprites.note.draw(layout, this.z, 1)
+            this.sprites.note.draw(layout, [layer.note, -this.targetTime], 1)
         }
     }
 
