@@ -3,7 +3,7 @@ import { options } from '../../../configuration/options.js'
 import { note } from '../../note.js'
 import { panel } from '../../panel.js'
 import { scaledScreen } from '../../scaledScreen.js'
-import { getZ, layer } from '../../skin.js'
+import { layer } from '../../skin.js'
 
 export abstract class Note extends Archetype {
     abstract isDai: boolean
@@ -21,14 +21,12 @@ export abstract class Note extends Archetype {
         const time = bpmChanges.at(this.import.beat).time
         const pos = panel.getPos(time)
 
-        const z = getZ(layer.note, time)
-
         const layout = this.noteLayout.add(pos)
 
         if (this.useFallbackSprite) {
-            this.sprites.fallback.draw(layout, z, 1)
+            this.sprites.fallback.draw(layout, [layer.note, -time], 1)
         } else {
-            this.sprites.note.draw(layout, z, 1)
+            this.sprites.note.draw(layout, [layer.note, -time], 1)
         }
 
         return { time, pos }

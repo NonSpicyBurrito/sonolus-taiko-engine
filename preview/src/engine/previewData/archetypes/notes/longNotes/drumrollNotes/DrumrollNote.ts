@@ -1,5 +1,5 @@
 import { panel } from '../../../../panel.js'
-import { getZ, layer } from '../../../../skin.js'
+import { layer } from '../../../../skin.js'
 import { LongNote } from '../LongNote.js'
 
 export abstract class DrumrollNote extends LongNote {
@@ -32,8 +32,6 @@ export abstract class DrumrollNote extends LongNote {
             max: Math.floor(t.max / panel.w),
         }
 
-        const z = getZ(layer.note, t.min, 1)
-
         for (let i = index.min; i <= index.max; i++) {
             const y = i * panel.h
 
@@ -50,9 +48,13 @@ export abstract class DrumrollNote extends LongNote {
             }).translate(0, y)
 
             if (this.useFallbackConnectionSprite) {
-                this.sprites.connectionFallback.draw(layout.toQuad().swapRotate90(), z, 1)
+                this.sprites.connectionFallback.draw(
+                    layout.toQuad().swapRotate90(),
+                    [layer.note, -t.min, -1],
+                    1,
+                )
             } else {
-                this.sprites.connection.draw(layout, z, 1)
+                this.sprites.connection.draw(layout, [layer.note, -t.min, -1], 1)
             }
         }
     }
@@ -61,14 +63,12 @@ export abstract class DrumrollNote extends LongNote {
         const time = bpmChanges.at(this.longImport.tailBeat).time
         const pos = panel.getPos(time)
 
-        const z = getZ(layer.note, time, 2)
-
         const layout = this.noteLayout.add(pos)
 
         if (this.useFallbackTailSprite) {
-            this.sprites.tailFallback.draw(layout, z, 1)
+            this.sprites.tailFallback.draw(layout, [layer.note, -time, -2], 1)
         } else {
-            this.sprites.tail.draw(layout, z, 1)
+            this.sprites.tail.draw(layout, [layer.note, -time, -2], 1)
         }
     }
 

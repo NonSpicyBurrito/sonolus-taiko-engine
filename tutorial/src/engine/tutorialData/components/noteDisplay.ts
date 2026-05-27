@@ -36,11 +36,11 @@ export const noteDisplay = {
                 .mul(2)
                 .translate((scaledScreen.l + scaledScreen.r) / 2, 0)
 
-            skin.sprites.draw(id, layout, layer.note, a)
+            skin.sprites.draw(id, layout, [layer.note], a)
         } else {
             const x = mode === Mode.Fall ? Math.unlerp(0, 2, segment.time) : 1
 
-            skin.sprites.draw(id, noteLayout().translate(x, 0), layer.note, 1)
+            skin.sprites.draw(id, noteLayout().translate(x, 0), [layer.note], 1)
         }
     },
 

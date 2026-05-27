@@ -51,9 +51,7 @@ export const line = (sprite: SkinSprite, beat: number, a: number) => {
             t: -1.5,
             b: 1.5,
         }).add(pos),
-        layer.line,
+        [layer.line],
         a,
     )
 }
-
-export const getZ = (layer: number, time: number, order = 0) => layer - time / 1000 - order / 100000

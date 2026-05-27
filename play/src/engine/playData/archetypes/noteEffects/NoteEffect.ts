@@ -1,5 +1,5 @@
 import { noteEffectLayout } from '../../note.js'
-import { getZ, layer } from '../../skin.js'
+import { layer } from '../../skin.js'
 import { stage } from '../../stage.js'
 
 const lerp = (x: VecLike, y: VecLike, s: number) =>
@@ -21,14 +21,10 @@ export abstract class NoteEffect extends SpawnableArchetype({
         end: Number,
     })
 
-    z = this.entityMemory(Number)
-
     initialize() {
         this.animationTimes.start = this.spawnData.startTime
         this.animationTimes.middle = this.animationTimes.start + 0.5
         this.animationTimes.end = this.animationTimes.middle + 0.25
-
-        this.z = getZ(layer.effect, this.spawnData.startTime)
     }
 
     updateParallel() {
@@ -58,9 +54,9 @@ export abstract class NoteEffect extends SpawnableArchetype({
         const layout = noteEffectLayout(this.isDai).add(p)
 
         if (this.useFallbackSprite) {
-            this.sprites.fallback.draw(layout, this.z, 1)
+            this.sprites.fallback.draw(layout, [layer.effect, -this.spawnData.startTime], 1)
         } else {
-            this.sprites.note.draw(layout, this.z, 1)
+            this.sprites.note.draw(layout, [layer.effect, -this.spawnData.startTime], 1)
         }
     }
 
@@ -69,9 +65,9 @@ export abstract class NoteEffect extends SpawnableArchetype({
         const a = Math.unlerp(this.animationTimes.end, this.animationTimes.middle, time.now)
 
         if (this.useFallbackSprite) {
-            this.sprites.fallback.draw(layout, this.z, a)
+            this.sprites.fallback.draw(layout, [layer.effect, -this.spawnData.startTime], a)
         } else {
-            this.sprites.note.draw(layout, this.z, a)
+            this.sprites.note.draw(layout, [layer.effect, -this.spawnData.startTime], a)
         }
     }
 }

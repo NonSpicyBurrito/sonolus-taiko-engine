@@ -24,7 +24,7 @@ export const touchDrum = {
             b: scaledScreen.b,
         }).translate(0, Math.lerp(-0.1 * h, 0, s))
 
-        sprites.touchDrum.draw(layout, layer.touchDrum, 1)
+        sprites.touchDrum.draw(layout, [layer.touchDrum], 1)
     },
 
     hit() {

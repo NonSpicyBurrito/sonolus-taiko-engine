@@ -1,6 +1,6 @@
 import { options } from '../../../../../configuration/options.js'
 import { getDuration, note, noteLayout } from '../../../../note.js'
-import { getZ, layer, skin } from '../../../../skin.js'
+import { layer, skin } from '../../../../skin.js'
 import { NoteEffect } from '../../../noteEffects/NoteEffect.js'
 import { LongNote } from '../LongNote.js'
 
@@ -28,13 +28,6 @@ export abstract class BalloonNote extends LongNote {
     visualTime = this.entityMemory(Range)
     tailTime = this.entityMemory(Number)
     hiddenTime = this.entityMemory(Number)
-
-    note = this.entityMemory({
-        z: Number,
-    })
-    attachment = this.entityMemory({
-        z: Number,
-    })
 
     preprocess() {
         const duration = getDuration(bpmChanges.at(this.import.beat).bpm, this.import.speed)
@@ -77,10 +70,6 @@ export abstract class BalloonNote extends LongNote {
     globalInitialize() {
         if (options.hidden > 0)
             this.hiddenTime = Math.lerp(this.visualTime.max, this.visualTime.min, options.hidden)
-
-        this.note.z = getZ(layer.note, this.visualTime.max)
-
-        this.attachment.z = getZ(layer.note, this.visualTime.max, -1)
     }
 
     render() {
@@ -94,9 +83,9 @@ export abstract class BalloonNote extends LongNote {
         const layout = noteLayout(this.isDai).translate(x, 0)
 
         if (this.useFallbackSprite) {
-            this.sprites.fallback.draw(layout, this.note.z, 1)
+            this.sprites.fallback.draw(layout, [layer.note, -this.visualTime.max], 1)
         } else {
-            this.sprites.note.draw(layout, this.note.z, 1)
+            this.sprites.note.draw(layout, [layer.note, -this.visualTime.max], 1)
         }
     }
 
@@ -131,7 +120,7 @@ export abstract class BalloonNote extends LongNote {
             .translate(-0.7 * (this.isDai ? note.radius.dai : note.radius.normal), 0)
             .translate(x, 0)
 
-        skin.sprites.draw(id, layout, this.attachment.z, 1)
+        skin.sprites.draw(id, layout, [layer.note, -this.visualTime.max, 1], 1)
     }
 
     spawnNoteEffect() {

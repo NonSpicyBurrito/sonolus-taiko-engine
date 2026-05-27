@@ -1,5 +1,5 @@
 import { noteEffectLayout } from '../../note.js'
-import { getZ, layer } from '../../skin.js'
+import { layer } from '../../skin.js'
 import { stage } from '../../stage.js'
 
 const lerp = (x: VecLike, y: VecLike, s: number) =>
@@ -15,14 +15,10 @@ export abstract class NoteEffect extends SpawnableArchetype({
         fallback: SkinSprite
     }
 
-    initialized = this.entityMemory(Boolean)
-
     animationTimes = this.entityMemory({
         middle: Number,
         end: Number,
     })
-
-    z = this.entityMemory(Number)
 
     spawnTime() {
         return this.spawnData.startTime
@@ -35,13 +31,6 @@ export abstract class NoteEffect extends SpawnableArchetype({
         return this.animationTimes.end
     }
 
-    initialize() {
-        if (this.initialized) return
-        this.initialized = true
-
-        this.globalInitialize()
-    }
-
     updateParallel() {
         if (time.now >= this.animationTimes.middle) {
             this.renderFading()
@@ -52,10 +41,6 @@ export abstract class NoteEffect extends SpawnableArchetype({
 
     get useFallbackSprite() {
         return !this.sprites.note.exists
-    }
-
-    globalInitialize() {
-        this.z = getZ(layer.effect, this.spawnData.startTime)
     }
 
     renderFlying() {
@@ -71,9 +56,9 @@ export abstract class NoteEffect extends SpawnableArchetype({
         const layout = noteEffectLayout(this.isDai).add(p)
 
         if (this.useFallbackSprite) {
-            this.sprites.fallback.draw(layout, this.z, 1)
+            this.sprites.fallback.draw(layout, [layer.effect, -this.spawnData.startTime], 1)
         } else {
-            this.sprites.note.draw(layout, this.z, 1)
+            this.sprites.note.draw(layout, [layer.effect, -this.spawnData.startTime], 1)
         }
     }
 
@@ -82,9 +67,9 @@ export abstract class NoteEffect extends SpawnableArchetype({
         const a = Math.unlerp(this.animationTimes.end, this.animationTimes.middle, time.now)
 
         if (this.useFallbackSprite) {
-            this.sprites.fallback.draw(layout, this.z, a)
+            this.sprites.fallback.draw(layout, [layer.effect, -this.spawnData.startTime], a)
         } else {
-            this.sprites.note.draw(layout, this.z, a)
+            this.sprites.note.draw(layout, [layer.effect, -this.spawnData.startTime], a)
         }
     }
 }
