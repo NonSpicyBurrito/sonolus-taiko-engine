@@ -1,5 +1,4 @@
 import { Initialization } from './Initialization.js'
-import { Stage } from './Stage.js'
 import { DaiBalloonNoteEffect } from './noteEffects/DaiBalloonNoteEffect.js'
 import { DaiDonNoteEffect } from './noteEffects/DaiDonNoteEffect.js'
 import { DaiKaNoteEffect } from './noteEffects/DaiKaNoteEffect.js'
@@ -18,6 +17,7 @@ import { DaiDonNote } from './notes/tapNotes/donNotes/DaiDonNote.js'
 import { NormalDonNote } from './notes/tapNotes/donNotes/NormalDonNote.js'
 import { DaiKaNote } from './notes/tapNotes/kaNotes/DaiKaNote.js'
 import { NormalKaNote } from './notes/tapNotes/kaNotes/NormalKaNote.js'
+import { Stage } from './Stage.js'
 
 export const archetypes = defineArchetypes({
     Initialization,

@@ -1,4 +1,5 @@
 import { EngineArchetypeDataName } from '@sonolus/core'
+
 import { options } from '../../../../configuration/options.js'
 import { sfxDistance } from '../../../effect.js'
 import { getDuration, noteLayout } from '../../../note.js'
