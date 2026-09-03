@@ -5,7 +5,7 @@ export { tjaToTJC } from './tja/convert.js'
 export { tjcToLevelData } from './tjc/convert.js'
 export * from './tjc/index.js'
 
-export const version = '1.6.3'
+export const version = '1.6.4'
 
 export const engineFullName = {
     en: 'Taiko no Tatsujin',
