@@ -3,6 +3,7 @@ import { EngineConfigurationOption, Text } from '@sonolus/core'
 export const optionsDefinition = {
     speed: {
         name: Text.Speed,
+        category: 'gameplay',
         standard: true,
         advanced: true,
         type: 'slider',
@@ -14,6 +15,7 @@ export const optionsDefinition = {
     },
     hidden: {
         name: Text.Hidden,
+        category: 'gameplay',
         standard: true,
         advanced: true,
         type: 'slider',
@@ -25,6 +27,7 @@ export const optionsDefinition = {
     },
     drumSize: {
         name: 'Drum Size',
+        category: 'graphics',
         scope: 'Taiko',
         type: 'slider',
         def: 0.45,
@@ -35,6 +38,7 @@ export const optionsDefinition = {
     },
     slotPosition: {
         name: Text.SlotPosition,
+        category: 'graphics',
         scope: 'Taiko',
         type: 'slider',
         def: 1,
@@ -45,6 +49,7 @@ export const optionsDefinition = {
     },
     noteSpeed: {
         name: Text.NoteSpeed,
+        category: 'gameplay',
         scope: 'Taiko',
         type: 'slider',
         def: 1,
@@ -55,18 +60,21 @@ export const optionsDefinition = {
     },
     sfxEnabled: {
         name: Text.Effect,
+        category: 'audio',
         scope: 'Taiko',
         type: 'toggle',
         def: 1,
     },
     autoSFX: {
         name: Text.EffectAuto,
+        category: 'audio',
         scope: 'Taiko',
         type: 'toggle',
         def: 0,
     },
     noteSize: {
         name: Text.NoteSize,
+        category: 'graphics',
         scope: 'Taiko',
         type: 'slider',
         def: 1,
@@ -77,12 +85,14 @@ export const optionsDefinition = {
     },
     noteEffectEnabled: {
         name: Text.NoteEffect,
+        category: 'graphics',
         scope: 'Taiko',
         type: 'toggle',
         def: 1,
     },
     noteEffectSize: {
         name: Text.NoteEffectSize,
+        category: 'graphics',
         scope: 'Taiko',
         type: 'slider',
         def: 1,
@@ -93,12 +103,14 @@ export const optionsDefinition = {
     },
     slotEffectEnabled: {
         name: Text.SlotEffect,
+        category: 'graphics',
         scope: 'Taiko',
         type: 'toggle',
         def: 1,
     },
     slotEffectSize: {
         name: Text.SlotEffectSize,
+        category: 'graphics',
         scope: 'Taiko',
         type: 'slider',
         def: 1,
@@ -109,6 +121,7 @@ export const optionsDefinition = {
     },
     stageCover: {
         name: Text.StageCoverHorizontal,
+        category: 'graphics',
         scope: 'Taiko',
         advanced: true,
         type: 'slider',
@@ -120,6 +133,7 @@ export const optionsDefinition = {
     },
     stageDirection: {
         name: Text.StageDirection,
+        category: 'graphics',
         scope: 'Taiko',
         type: 'select',
         def: 0,
@@ -127,6 +141,7 @@ export const optionsDefinition = {
     },
     previewHorizontalScale: {
         name: Text.PreviewScaleHorizontal,
+        category: 'miscellaneous',
         scope: 'Taiko',
         type: 'slider',
         def: 1,
@@ -137,24 +152,28 @@ export const optionsDefinition = {
     },
     previewMeasure: {
         name: Text.PreviewMeasure,
+        category: 'miscellaneous',
         scope: 'Taiko',
         type: 'toggle',
         def: 1,
     },
     previewBeat: {
         name: Text.PreviewBeat,
+        category: 'miscellaneous',
         scope: 'Taiko',
         type: 'toggle',
         def: 1,
     },
     previewTime: {
         name: Text.PreviewTime,
+        category: 'miscellaneous',
         scope: 'Taiko',
         type: 'toggle',
         def: 1,
     },
     previewBpm: {
         name: Text.PreviewBpm,
+        category: 'miscellaneous',
         scope: 'Taiko',
         type: 'toggle',
         def: 1,
