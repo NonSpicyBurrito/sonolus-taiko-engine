@@ -1,4 +1,5 @@
 import { ParticleEffectName } from '@sonolus/core'
+
 import { layout } from '../../../../shared/src/engine/data/utils.js'
 import { stage } from './stage.js'
 
